@@ -1,0 +1,159 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var vendorScripts = ['card/dist/card.js']
+  - var pageTitle = 'Checkout'
+  - var breadcrumbs = [{'title': 'Shop', 'link': 'shop-grid-ls.html'}, {'title': 'Checkout'}]
+  - var parentMenu = 'Shop'
+
+//- Navbar
+block navbar
+  include partials/navbar-3-level-light
+
+//- Page title
+block page-title
+  include partials/page-title-shop
+  
+//- Page Content
+block content
+
+  .container.pb-5.mb-2.mb-md-4
+    .row
+
+      section.col-lg-8
+
+        // Steps
+        .steps.steps-light.pt-2.pb-3.mb-5
+          a(href='shop-cart.html').step-item.active
+            .step-progress
+              span.step-count 1
+            .step-label
+              i.czi-cart
+              | Cart
+          a(href='checkout-details.html').step-item.active
+            .step-progress
+              span.step-count 2
+            .step-label
+              i.czi-user-circle
+              | Your details
+          a(href='checkout-shipping.html').step-item.active
+            .step-progress
+              span.step-count 3
+            .step-label
+              i.czi-package
+              | Shipping
+          a(href='checkout-payment.html').step-item.active.current
+            .step-progress
+              span.step-count 4
+            .step-label
+              i.czi-card
+              | Payment
+          a(href='checkout-review.html').step-item
+            .step-progress
+              span.step-count 5
+            .step-label
+              i.czi-check-circle
+              | Review
+        
+        // Payment methods accordion
+        h2.h6.pb-3.mb-2 Choose payment method
+        div(id='payment-method' class='accordion' role='tablist').mb-2
+          .card
+            .card-header(role='tab')
+              h3.accordion-heading
+                a(href='#card' data-toggle='collapse')
+                  i.czi-card.font-size-lg.mr-2.mt-n1.align-middle
+                  | Pay with Credit Card
+                  span.accordion-indicator
+            div(id='card' class='collapse show' data-parent='#payment-method' role='tabpanel')
+              .card-body
+                p.font-size-sm
+                  | We accept following credit cards:&nbsp;&nbsp;
+                  img(src='img/cards.png' style='width: 187px;' alt='Cerdit Cards').d-inline-block.align-middle
+                .card-wrapper
+                form.interactive-credit-card.row
+                  .form-group.col-sm-6
+                    input(type='text' name='number' placeholder='Card Number' required).form-control
+                  .form-group.col-sm-6
+                    input(type='text' name='name' placeholder='Full Name' required).form-control
+                  .form-group.col-sm-3
+                    input(type='text' name='expiry' placeholder='MM/YY' required).form-control
+                  .form-group.col-sm-3
+                    input(type='text' name='cvc' placeholder='CVC' required).form-control
+                  .col-sm-6
+                    button(type='submit').btn.btn-outline-primary.btn-block.mt-0 Submit
+          .card
+            .card-header(role='tab')
+              h3.accordion-heading
+                a(href='#paypal' class='collapsed' data-toggle='collapse')
+                  i.czi-paypal.mr-2.align-middle
+                  | Pay with PayPal
+                  span.accordion-indicator
+            div(id='paypal' class='collapse' data-parent='#payment-method' role='tabpanel')
+              .card-body.font-size-sm
+                p <span class='font-weight-medium'>PayPal</span> - the safer, easier way to pay
+                form(method='post').row
+                  .col-sm-6
+                    .form-group
+                      input(type='email' placeholder='E-mail' required).form-control
+                  .col-sm-6
+                    .form-group
+                      input(type='password' placeholder='Password' required).form-control
+                  .col-12
+                    .d-flex.flex-wrap.justify-content-between.align-items-center
+                      a(href='#').nav-link-style Forgot password?
+                      button(type='submit').btn.btn-primary Log In
+          .card
+            .card-header(role='tab')
+              h3.accordion-heading
+                a(href='#points' class='collapsed' data-toggle='collapse')
+                  i.czi-gift.mr-2
+                  | Redeem Reward Points
+                  span.accordion-indicator
+            div(id='points' class='collapse' data-parent='#payment-method' role='tabpanel')
+              .card-body
+                p
+                  | You currently have
+                  span.font-weight-medium &nbsp;384
+                  | &nbsp;Reward Points to spend.
+                .custom-control.custom-checkbox.d-block
+                  input(type='checkbox' id='use_points').custom-control-input
+                  label(for='use_points').custom-control-label Use my Reward Points to pay for this order.
+
+        // Navigation (desktop)
+        .d-none.d-lg-flex.pt-4
+          .w-50.pr-3
+            a(href='checkout-shipping.html').btn.btn-secondary.btn-block
+              i.czi-arrow-left.mt-sm-0.mr-1
+              span.d-none.d-sm-inline Back to Shipping
+              span.d-inline.d-sm-none Back
+          .w-50.pl-2
+            a(href='checkout-review.html').btn.btn-primary.btn-block
+              span.d-none.d-sm-inline Review your order
+              span.d-inline.d-sm-none Review order
+              i.czi-arrow-right.mt-sm-0.ml-1
+          
+      // Sidebar
+      aside.col-lg-4.pt-4.pt-lg-0
+        //- sidebar-checkout.pug template
+        include partials/sidebar-checkout
+        
+    // Navigation (mobile)
+    .row.d-lg-none
+      .col-lg-8
+        .d-flex.pt-4.mt-3
+          .w-50.pr-3
+            a(href='checkout-shipping.html').btn.btn-secondary.btn-block
+              i.czi-arrow-left.mt-sm-0.mr-1
+              span.d-none.d-sm-inline Back to Shipping
+              span.d-inline.d-sm-none Back
+          .w-50.pl-2
+            a(href='checkout-review.html').btn.btn-primary.btn-block
+              span.d-none.d-sm-inline Review your order
+              span.d-inline.d-sm-none Review order
+              i.czi-arrow-right.mt-sm-0.ml-1
+
+//- Footer
+block footer
+  include partials/footer-dark

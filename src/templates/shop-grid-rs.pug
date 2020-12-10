@@ -1,0 +1,625 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var vendorStyles = ['nouislider/distribute/nouislider.min.css', 'drift-zoom/dist/drift-basic.min.css']
+  - var vendorScripts = ['nouislider/distribute/nouislider.min.js', 'drift-zoom/dist/Drift.min.js']
+  - var pageTitle = 'Shop grid right sidebar'
+  - var breadcrumbs = [{'title': 'Shop', 'link': '#'}, {'title': 'Grid right sidebar'}]
+  - var parentMenu = 'Shop'
+  - var isOffcanvasSidebar = 'shop'
+
+//- Navbar + Quick View Modal
+block navbar
+  include partials/modal-quick-view
+  include partials/navbar-3-level-light
+
+//- Page Title
+block page-title
+  include partials/page-title-shop
+  
+//- Page Content
+block content
+
+  .container.pb-5.mb-2.mb-md-4
+    .row
+
+      // Content  
+      section.col-lg-8
+
+        // Toolbar
+        .d-flex.justify-content-center.justify-content-sm-between.align-items-center.pt-2.pb-4.pb-sm-5
+          .d-flex.flex-wrap
+            .form-inline.flex-nowrap.mr-3.mr-sm-4.pb-3
+              label(for='sorting').text-light.opacity-75.text-nowrap.mr-2.d-none.d-sm-block Sort by:
+              select#sorting.form-control.custom-select
+                option Popularity
+                option Low - Hight Price
+                option High - Low Price
+                option Average Rating
+                option A - Z Order
+                option Z - A Order
+              span.font-size-sm.text-light.opacity-75.text-nowrap.ml-2.d-none.d-md-block of 287 products
+          .d-flex.pb-3
+            a(href='#').nav-link-style.nav-link-light.mr-3
+              i.czi-arrow-left
+            span.font-size-md.text-light 1 / 5
+            a(href='#').nav-link-style.nav-link-light.ml-3
+              i.czi-arrow-right
+          .d-none.d-sm-flex.pb-3
+            a(href='#').btn.btn-icon.nav-link-style.bg-light.text-dark.disabled.opacity-100.mr-2
+              i.czi-view-grid
+            a(href='shop-list-rs.html').btn.btn-icon.nav-link-style.nav-link-light
+              i.czi-view-list
+
+        // Products grid
+        .row.mx-n2
+
+          // Product
+          .col-md-4.col-sm-6.px-2.mb-4
+            .card.product-card
+              button(type='button' data-toggle='tooltip' data-placement='left' title='Add to wishlist').btn-wishlist.btn-sm
+                i.czi-heart
+              a(href='shop-single-v1.html').card-img-top.d-block.overflow-hidden
+                img(src='img/shop/catalog/01.jpg' alt='Product')
+              .card-body.py-2
+                a(href='#').product-meta.d-block.font-size-xs.pb-1 Sneakers &amp; Keds
+                h3.product-title.font-size-sm
+                  a(href='shop-single-v1.html') Women Colorblock Sneakers
+                .d-flex.justify-content-between
+                  .product-price
+                    span.text-accent $154.<small>00</small>
+                  +star-rating(4)
+              .card-body.card-body-hidden
+                .text-center.pb-2
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size1', id='s-75').custom-control-input
+                    label.custom-option-label(for='s-75') 7.5
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size1', id='s-80' checked).custom-control-input
+                    label.custom-option-label(for='s-80') 8
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size1', id='s-85').custom-control-input
+                    label.custom-option-label(for='s-85') 8.5
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size1', id='s-90').custom-control-input
+                    label.custom-option-label(for='s-90') 9
+                button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm.btn-block.mb-2
+                  i.czi-cart.font-size-sm.mr-1
+                  | Add to Cart
+                .text-center
+                  a(href='#quick-view' data-toggle='modal').nav-link-style.font-size-ms
+                    i.czi-eye.align-middle.mr-1
+                    | Quick view
+            hr.d-sm-none
+
+          // Product
+          .col-md-4.col-sm-6.px-2.mb-4
+            .card.product-card
+              span.badge.badge-danger.badge-shadow Sale
+              button(type='button' data-toggle='tooltip' data-placement='left' title='Add to wishlist').btn-wishlist.btn-sm
+                i.czi-heart
+              a(href='shop-single-v1.html').card-img-top.d-block.overflow-hidden
+                img(src='img/shop/catalog/02.jpg' alt='Product')
+              .card-body.py-2
+                a(href='#').product-meta.d-block.font-size-xs.pb-1 Women’s T-shirt
+                h3.product-title.font-size-sm
+                  a(href='shop-single-v1.html') Cotton Lace Blouse
+                .d-flex.justify-content-between
+                  .product-price
+                    span.text-accent $28.<small>50</small>
+                    del.font-size-sm.text-muted 38.<small>50</small>
+                  +star-rating(3)
+              .card-body.card-body-hidden
+                .text-center.pb-2
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio' name='color1' id='white' checked).custom-control-input
+                    label(for='white').custom-option-label.rounded-circle
+                      span(style='background-color: #eaeaeb;').custom-option-color.rounded-circle
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio' name='color1' id='blue').custom-control-input
+                    label(for='blue').custom-option-label.rounded-circle
+                      span(style='background-color: #d1dceb;').custom-option-color.rounded-circle
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio' name='color1' id='yellow').custom-control-input
+                    label(for='yellow').custom-option-label.rounded-circle
+                      span(style='background-color: #f4e6a2;').custom-option-color.rounded-circle
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio' name='color1' id='pink').custom-control-input
+                    label(for='pink').custom-option-label.rounded-circle
+                      span(style='background-color: #f3dcff;').custom-option-color.rounded-circle
+                .d-flex.mb-2
+                  select.custom-select.custom-select-sm.mr-2
+                    option XS
+                    option S
+                    option M
+                    option L
+                    option XL
+                  button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm
+                    i.czi-cart.font-size-sm.mr-1
+                    | Add to Cart
+                .text-center
+                  a(href='#quick-view' data-toggle='modal').nav-link-style.font-size-ms
+                    i.czi-eye.align-middle.mr-1
+                    | Quick view
+            hr.d-sm-none
+
+          // Product
+          .col-md-4.col-sm-6.px-2.mb-4
+            .card.product-card
+              button(type='button' data-toggle='tooltip' data-placement='left' title='Add to wishlist').btn-wishlist.btn-sm
+                i.czi-heart
+              a(href='shop-single-v1.html').card-img-top.d-block.overflow-hidden
+                img(src='img/shop/catalog/03.jpg' alt='Product')
+              .card-body.py-2
+                a(href='#').product-meta.d-block.font-size-xs.pb-1 Women’s Shorts
+                h3.product-title.font-size-sm
+                  a(href='shop-single-v1.html') Mom High Waist Shorts
+                .d-flex.justify-content-between
+                  .product-price
+                    span.text-accent $39.<small>50</small>
+                  +star-rating(5)
+              .card-body.card-body-hidden
+                .text-center.pb-2
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size2', id='xs').custom-control-input
+                    label.custom-option-label(for='xs') XS
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size2', id='s' checked).custom-control-input
+                    label.custom-option-label(for='s') S
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size2', id='m').custom-control-input
+                    label.custom-option-label(for='m') M
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size2', id='l').custom-control-input
+                    label.custom-option-label(for='l') L
+                button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm.btn-block.mb-2
+                  i.czi-cart.font-size-sm.mr-1
+                  | Add to Cart
+                .text-center
+                  a(href='#quick-view' data-toggle='modal').nav-link-style.font-size-ms
+                    i.czi-eye.align-middle.mr-1
+                    | Quick view
+            hr.d-sm-none
+
+          // Product
+          .col-md-4.col-sm-6.px-2.mb-4
+            .card.product-card
+              button(type='button' data-toggle='tooltip' data-placement='left' title='Add to wishlist').btn-wishlist.btn-sm
+                i.czi-heart
+              a(href='shop-single-v1.html').card-img-top.d-block.overflow-hidden
+                img(src='img/shop/catalog/04.jpg' alt='Product')
+              .card-body.py-2
+                a(href='#').product-meta.d-block.font-size-xs.pb-1 Sportswear
+                h3.product-title.font-size-sm
+                  a(href='shop-single-v1.html') Women Sports Jacket
+                .d-flex.justify-content-between
+                  .product-price
+                    span.text-accent $68.<small>40</small>
+                  +star-rating(4)
+              .card-body.card-body-hidden
+                .text-center.pb-2
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size3', id='xs2' checked).custom-control-input
+                    label.custom-option-label(for='xs2') XS
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size3', id='s2').custom-control-input
+                    label.custom-option-label(for='s2') S
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size3', id='m2').custom-control-input
+                    label.custom-option-label(for='m2') M
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size3', id='l2').custom-control-input
+                    label.custom-option-label(for='l2') L
+                button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm.btn-block.mb-2
+                  i.czi-cart.font-size-sm.mr-1
+                  | Add to Cart
+                .text-center
+                  a(href='#quick-view' data-toggle='modal').nav-link-style.font-size-ms
+                    i.czi-eye.align-middle.mr-1
+                    | Quick view
+            hr.d-sm-none
+
+          // Product
+          .col-md-4.col-sm-6.px-2.mb-4
+            .card.product-card
+              button(type='button' data-toggle='tooltip' data-placement='left' title='Add to wishlist').btn-wishlist.btn-sm
+                i.czi-heart
+              a(href='shop-single-v1.html').card-img-top.d-block.overflow-hidden
+                img(src='img/shop/catalog/05.jpg' alt='Product')
+              .card-body.py-2
+                a(href='#').product-meta.d-block.font-size-xs.pb-1 Men’s Sunglasses
+                h3.product-title.font-size-sm
+                  a(href='shop-single-v1.html') Polarized Sunglasses
+                .d-flex.justify-content-between
+                  .product-price
+                    span.text-muted.font-size-sm Out of stock
+                  +star-rating(4)
+              .card-body.card-body-hidden
+                a(href='shop-single-v1.html').btn.btn-secondary.btn-sm.btn-block.mb-2 View details
+                .text-center
+                  a(href='#quick-view' data-toggle='modal').nav-link-style.font-size-ms
+                    i.czi-eye.align-middle.mr-1
+                    | Quick view
+            hr.d-sm-none
+
+          // Product
+          .col-md-4.col-sm-6.px-2.mb-4
+            .card.product-card
+              button(type='button' data-toggle='tooltip' data-placement='left' title='Add to wishlist').btn-wishlist.btn-sm
+                i.czi-heart
+              a(href='shop-single-v1.html').card-img-top.d-block.overflow-hidden
+                img(src='img/shop/catalog/06.jpg' alt='Product')
+              .card-body.py-2
+                a(href='#').product-meta.d-block.font-size-xs.pb-1 Backpacks
+                h3.product-title.font-size-sm
+                  a(href='shop-single-v1.html') TH Jeans City Backpack
+                .d-flex.justify-content-between
+                  .product-price
+                    span.text-accent $79.<small>50</small>
+                  +star-rating(3)
+              .card-body.card-body-hidden
+                .text-center.pb-2
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio' name='color2' id='khaki' checked).custom-control-input
+                    label(for='khaki').custom-option-label.rounded-circle
+                      span(style='background-color: #97947c;').custom-option-color.rounded-circle
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio' name='color2' id='jeans').custom-control-input
+                    label(for='jeans').custom-option-label.rounded-circle
+                      span(style='background-color: #99a8be;').custom-option-color.rounded-circle
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio' name='color2' id='white2').custom-control-input
+                    label(for='white2').custom-option-label.rounded-circle
+                      span(style='background-color: #eaeaeb;').custom-option-color.rounded-circle
+                button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm.btn-block.mb-2
+                  i.czi-cart.font-size-sm.mr-1
+                  | Add to Cart
+                .text-center
+                  a(href='#quick-view' data-toggle='modal').nav-link-style.font-size-ms
+                    i.czi-eye.align-middle.mr-1
+                    | Quick view
+
+        // Banner
+        .py-sm-2
+          .d-sm-flex.justify-content-between.align-items-center.bg-secondary.overflow-hidden.mb-4.rounded-lg
+            .py-4.my-2.my-md-0.py-md-5.px-4.ml-md-3.text-center.text-sm-left
+              h4.font-size-lg.font-weight-light.mb-2 Converse All Star
+              h3.mb-4 Make Your Day Comfortable
+              a(href='#').btn.btn-primary.btn-shadow.btn-sm Shop Now
+            img(src='img/shop/catalog/banner.jpg' alt='Shop Converse').d-block.ml-auto
+
+
+        // Products grid
+        .row.mx-n2
+
+          // Product
+          .col-md-4.col-sm-6.px-2.mb-4
+            .card.product-card
+              button(type='button' data-toggle='tooltip' data-placement='left' title='Add to wishlist').btn-wishlist.btn-sm
+                i.czi-heart
+              a(href='shop-single-v1.html').card-img-top.d-block.overflow-hidden
+                img(src='img/shop/catalog/07.jpg' alt='Product')
+              .card-body.py-2
+                a(href='#').product-meta.d-block.font-size-xs.pb-1 Women's Swimwear
+                h3.product-title.font-size-sm
+                  a(href='shop-single-v1.html') Two-Piece Bikini in Print
+                .d-flex.justify-content-between
+                  .product-price
+                    span.text-accent $18.<small>99</small>
+                  +star-rating(4)
+              .card-body.card-body-hidden
+                .text-center.pb-2
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size4', id='xs3' checked).custom-control-input
+                    label.custom-option-label(for='xs3') XS
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size4', id='s3').custom-control-input
+                    label.custom-option-label(for='s3') S
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size4', id='m3').custom-control-input
+                    label.custom-option-label(for='m3') M
+                button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm.btn-block.mb-2
+                  i.czi-cart.font-size-sm.mr-1
+                  | Add to Cart
+                .text-center
+                  a(href='#quick-view' data-toggle='modal').nav-link-style.font-size-ms
+                    i.czi-eye.align-middle.mr-1
+                    | Quick view
+            hr.d-sm-none
+
+          // Product
+          .col-md-4.col-sm-6.px-2.mb-4
+            .card.product-card
+              button(type='button' data-toggle='tooltip' data-placement='left' title='Add to wishlist').btn-wishlist.btn-sm
+                i.czi-heart
+              a(href='shop-single-v1.html').card-img-top.d-block.overflow-hidden
+                img(src='img/shop/catalog/08.jpg' alt='Product')
+              .card-body.py-2
+                a(href='#').product-meta.d-block.font-size-xs.pb-1 Kid's Toys
+                h3.product-title.font-size-sm
+                  a(href='shop-single-v1.html') Soft Panda Teddy Bear
+                .d-flex.justify-content-between
+                  .product-price
+                    span.text-accent $14.<small>99</small>
+                  +star-rating(5)
+              .card-body.card-body-hidden
+                button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm.btn-block.mb-2
+                  i.czi-cart.font-size-sm.mr-1
+                  | Add to Cart
+                .text-center
+                  a(href='#quick-view' data-toggle='modal').nav-link-style.font-size-ms
+                    i.czi-eye.align-middle.mr-1
+                    | Quick view
+            hr.d-sm-none
+
+          // Product
+          .col-md-4.col-sm-6.px-2.mb-4
+            .card.product-card
+              button(type='button' data-toggle='tooltip' data-placement='left' title='Add to wishlist').btn-wishlist.btn-sm
+                i.czi-heart
+              a(href='shop-single-v1.html').card-img-top.d-block.overflow-hidden
+                img(src='img/shop/catalog/09.jpg' alt='Product')
+              .card-body.py-2
+                a(href='#').product-meta.d-block.font-size-xs.pb-1 Cosmetics
+                h3.product-title.font-size-sm
+                  a(href='shop-single-v1.html') Metallic Lipstick (Crimson)
+                .d-flex.justify-content-between
+                  .product-price
+                    span.text-accent $12.<small>99</small>
+                  +star-rating(4)
+              .card-body.card-body-hidden
+                .text-center.pb-2
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio' name='color2' id='crimson' checked).custom-control-input
+                    label(for='crimson').custom-option-label.rounded-circle
+                      span(style='background-color: #bd3c82;').custom-option-color.rounded-circle
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio' name='color2' id='creamy').custom-control-input
+                    label(for='creamy').custom-option-label.rounded-circle
+                      span(style='background-color: #ebae81;').custom-option-color.rounded-circle
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio' name='color2' id='palm').custom-control-input
+                    label(for='palm').custom-option-label.rounded-circle
+                      span(style='background-color: #ca8799;').custom-option-color.rounded-circle
+                button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm.btn-block.mb-2
+                  i.czi-cart.font-size-sm.mr-1
+                  | Add to Cart
+                .text-center
+                  a(href='#quick-view' data-toggle='modal').nav-link-style.font-size-ms
+                    i.czi-eye.align-middle.mr-1
+                    | Quick view
+            hr.d-sm-none
+
+          // Product
+          .col-md-4.col-sm-6.px-2.mb-4
+            .card.product-card
+              button(type='button' data-toggle='tooltip' data-placement='left' title='Add to wishlist').btn-wishlist.btn-sm
+                i.czi-heart
+              a(href='shop-single-v1.html').card-img-top.d-block.overflow-hidden
+                img(src='img/shop/catalog/10.jpg' alt='Product')
+              .card-body.py-2
+                a(href='#').product-meta.d-block.font-size-xs.pb-1 Men’s Accessories
+                h3.product-title.font-size-sm
+                  a(href='shop-single-v1.html') 5-Pack Multicolor Bracelets
+                .d-flex.justify-content-between
+                  .product-price
+                    span.text-accent $7.<small>99</small>
+                  +star-rating(5)
+              .card-body.card-body-hidden
+                button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm.btn-block.mb-2
+                  i.czi-cart.font-size-sm.mr-1
+                  | Add to Cart
+                .text-center
+                  a(href='#quick-view' data-toggle='modal').nav-link-style.font-size-ms
+                    i.czi-eye.align-middle.mr-1
+                    | Quick view
+            hr.d-sm-none
+
+          // Product
+          .col-md-4.col-sm-6.px-2.mb-4
+            .card.product-card
+              button(type='button' data-toggle='tooltip' data-placement='left' title='Add to wishlist').btn-wishlist.btn-sm
+                i.czi-heart
+              a(href='shop-single-v1.html').card-img-top.d-block.overflow-hidden
+                img(src='img/shop/catalog/11.jpg' alt='Product')
+              .card-body.py-2
+                a(href='#').product-meta.d-block.font-size-xs.pb-1 Men’s Sandals
+                h3.product-title.font-size-sm
+                  a(href='shop-single-v1.html') Soft Footbed Sandals
+                .d-flex.justify-content-between
+                  .product-price
+                    span.text-accent $99.<small>50</small>
+                  +star-rating(4)
+              .card-body.card-body-hidden
+                .text-center.pb-2
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio' name='color1' id='blue2' checked).custom-control-input
+                    label(for='blue2').custom-option-label.rounded-circle
+                      span(style='background-color: #879fb3;').custom-option-color.rounded-circle
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio' name='color1' id='brown').custom-control-input
+                    label(for='brown').custom-option-label.rounded-circle
+                      span(style='background-color: #9c6d4a;').custom-option-color.rounded-circle
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio' name='color1' id='black').custom-control-input
+                    label(for='black').custom-option-label.rounded-circle
+                      span(style='background-color: #333333;').custom-option-color.rounded-circle
+                .d-flex.mb-2
+                  select.custom-select.custom-select-sm.mr-2
+                    option 9.5
+                    option 10
+                    option 10.5
+                    option 11
+                    option 11.5
+                  button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm
+                    i.czi-cart.font-size-sm.mr-1
+                    | Add to Cart
+                .text-center
+                  a(href='#quick-view' data-toggle='modal').nav-link-style.font-size-ms
+                    i.czi-eye.align-middle.mr-1
+                    | Quick view
+            hr.d-sm-none
+
+          // Product
+          .col-md-4.col-sm-6.px-2.mb-4
+            .card.product-card
+              button(type='button' data-toggle='tooltip' data-placement='left' title='Add to wishlist').btn-wishlist.btn-sm
+                i.czi-heart
+              a(href='shop-single-v1.html').card-img-top.d-block.overflow-hidden
+                img(src='img/shop/catalog/12.jpg' alt='Product')
+              .card-body.py-2
+                a(href='#').product-meta.d-block.font-size-xs.pb-1 Men’s Hats
+                h3.product-title.font-size-sm
+                  a(href='shop-single-v1.html') 3-Color Sun Stash Hat
+                .d-flex.justify-content-between
+                  .product-price
+                    span.text-accent $25.<small>99</small>
+                  +star-rating(5)
+              .card-body.card-body-hidden
+                .text-center.pb-2
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size5', id='s4' checked).custom-control-input
+                    label.custom-option-label(for='s4') S
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size5', id='m4').custom-control-input
+                    label.custom-option-label(for='m4') M
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size5', id='l4').custom-control-input
+                    label.custom-option-label(for='l4') L
+                button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm.btn-block.mb-2
+                  i.czi-cart.font-size-sm.mr-1
+                  | Add to Cart
+                .text-center
+                  a(href='#quick-view' data-toggle='modal').nav-link-style.font-size-ms
+                    i.czi-eye.align-middle.mr-1
+                    | Quick view
+            hr.d-sm-none
+
+          // Product
+          .col-md-4.col-sm-6.px-2.mb-4
+            .card.product-card
+              span.badge.badge-danger.badge-shadow Sale
+              button(type='button' data-toggle='tooltip' data-placement='left' title='Add to wishlist').btn-wishlist.btn-sm
+                i.czi-heart
+              a(href='shop-single-v1.html').card-img-top.d-block.overflow-hidden
+                img(src='img/shop/catalog/13.jpg' alt='Product')
+              .card-body.py-2
+                a(href='#').product-meta.d-block.font-size-xs.pb-1 Men’s T-shirts
+                h3.product-title.font-size-sm
+                  a(href='shop-single-v1.html') Cotton Polo Regular Fit
+                .d-flex.justify-content-between
+                  .product-price
+                    span.text-accent $11.<small>50</small>
+                    del.font-size-sm.text-muted $13.<small>50</small>
+                  +star-rating(3)
+              .card-body.card-body-hidden
+                .text-center.pb-2
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size6', id='s5').custom-control-input
+                    label.custom-option-label(for='s5') S
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size6', id='m5').custom-control-input
+                    label.custom-option-label(for='m5') M
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size6', id='l5' checked).custom-control-input
+                    label.custom-option-label(for='l5') L
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size6', id='xl5').custom-control-input
+                    label.custom-option-label(for='xl5') XL
+                button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm.btn-block.mb-2
+                  i.czi-cart.font-size-sm.mr-1
+                  | Add to Cart
+                .text-center
+                  a(href='#quick-view' data-toggle='modal').nav-link-style.font-size-ms
+                    i.czi-eye.align-middle.mr-1
+                    | Quick view
+            hr.d-sm-none
+
+          // Product
+          .col-md-4.col-sm-6.px-2.mb-4
+            .card.product-card
+              button(type='button' data-toggle='tooltip' data-placement='left' title='Add to wishlist').btn-wishlist.btn-sm
+                i.czi-heart
+              a(href='shop-single-v1.html').card-img-top.d-block.overflow-hidden
+                img(src='img/shop/catalog/14.jpg' alt='Product')
+              .card-body.py-2
+                a(href='#').product-meta.d-block.font-size-xs.pb-1 Men’s Jeans
+                h3.product-title.font-size-sm
+                  a(href='shop-single-v1.html') Slim Taper Fit Jeans
+                .d-flex.justify-content-between
+                  .product-price
+                    span.text-accent $58.<small>99</small>
+                  +star-rating(4)
+              .card-body.card-body-hidden
+                .text-center.pb-2
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size7', id='s6').custom-control-input
+                    label.custom-option-label(for='s6') S
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size7', id='m6').custom-control-input
+                    label.custom-option-label(for='m6') M
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size7', id='l6' checked).custom-control-input
+                    label.custom-option-label(for='l6') L
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size7', id='xl6').custom-control-input
+                    label.custom-option-label(for='xl6') XL
+                button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm.btn-block.mb-2
+                  i.czi-cart.font-size-sm.mr-1
+                  | Add to Cart
+                .text-center
+                  a(href='#quick-view' data-toggle='modal').nav-link-style.font-size-ms
+                    i.czi-eye.align-middle.mr-1
+                    | Quick view
+            hr.d-sm-none
+
+          // Product
+          .col-md-4.col-sm-6.px-2.mb-4
+            .card.product-card
+              button(type='button' data-toggle='tooltip' data-placement='left' title='Add to wishlist').btn-wishlist.btn-sm
+                i.czi-heart
+              a(href='shop-single-v1.html').card-img-top.d-block.overflow-hidden
+                img(src='img/shop/catalog/15.jpg' alt='Product')
+              .card-body.py-2
+                a(href='#').product-meta.d-block.font-size-xs.pb-1 Men’s Waistcoats
+                h3.product-title.font-size-sm
+                  a(href='shop-single-v1.html') Single-breasted Trenchcoat
+                .d-flex.justify-content-between
+                  .product-price
+                    span.text-accent $79.<small>99</small>
+                  +star-rating(4)
+              .card-body.card-body-hidden
+                .text-center.pb-2
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size8', id='m7').custom-control-input
+                    label.custom-option-label(for='m7') M
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size8', id='l7' checked).custom-control-input
+                    label.custom-option-label(for='l7') L
+                  .custom-control.custom-option.custom-control-inline.mb-2
+                    input(type='radio', name='size8', id='xl7').custom-control-input
+                    label.custom-option-label(for='xl7') XL
+                button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm.btn-block.mb-2
+                  i.czi-cart.font-size-sm.mr-1
+                  | Add to Cart
+                .text-center
+                  a(href='#quick-view' data-toggle='modal').nav-link-style.font-size-ms
+                    i.czi-eye.align-middle.mr-1
+                    | Quick view
+      
+        hr.my-3
+        //- pagination.pug template
+        include partials/pagination
+
+      // Sidebar
+      aside.col-lg-4
+        //- sidebar-shop.pug template
+        include partials/sidebar-shop
+
+  //- toast-shop.pug template
+  include partials/toast-shop
+
+//- Footer
+block footer
+  include partials/footer-dark

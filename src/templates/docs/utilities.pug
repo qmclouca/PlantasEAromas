@@ -1,0 +1,17 @@
+extends ../partials/layout-docs
+
+//- Override default config variables
+append config
+  - var pageTitle = 'Utility classes'
+  - var isNestedFile = true
+  
+//- Page Content
+block content
+  .pb-5
+    .alert.alert-info.alert-with-icon.font-size-md.mb-4(role='alert')
+      .alert-icon-box
+        i.czi-announcement.alert-icon.font-size-lg
+      p.mb-0 Bootstrap includes dozens of utilities - classes with a single purpose to reduce the frequency of highly repetitive declarations.
+    p Along with <a href='https://getbootstrap.com/docs/4.5/utilities/borders/' class='font-weight-semibold' target='_blank'>default Bootstrap 4 utility classes</a> Cartzilla introduces its own. They all live inside <code>Cartzilla/src/scss/theme/_utilities.scss</code> file.
+    p See part of <code>_utilities.scss</code> file below:
+    img(src='../img/docs/sass-utils.png' alt='Prepros').d-block.img-thumbnail

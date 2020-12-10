@@ -1,0 +1,196 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var pageTitle = 'Your cart'
+  - var breadcrumbs = [{'title': 'Shop', 'link': 'shop-grid-ls.html'}, {'title': 'Cart'}]
+  - var parentMenu = 'Shop'
+
+//- Navbar
+block navbar
+  include partials/navbar-3-level-light
+
+//- Page title
+block page-title
+  include partials/page-title-shop
+  
+//- Page Content
+block content
+
+  .container.pb-5.mb-2.mb-md-4
+    .row
+
+      // List of items
+      section.col-lg-8
+        .d-flex.justify-content-between.align-items-center.pt-3.pb-2.pb-sm-5.mt-1
+          h2.h6.text-light.mb-0 Products
+          a(href='shop-grid-ls.html').btn.btn-outline-primary.btn-sm.pl-2
+            i.czi-arrow-left.mr-2
+            | Continue shopping
+
+        // Item
+        .d-sm-flex.justify-content-between.align-items-center.my-4.pb-3.border-bottom
+          .media.media-ie-fix.d-block.d-sm-flex.align-items-center.text-center.text-sm-left
+            a(href='shop-single-v1.html' style='width: 10rem;').d-inline-block.mx-auto.mr-sm-4
+              img(src='img/shop/cart/01.jpg' alt='Product')
+            .media-body.pt-2
+              h3.product-title.font-size-base.mb-2
+                a(href='shop-single-v1.html') Women Colorblock Sneakers
+              .font-size-sm
+                span.text-muted.mr-2 Size:
+                | 8.5
+              .font-size-sm
+                span.text-muted.mr-2 Color:
+                | White &amp; Blue
+              .font-size-lg.text-accent.pt-2 $154.<small>00</small>
+          .pt-2.pt-sm-0.pl-sm-3.mx-auto.mx-sm-0.text-center.text-sm-left(style='max-width: 9rem;')
+            .form-group.mb-0
+              label(for='quantity1').font-weight-medium Quantity
+              input(type='number' id='quantity1' value='1').form-control
+            button(type='button').btn.btn-link.px-0.text-danger
+              i.czi-close-circle.mr-2
+              span.font-size-sm Remove
+
+        // Item
+        .d-sm-flex.justify-content-between.align-items-center.my-4.pb-3.border-bottom
+          .media.media-ie-fix.d-block.d-sm-flex.align-items-center.text-center.text-sm-left
+            a(href='shop-single-v1.html' style='width: 10rem;').d-inline-block.mx-auto.mr-sm-4
+              img(src='img/shop/cart/02.jpg' alt='Product')
+            .media-body.pt-2
+              h3.product-title.font-size-base.mb-2
+                a(href='shop-single-v1.html') TH Jeans City Backpack
+              .font-size-sm
+                span.text-muted.mr-2 Brand:
+                | Tommy Hilfiger
+              .font-size-sm
+                span.text-muted.mr-2 Color:
+                | Khaki
+              .font-size-lg.text-accent.pt-2 $79.<small>50</small>
+          .pt-2.pt-sm-0.pl-sm-3.mx-auto.mx-sm-0.text-center.text-sm-left(style='max-width: 9rem;')
+            .form-group.mb-0
+              label(for='quantity2').font-weight-medium Quantity
+              input(type='number' id='quantity2' value='1').form-control
+            button(type='button').btn.btn-link.px-0.text-danger
+              i.czi-close-circle.mr-2
+              span.font-size-sm Remove
+
+        // Item
+        .d-sm-flex.justify-content-between.align-items-center.my-4.pb-3.border-bottom
+          .media.media-ie-fix.d-block.d-sm-flex.align-items-center.text-center.text-sm-left
+            a(href='shop-single-v1.html' style='width: 10rem;').d-inline-block.mx-auto.mr-sm-4
+              img(src='img/shop/cart/03.jpg' alt='Product')
+            .media-body.pt-2
+              h3.product-title.font-size-base.mb-2
+                a(href='shop-single-v1.html') 3-Color Sun Stash Hat
+              .font-size-sm
+                span.text-muted.mr-2 Brand:
+                | The North Face
+              .font-size-sm
+                span.text-muted.mr-2 Color:
+                | Pink / Beige / Dark blue
+              .font-size-lg.text-accent.pt-2 $22.<small>50</small>
+          .pt-2.pt-sm-0.pl-sm-3.mx-auto.mx-sm-0.text-center.text-sm-left(style='max-width: 9rem;')
+            .form-group.mb-0
+              label(for='quantity3').font-weight-medium Quantity
+              input(type='number' id='quantity3' value='1').form-control
+            button(type='button').btn.btn-link.px-0.text-danger
+              i.czi-close-circle.mr-2
+              span.font-size-sm Remove
+
+        // Item
+        .d-sm-flex.justify-content-between.align-items-center.my-4.pb-3.border-bottom
+          .media.media-ie-fix.d-block.d-sm-flex.align-items-center.text-center.text-sm-left
+            a(href='shop-single-v1.html' style='width: 10rem;').d-inline-block.mx-auto.mr-sm-4
+              img(src='img/shop/cart/04.jpg' alt='Product')
+            .media-body.pt-2
+              h3.product-title.font-size-base.mb-2
+                a(href='shop-single-v1.html') Cotton Polo Regular Fit
+              .font-size-sm
+                span.text-muted.mr-2 Size:
+                | 42
+              .font-size-sm
+                span.text-muted.mr-2 Color:
+                | Light blue
+              .font-size-lg.text-accent.pt-2 $9.<small>00</small>
+          .pt-2.pt-sm-0.pl-sm-3.mx-auto.mx-sm-0.text-center.text-sm-left(style='max-width: 9rem;')
+            .form-group.mb-0
+              label(for='quantity4').font-weight-medium Quantity
+              input(type='number' id='quantity4' value='1').form-control
+            button(type='button').btn.btn-link.px-0.text-danger
+              i.czi-close-circle.mr-2
+              span.font-size-sm Remove
+
+        button(type='button').btn.btn-outline-accent.btn-block
+          i.czi-loading.font-size-base.mr-2
+          | Update cart
+
+      // Sidebar
+      aside.col-lg-4.pt-4.pt-lg-0
+        .cz-sidebar-static.rounded-lg.box-shadow-lg.ml-lg-auto
+          .text-center.mb-4.pb-3.border-bottom
+            h2.h6.mb-3.pb-1 Subtotal
+            h3.font-weight-normal
+              | $265.
+              small 00
+          .form-group.mb-4
+            label(for='order-comments').mb-3
+              span.badge.badge-info.font-size-xs.mr-2 Note
+              span.font-weight-medium Additional comments
+            textarea(rows='6')#order-comments.form-control
+          #order-options.accordion
+            .card
+              .card-header
+                h3.accordion-heading
+                  a(href='#promo-code' role='button' data-toggle='collapse' aria-expanded='true' aria-controls='promo-code')
+                    | Apply promo code
+                    span.accordion-indicator
+              #promo-code.collapse.show(data-parent='#order-options')
+                form(method='post' novalidate).card-body.needs-validation
+                  .form-group
+                    input(type='text' placeholder='Promo code' required).form-control
+                    .invalid-feedback Please provide promo code.
+                  button(type='submit').btn.btn-outline-primary.btn-block Apply promo code
+            .card
+              .card-header
+                h3.accordion-heading
+                  a(href='#shipping-estimates' role='button' data-toggle='collapse' aria-expanded='true' aria-controls='shipping-estimates').collapsed
+                    | Shipping estimates
+                    span.accordion-indicator
+              #shipping-estimates.collapse(data-parent='#order-options')
+                .card-body
+                  form(novalidate).needs-validation
+                    .form-group
+                      select(required).form-control.custom-select
+                        option(value='') Choose your country
+                        option(value='Australia') Australia
+                        option(value='Belgium') Belgium
+                        option(value='Canada') Canada
+                        option(value='Finland') Finland
+                        option(value='Mexico') Mexico
+                        option(value='New Zealand') New Zealand
+                        option(value='Switzerland') Switzerland
+                        option(value='United States') United States
+                      .invalid-feedback Please choose your country!
+                    .form-group
+                      select(required).form-control.custom-select
+                        option(value='') Choose your city
+                        option(value='Bern') Bern
+                        option(value='Brussels') Brussels
+                        option(value='Canberra') Canberra
+                        option(value='Helsinki') Helsinki
+                        option(value='Mexico City') Mexico City
+                        option(value='Ottawa') Ottawa
+                        option(value='Washington D.C.') Washington D.C.
+                        option(value='Wellington') Wellington
+                      .invalid-feedback Please choose your city!
+                    .form-group
+                      input(type='text' placeholder='ZIP / Postal code' required).form-control
+                      .invalid-feedback Please provide a valid zip!
+                    button(type='submit').btn.btn-outline-primary.btn-block Calculate shipping
+          a(href='checkout-details.html').btn.btn-primary.btn-shadow.btn-block.mt-4
+            i.czi-card.font-size-lg.mr-2
+            | Proceed to Checkout
+
+//- Footer
+block footer
+  include partials/footer-dark

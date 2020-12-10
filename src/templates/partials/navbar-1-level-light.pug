@@ -1,0 +1,51 @@
+// Navbar 1 Level (Light)
+// Remove "navbar-sticky" class to make navigation bar scrollable with the page.
+header.bg-light.box-shadow-sm.navbar-sticky
+  .navbar.navbar-expand-lg.navbar-light
+    .container
+      a(href='index.html' style='min-width: 7rem;').navbar-brand.d-none.d-sm-block.mr-4.order-lg-1
+        +image('img/logo-dark.png', 'Cartzilla')(width='142')
+      a(href='index.html' style='min-width: 4.625rem;').navbar-brand.d-sm-none.mr-2.order-lg-1
+        +image('img/logo-icon.png', 'Cartzilla')(width='74')
+      
+      .navbar-toolbar.d-flex.align-items-center.order-lg-3
+        button(type='button' data-toggle='collapse' data-target='#navbarCollapse').navbar-toggler
+          span.navbar-toggler-icon
+        a(href='#searchBox' data-toggle='collapse' role='button' aria-expanded='false', aria-controls='searchBox').navbar-tool.d-none.d-lg-flex
+          span.navbar-tool-tooltip Search
+          .navbar-tool-icon-box: i.navbar-tool-icon.czi-search
+        a(href='account-wishlist.html').navbar-tool.d-none.d-lg-flex
+          span.navbar-tool-tooltip Wishlist
+          .navbar-tool-icon-box: i.navbar-tool-icon.czi-heart
+        a(href='#signin-modal' data-toggle='modal').navbar-tool.ml-1.mr-n1
+          span.navbar-tool-tooltip Account
+          .navbar-tool-icon-box: i.navbar-tool-icon.czi-user
+        .navbar-tool.dropdown.ml-3
+          a(href='shop-cart.html').navbar-tool-icon-box.bg-secondary.dropdown-toggle
+            span.navbar-tool-label 4
+            i.navbar-tool-icon.czi-cart
+
+          //- cart-dropdown.pug template
+          include cart-dropdown
+
+      #navbarCollapse.collapse.navbar-collapse.mr-auto.order-lg-2
+
+        // Search
+        .input-group-overlay.d-lg-none.my-3
+          .input-group-prepend-overlay
+            span.input-group-text
+              i.czi-search
+          input(type='text' placeholder='Search for products').form-control.prepended-form-control
+
+        //- menu-primary.pug
+        include menu-primary
+
+  // Search collapse
+  #searchBox.search-box.collapse
+    .card.pt-2.pb-4.border-0.rounded-0
+      .container
+        .input-group-overlay
+          .input-group-prepend-overlay
+            span.input-group-text
+              i.czi-search
+          input(type='text' placeholder='Search for products').form-control.prepended-form-control

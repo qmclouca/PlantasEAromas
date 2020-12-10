@@ -1,0 +1,63 @@
+// Add New Address
+form(method='post' id='add-address' tabindex='-1' novalidate).needs-validation.modal.fade
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        h5.modal-title Add a new address
+        button(type='button' class='close' data-dismiss='modal' aria-label='Close')
+          span(aria-hidden='true') &times;
+      .modal-body
+        .row
+          .col-sm-6
+            .form-group
+              label(for='address-fn') First name
+              input(type='text' id='address-fn' class='form-control' required)
+              .invalid-feedback Please fill in you first name!
+          .col-sm-6
+            .form-group
+              label(for='address-ln') Last name
+              input(type='text' id='address-ln' class='form-control' required)
+              .invalid-feedback Please fill in you last name!
+          .col-sm-6
+            .form-group
+              label(for='address-company') Company
+              input(type='text' id='address-company' class='form-control')
+          .col-sm-6
+            .form-group
+              label(for='address-country') Country
+              select(id='address-country' class='custom-select' required)
+                option(value) Select country
+                option(value='Argentina') Argentina
+                option(value='Belgium') Belgium
+                option(value='France') France
+                option(value='Germany') Germany
+                option(value='Spain') Spain
+                option(value='UK') United Kingdom
+                option(value='USA') USA
+              .invalid-feedback Please select your country!
+          .col-sm-6
+            .form-group
+              label(for='address-city') City
+              input(type='text' id='address-city' class='form-control' required)
+              .invalid-feedback Please fill in your city!
+          .col-sm-6
+            .form-group
+              label(for='address-line1') Line 1
+              input(type='text' id='address-line1' class='form-control' required)
+              .invalid-feedback Please fill in your address!
+          .col-sm-6
+            .form-group
+              label(for='address-line2') Line 2
+              input(type='text' id='address-line2' class='form-control')
+          .col-sm-6
+            .form-group
+              label(for='address-zip') ZIP code
+              input(type='text' id='address-zip' class='form-control' required)
+              .invalid-feedback Please add your ZIP code!
+          .col-12
+            .custom-control.custom-checkbox
+              input(type="checkbox", id="address-primary").custom-control-input
+              label.custom-control-label(for="address-primary") Make this address primary
+      .modal-footer
+        button(type='button' class='btn btn-secondary' data-dismiss='modal') Close
+        button(type='submit' class='btn btn-primary btn-shadow') Add address

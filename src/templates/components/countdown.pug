@@ -1,0 +1,505 @@
+extends ../partials/layout-components
+
+//- Override default config variables
+append config
+  - var vendorStyles = ['prismjs/themes/prism.css', 'prismjs/plugins/toolbar/prism-toolbar.css', 'prismjs/plugins/line-numbers/prism-line-numbers.css']
+  - var vendorScripts = ['prismjs/components/prism-core.min.js', 'prismjs/components/prism-markup.min.js', 'prismjs/components/prism-clike.min.js', 'prismjs/components/prism-javascript.min.js', 'prismjs/components/prism-pug.min.js', 'prismjs/plugins/toolbar/prism-toolbar.min.js', 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js', 'prismjs/plugins/line-numbers/prism-line-numbers.min.js']
+  - var pageTitle = 'Countdown'
+  - var pageSubtitle = 'Timer that counts down in seconds, minutes, hours and days to any date.'
+  - var isPageTitleBadge = true
+  - var anchorNav = [{'title': 'Basic example + Alignment', 'link': '#coundown-basic'}, {'title': 'Sizing', 'link': '#coundown-sizing'}, {'title': 'Colors', 'link': '#coundown-colors'}, {'title': 'Cards example', 'link': '#coundown-cards'}]
+  
+//- Page Content
+block content
+  .bg-secondary.rounded-lg.p-4.mb-5
+    h6.font-size-sm Date / time format to use inside data attribute:
+    code data-countdown='MM/DD/YYYY HH:mm:ss AM/PM'
+    p.font-size-sm.mb-0.py-2: u Example:
+    code data-countdown='07/01/2021 07:00:00 PM'
+
+  // Basic example + Alignment
+  section#coundown-basic.pb-5.mb-md-2
+    h2.h5.mb-3 Basic example + Alignment
+    .card.border-0.box-shadow
+      .card-header
+        ul(role='tablist').nav.nav-tabs.card-header-tabs
+          li.nav-item
+            a(href='#result1' data-toggle='tab' role='tab' aria-controls='result1' aria-selected='true').nav-link.active Result
+          li.nav-item
+            a(href='#html1' data-toggle='tab' role='tab' aria-controls='html1' aria-selected='false').nav-link HTML
+          li.nav-item
+            a(href='#pug1' data-toggle='tab' role='tab' aria-controls='pug1' aria-selected='false').nav-link Pug
+      .card-body
+        .tab-content
+          #result1.tab-pane.fade.show.active(role='tabpanel')
+            .cz-countdown.py-2.h4(data-countdown='07/01/2021 07:00:00 PM')
+              .cz-countdown-days
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted d
+              .cz-countdown-hours
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted h
+              .cz-countdown-minutes
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted m
+              .cz-countdown-seconds
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted s
+            .cz-countdown.justify-content-center.py-2.h4(data-countdown='07/01/2021 07:00:00 PM')
+              .cz-countdown-days
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted d
+              .cz-countdown-hours
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted h
+              .cz-countdown-minutes
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted m
+              .cz-countdown-seconds
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted s
+            .cz-countdown.justify-content-end.py-2.h4(data-countdown='07/01/2021 07:00:00 PM')
+              .cz-countdown-days
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted d
+              .cz-countdown-hours
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted h
+              .cz-countdown-minutes
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted m
+              .cz-countdown-seconds
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted s
+          #html1.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-html').
+                &lt;!-- Left aligned countdown (default) --&gt;
+                &lt;div class=&quot;cz-countdown h4&quot; data-countdown=&quot;07/01/2021 07:00:00 PM&quot;&gt;
+                  &lt;div class=&quot;cz-countdown-days&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label text-muted&quot;&gt;d&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;cz-countdown-hours&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label text-muted&quot;&gt;h&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;cz-countdown-minutes&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label text-muted&quot;&gt;m&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;cz-countdown-seconds&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label text-muted&quot;&gt;s&lt;/span&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Center aligned countdown --&gt;
+                &lt;div class=&quot;cz-countdown h4 justify-content-center&quot; data-countdown=&quot;07/01/2021 07:00:00 PM&quot;&gt;
+                  ...
+                &lt;/div&gt;
+
+                &lt;!-- Right aligned countdown --&gt;
+                &lt;div class=&quot;cz-countdown h4 justify-content-end&quot; data-countdown=&quot;07/01/2021 07:00:00 PM&quot;&gt;
+                  ...
+                &lt;/div&gt;
+          #pug1.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-pug').
+                // Left aligned countdown (default)
+                .cz-countdown.h4(data-countdown=&quot;07/01/2021 07:00:00 PM&quot;)
+                  .cz-countdown-days
+                    span.cz-countdown-value
+                    span.cz-countdown-label.text-muted d
+                  .cz-countdown-hours
+                    span.cz-countdown-value
+                    span.cz-countdown-label.text-muted h
+                  .cz-countdown-minutes
+                    span.cz-countdown-value
+                    span.cz-countdown-label.text-muted m
+                  .cz-countdown-seconds
+                    span.cz-countdown-value
+                    span.cz-countdown-label.text-muted s
+
+                // Center aligned countdown
+                .cz-countdown.h4.justify-content-center(data-countdown=&quot;07/01/2021 07:00:00 PM&quot;)
+                  ...
+
+                // Right aligned countdown
+                .cz-countdown.h4.justify-content-end(data-countdown=&quot;07/01/2021 07:00:00 PM&quot;)
+                  ...
+
+  // Sizing
+  section#coundown-sizing.pb-5.mb-md-2
+    h2.h5.mb-3 Sizing
+    .card.border-0.box-shadow
+      .card-header
+        ul(role='tablist').nav.nav-tabs.card-header-tabs
+          li.nav-item
+            a(href='#result2' data-toggle='tab' role='tab' aria-controls='result2' aria-selected='true').nav-link.active Result
+          li.nav-item
+            a(href='#html2' data-toggle='tab' role='tab' aria-controls='html2' aria-selected='false').nav-link HTML
+          li.nav-item
+            a(href='#pug2' data-toggle='tab' role='tab' aria-controls='pug2' aria-selected='false').nav-link Pug
+      .card-body
+        .tab-content
+          #result2.tab-pane.fade.show.active(role='tabpanel')
+            .cz-countdown.py-1.h1(data-countdown='07/01/2021 07:00:00 PM')
+              .cz-countdown-days
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted d
+              .cz-countdown-hours
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted h
+              .cz-countdown-minutes
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted m
+              .cz-countdown-seconds
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted s
+            .cz-countdown.py-1.h2(data-countdown='07/01/2021 07:00:00 PM')
+              .cz-countdown-days
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted d
+              .cz-countdown-hours
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted h
+              .cz-countdown-minutes
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted m
+              .cz-countdown-seconds
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted s
+            .cz-countdown.py-1.h3(data-countdown='07/01/2021 07:00:00 PM')
+              .cz-countdown-days
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted d
+              .cz-countdown-hours
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted h
+              .cz-countdown-minutes
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted m
+              .cz-countdown-seconds
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted s
+            .cz-countdown.py-1.h4(data-countdown='07/01/2021 07:00:00 PM')
+              .cz-countdown-days
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted d
+              .cz-countdown-hours
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted h
+              .cz-countdown-minutes
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted m
+              .cz-countdown-seconds
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted s
+            .cz-countdown.py-1.h5(data-countdown='07/01/2021 07:00:00 PM')
+              .cz-countdown-days
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted d
+              .cz-countdown-hours
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted h
+              .cz-countdown-minutes
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted m
+              .cz-countdown-seconds
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted s
+            .cz-countdown.py-1.h6(data-countdown='07/01/2021 07:00:00 PM')
+              .cz-countdown-days
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted d
+              .cz-countdown-hours
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted h
+              .cz-countdown-minutes
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted m
+              .cz-countdown-seconds
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted s
+          #html2.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-html').
+                &lt;!-- Alter countdown sizing using h1-h6, display1-display4 classes --&gt;
+                &lt;div class=&quot;cz-countdown h1&quot; data-countdown=&quot;07/01/2021 07:00:00 PM&quot;&gt;
+                  ...
+                &lt;/div&gt;
+
+                &lt;div class=&quot;cz-countdown h2&quot; data-countdown=&quot;07/01/2021 07:00:00 PM&quot;&gt;
+                  ...
+                &lt;/div&gt;
+
+                &lt;div class=&quot;cz-countdown h3&quot; data-countdown=&quot;07/01/2021 07:00:00 PM&quot;&gt;
+                  ...
+                &lt;/div&gt;
+
+                &lt;div class=&quot;cz-countdown h4&quot; data-countdown=&quot;07/01/2021 07:00:00 PM&quot;&gt;
+                  ...
+                &lt;/div&gt;
+
+                &lt;div class=&quot;cz-countdown h5&quot; data-countdown=&quot;07/01/2021 07:00:00 PM&quot;&gt;
+                  ...
+                &lt;/div&gt;
+
+                &lt;div class=&quot;cz-countdown h6&quot; data-countdown=&quot;07/01/2021 07:00:00 PM&quot;&gt;
+                  ...
+                &lt;/div&gt;
+          #pug2.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-pug').
+                // Alter countdown sizing using h1-h6, display1-display4 classes
+                .cz-countdown.h1(data-countdown=&quot;07/01/2021 07:00:00 PM&quot;)
+                  ...
+                
+                .cz-countdown.h2(data-countdown=&quot;07/01/2021 07:00:00 PM&quot;)
+                  ...
+                
+                .cz-countdown.h3(data-countdown=&quot;07/01/2021 07:00:00 PM&quot;)
+                  ...
+                
+                .cz-countdown.h4(data-countdown=&quot;07/01/2021 07:00:00 PM&quot;)
+                  ...
+                
+                .cz-countdown.h5(data-countdown=&quot;07/01/2021 07:00:00 PM&quot;)
+                  ...
+                
+                .cz-countdown.h6(data-countdown=&quot;07/01/2021 07:00:00 PM&quot;)
+                  ...
+
+  // Colors
+  section#coundown-colors.pb-5.mb-md-2
+    h2.h5.mb-3 Colors
+    .card.border-0.box-shadow
+      .card-header
+        ul(role='tablist').nav.nav-tabs.card-header-tabs
+          li.nav-item
+            a(href='#result3' data-toggle='tab' role='tab' aria-controls='result3' aria-selected='true').nav-link.active Result
+          li.nav-item
+            a(href='#html3' data-toggle='tab' role='tab' aria-controls='html3' aria-selected='false').nav-link HTML
+          li.nav-item
+            a(href='#pug3' data-toggle='tab' role='tab' aria-controls='pug3' aria-selected='false').nav-link Pug
+      .card-body
+        .tab-content
+          #result3.tab-pane.fade.show.active(role='tabpanel')
+            .cz-countdown.py-1.h4(data-countdown='07/01/2021 07:00:00 PM')
+              .cz-countdown-days.text-accent
+                span.cz-countdown-value
+                span.cz-countdown-label.opacity-60 d
+              .cz-countdown-hours.text-warning
+                span.cz-countdown-value
+                span.cz-countdown-label.opacity-60 h
+              .cz-countdown-minutes.text-success
+                span.cz-countdown-value
+                span.cz-countdown-label.opacity-60 m
+              .cz-countdown-seconds.text-danger
+                span.cz-countdown-value
+                span.cz-countdown-label.opacity-60 s
+            .bg-dark.pt-4.px-4.pb-2
+              .cz-countdown.py-1.h4.text-light(data-countdown='07/01/2021 07:00:00 PM')
+                .cz-countdown-days
+                  span.cz-countdown-value
+                  span.cz-countdown-label.opacity-60 d
+                .cz-countdown-hours
+                  span.cz-countdown-value
+                  span.cz-countdown-label.opacity-60 h
+                .cz-countdown-minutes
+                  span.cz-countdown-value
+                  span.cz-countdown-label.opacity-60 m
+                .cz-countdown-seconds
+                  span.cz-countdown-value
+                  span.cz-countdown-label.opacity-60 s
+          #html3.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-html').
+                &lt;!-- Multicolor --&gt;
+                &lt;div class=&quot;cz-countdown h4&quot; data-countdown=&quot;07/01/2021 07:00:00 PM&quot;&gt;
+                  &lt;div class=&quot;cz-countdown-days text-accent&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label opacity-60&quot;&gt;d&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;cz-countdown-hours text-warning&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label opacity-60&quot;&gt;h&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;cz-countdown-minutes text-success&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label opacity-60&quot;&gt;m&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;cz-countdown-seconds text-danger&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label opacity-60&quot;&gt;s&lt;/span&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Light version (white text on dark background) --&gt;
+                &lt;div class=&quot;cz-countdown h4 text-light&quot; data-countdown=&quot;07/01/2021 07:00:00 PM&quot;&gt;
+                  &lt;div class=&quot;cz-countdown-days&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label opacity-60&quot;&gt;d&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;cz-countdown-hours&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label opacity-60&quot;&gt;h&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;cz-countdown-minutes&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label opacity-60&quot;&gt;m&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;cz-countdown-seconds&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label opacity-60&quot;&gt;s&lt;/span&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+          #pug3.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-pug').
+                // Multicolor
+                .cz-countdown.h4(data-countdown=&quot;07/01/2021 07:00:00 PM&quot;)
+                  .cz-countdown-days.text-accent
+                    span.cz-countdown-value
+                    span.cz-countdown-label.opacity-60 d
+                  .cz-countdown-hours.text-warning
+                    span.cz-countdown-value
+                    span.cz-countdown-label.opacity-60 h
+                  .cz-countdown-minutes.text-success
+                    span.cz-countdown-value
+                    span.cz-countdown-label.opacity-60 m
+                  .cz-countdown-seconds.text-danger
+                    span.cz-countdown-value
+                    span.cz-countdown-label.opacity-60 s
+
+                // Light version (white text on dark background)
+                .cz-countdown.h4.text-light(data-countdown=&quot;07/01/2021 07:00:00 PM&quot;)
+                  .cz-countdown-days
+                    span.cz-countdown-value
+                    span.cz-countdown-label.opacity-60 d
+                  .cz-countdown-hours
+                    span.cz-countdown-value
+                    span.cz-countdown-label.opacity-60 h
+                  .cz-countdown-minutes
+                    span.cz-countdown-value
+                    span.cz-countdown-label.opacity-60 m
+                  .cz-countdown-seconds
+                    span.cz-countdown-value
+                    span.cz-countdown-label.opacity-60 s
+
+  // Cards example
+  section#coundown-cards.pb-5.mb-md-2
+    h2.h5.mb-3 Cards example
+    .card.border-0.box-shadow
+      .card-header
+        ul(role='tablist').nav.nav-tabs.card-header-tabs
+          li.nav-item
+            a(href='#result4' data-toggle='tab' role='tab' aria-controls='result4' aria-selected='true').nav-link.active Result
+          li.nav-item
+            a(href='#html4' data-toggle='tab' role='tab' aria-controls='html4' aria-selected='false').nav-link HTML
+          li.nav-item
+            a(href='#pug4' data-toggle='tab' role='tab' aria-controls='pug4' aria-selected='false').nav-link Pug
+      .card-body
+        .tab-content
+          #result4.tab-pane.fade.show.active(role='tabpanel')
+            .cz-countdown.pt-2.h5(data-countdown='07/01/2021 07:00:00 PM')
+              .cz-countdown-days.border.rounded.p-3
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted d
+              .cz-countdown-hours.border.rounded.p-3
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted h
+              .cz-countdown-minutes.border.rounded.p-3
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted m
+              .cz-countdown-seconds.border.rounded.p-3
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted s
+            .cz-countdown.pt-2.h5(data-countdown='07/01/2021 07:00:00 PM')
+              .cz-countdown-days.box-shadow.rounded.p-3
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted d
+              .cz-countdown-hours.box-shadow.rounded.p-3
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted h
+              .cz-countdown-minutes.box-shadow.rounded.p-3
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted m
+              .cz-countdown-seconds.box-shadow.rounded.p-3
+                span.cz-countdown-value
+                span.cz-countdown-label.text-muted s
+          #html4.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-html').
+                &lt;!-- Border version --&gt;
+                &lt;div class=&quot;cz-countdown h5&quot; data-countdown=&quot;07/01/2021 07:00:00 PM&quot;&gt;
+                  &lt;div class=&quot;cz-countdown-days border rounded p-3&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label text-muted&quot;&gt;d&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;cz-countdown-hours border rounded p-3&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label text-muted&quot;&gt;h&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;cz-countdown-minutes border rounded p-3&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label text-muted&quot;&gt;m&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;cz-countdown-seconds border rounded p-3&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label text-muted&quot;&gt;s&lt;/span&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Shadow version --&gt;
+                &lt;div class=&quot;cz-countdown h5&quot; data-countdown=&quot;07/01/2021 07:00:00 PM&quot;&gt;
+                  &lt;div class=&quot;cz-countdown-days box-shadow rounded p-3&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label text-muted&quot;&gt;d&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;cz-countdown-hours box-shadow rounded p-3&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label text-muted&quot;&gt;h&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;cz-countdown-minutes box-shadow rounded p-3&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label text-muted&quot;&gt;m&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&quot;cz-countdown-seconds box-shadow rounded p-3&quot;&gt;
+                    &lt;span class=&quot;cz-countdown-value&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;cz-countdown-label text-muted&quot;&gt;s&lt;/span&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+          #pug4.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-pug').
+                // Border version
+                .cz-countdown.h5(data-countdown=&quot;07/01/2021 07:00:00 PM&quot;)
+                  .cz-countdown-days.border.rounded.p-3
+                    span.cz-countdown-value
+                    span.cz-countdown-label.text-muted d
+                  .cz-countdown-hours.border.rounded.p-3
+                    span.cz-countdown-value
+                    span.cz-countdown-label.text-muted h
+                  .cz-countdown-minutes.border.rounded.p-3
+                    span.cz-countdown-value
+                    span.cz-countdown-label.text-muted m
+                  .cz-countdown-seconds.border.rounded.p-3
+                    span.cz-countdown-value
+                    span.cz-countdown-label.text-muted s
+
+                // Shadow version
+                .cz-countdown.h5(data-countdown=&quot;07/01/2021 07:00:00 PM&quot;)
+                  .cz-countdown-days.box-shadow.rounded.p-3
+                    span.cz-countdown-value
+                    span.cz-countdown-label.text-muted d
+                  .cz-countdown-hours.box-shadow.rounded.p-3
+                    span.cz-countdown-value
+                    span.cz-countdown-label.text-muted h
+                  .cz-countdown-minutes.box-shadow.rounded.p-3
+                    span.cz-countdown-value
+                    span.cz-countdown-label.text-muted m
+                  .cz-countdown-seconds.box-shadow.rounded.p-3
+                    span.cz-countdown-value
+                    span.cz-countdown-label.text-muted s

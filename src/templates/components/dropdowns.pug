@@ -1,0 +1,507 @@
+extends ../partials/layout-components
+
+//- Override default config variables
+append config
+  - var vendorStyles = ['prismjs/themes/prism.css', 'prismjs/plugins/toolbar/prism-toolbar.css', 'prismjs/plugins/line-numbers/prism-line-numbers.css']
+  - var vendorScripts = ['prismjs/components/prism-core.min.js', 'prismjs/components/prism-markup.min.js', 'prismjs/components/prism-clike.min.js', 'prismjs/components/prism-javascript.min.js', 'prismjs/components/prism-pug.min.js', 'prismjs/plugins/toolbar/prism-toolbar.min.js', 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js', 'prismjs/plugins/line-numbers/prism-line-numbers.min.js']
+  - var pageTitle = 'Dropdowns'
+  - var pageSubtitle = 'Toggle contextual overlays for displaying lists of links or other content.'
+  - var pageTitleLink = {'title': 'Bootstrap docs', 'link': 'https://getbootstrap.com/docs/4.5/components/dropdowns/'}
+  - var anchorNav = [{'title': 'Static examples', 'link': '#dropdowns-static'}, {'title': 'Forms inside dropdown', 'link': '#dropdowns-forms'}, {'title': 'Directions', 'link': '#dropdowns-directions'}, {'title': 'Menu alignment', 'link': '#dropdowns-alignment'}, {'title': 'Split button', 'link': '#dropdowns-split-button'}]
+  
+//- Page Content
+block content
+
+  // Static examples
+  section#dropdowns-static.pb-5.mb-md-2
+    h2.h5.mb-3 Static examples
+    .card.border-0.box-shadow
+      .card-header
+        ul(role='tablist').nav.nav-tabs.card-header-tabs
+          li.nav-item
+            a(href='#result1' data-toggle='tab' role='tab' aria-controls='result1' aria-selected='true').nav-link.active Result
+          li.nav-item
+            a(href='#html1' data-toggle='tab' role='tab' aria-controls='html1' aria-selected='false').nav-link HTML
+          li.nav-item
+            a(href='#pug1' data-toggle='tab' role='tab' aria-controls='pug1' aria-selected='false').nav-link Pug
+      .card-body
+        .tab-content
+          #result1.tab-pane.fade.show.active(role='tabpanel')
+            .dropdown-menu(style='position: static; width: 13rem;').d-inline-block.align-top.mr-4.mb-4
+              a(href='#').dropdown-item Regular link
+              a(href='#').dropdown-item Another regular link
+              a(href='#').dropdown-item.active Active link
+              a(href='#').dropdown-item.disabled Disabled link
+            .dropdown-menu(style='position: static; width: 13rem;').d-inline-block.align-top.mr-4.mb-4
+              h6.dropdown-header Dropdown header
+              a(href='#').dropdown-item Action
+              a(href='#').dropdown-item Another action
+              .dropdown-divider
+              a(href='#').dropdown-item Separated link
+            .dropdown-menu(style='position: static; width: 13rem;').d-inline-block.align-top.mr-4.mb-4
+              a(href='#').dropdown-item
+                i.czi-home.mr-2
+                | Home
+                span.badge.badge-pill.badge-secondary.ml-2 2
+              a(href='#').dropdown-item
+                i.czi-user-circle.mr-2
+                | Profile
+                span.badge.badge-pill.badge-primary.ml-2 3
+              a(href='#').dropdown-item
+                i.czi-message.mr-2
+                | Messages
+                span.badge.badge-pill.badge-success.ml-2 5
+              a(href='#').dropdown-item
+                i.czi-settings.mr-2
+                | Settings
+                span.badge.badge-pill.badge-warning.ml-2 1
+          #html1.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-html').
+                &lt;!-- Dropdown example 1 --&gt;
+                &lt;div class=&quot;dropdown-menu&quot;&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Regular link&lt;/a&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Another regular link&lt;/a&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item active&quot;&gt;Active link&lt;/a&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item disabled&quot;&gt;Disabled link&lt;/a&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Dropdown example 2 --&gt;
+                &lt;div class=&quot;dropdown-menu&quot;&gt;
+                  &lt;h6 class=&quot;dropdown-header&quot;&gt;Dropdown header&lt;/h6&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Action&lt;/a&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Another action&lt;/a&gt;
+                  &lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Separeted link&lt;/a&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Dropdown example 3 --&gt;
+                &lt;div class=&quot;dropdown-menu&quot;&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;
+                    &lt;i class=&quot;czi-home mr-2&quot;&gt;&lt;/i&gt;
+                    Regular link
+                    &lt;span class=&quot;badge badge-pill badge-secondary ml-2&quot;&gt;2&lt;/span&gt;
+                  &lt;/a&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;
+                    &lt;i class=&quot;czi-user-circle mr-2&quot;&gt;&lt;/i&gt;
+                    Profile
+                    &lt;span class=&quot;badge badge-pill badge-primary ml-2&quot;&gt;3&lt;/span&gt;
+                  &lt;/a&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;
+                    &lt;i class=&quot;czi-message mr-2&quot;&gt;&lt;/i&gt;
+                    Messages
+                    &lt;span class=&quot;badge badge-pill badge-success ml-2&quot;&gt;5&lt;/span&gt;
+                  &lt;/a&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;
+                    &lt;i class=&quot;czi-settings mr-2&quot;&gt;&lt;/i&gt;
+                    Settings
+                    &lt;span class=&quot;badge badge-pill badge-warning ml-2&quot;&gt;1&lt;/span&gt;
+                  &lt;/a&gt;
+                &lt;/div&gt;
+          #pug1.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-pug').
+                // Dropdown example 1
+                .dropdown-menu
+                  a(href=&quot;#&quot;).dropdown-item
+                    | Regular link
+                  a(href=&quot;#&quot;).dropdown-item
+                    | Another regular link
+                  a(href=&quot;#&quot;).dropdown-item.active
+                    | Active link
+                  a(href=&quot;#&quot;).dropdown-item.disabled
+                    | Disabled link
+
+                // Dropdown example 2
+                .dropdown-menu
+                  h6.dropdown-header
+                    | Dropdown header
+                  a(href=&quot;#&quot;).dropdown-item
+                    | Action
+                  a(href=&quot;#&quot;).dropdown-item
+                    | Another action
+                  .dropdown-divider
+                  a(href=&quot;#&quot;).dropdown-item
+                    | Separated link
+
+                // Dropdown example 3
+                .dropdown-menu
+                  a(href=&quot;#&quot;).dropdown-item
+                    i.czi-home.mr-2
+                    | Home
+                    span.badge.badge-pill.badge-secondary.ml-2
+                      | 2
+                  a(href=&quot;#&quot;).dropdown-item
+                    i.czi-user-circle.mr-2
+                    | Profile
+                    span.badge.badge-pill.badge-primary.ml-2
+                      | 3
+                  a(href=&quot;#&quot;).dropdown-item
+                    i.czi-message.mr-2
+                    | Messages
+                    span.badge.badge-pill.badge-success.ml-2
+                      | 5
+                  a(href=&quot;#&quot;).dropdown-item
+                    i.czi-settings.mr-2
+                    | Settings
+                    span.badge.badge-pill.badge-warning.ml-2
+                      | 1
+
+  // Forms inside dropdown
+  section#dropdowns-forms.pb-5.mb-md-2
+    h2.h5.mb-3 Forms inside dropdown
+    .card.border-0.box-shadow
+      .card-header
+        ul(role='tablist').nav.nav-tabs.card-header-tabs
+          li.nav-item
+            a(href='#result2' data-toggle='tab' role='tab' aria-controls='result2' aria-selected='true').nav-link.active Result
+          li.nav-item
+            a(href='#html2' data-toggle='tab' role='tab' aria-controls='html2' aria-selected='false').nav-link HTML
+          li.nav-item
+            a(href='#pug2' data-toggle='tab' role='tab' aria-controls='pug2' aria-selected='false').nav-link Pug
+      .card-body
+        .tab-content
+          #result2.tab-pane.fade.show.active(role='tabpanel')
+            .dropdown-menu(style='position: static; width: 17rem;').d-block.mb-3
+              form(autocomplete='off').p-4
+                .form-group
+                  label(for='exampleDropdownFormEmail') Email address
+                  input(type='email' id='exampleDropdownFormEmail' placeholder='email@example.com' required).form-control
+                .form-group
+                  label(for='exampleDropdownFormPassword') Password
+                  input(type='password' id='exampleDropdownFormPassword' placeholder='Password' required).form-control
+                .form-group
+                  .custom-control.custom-checkbox
+                    input(type='checkbox' id='dropdownCheck').custom-control-input
+                    label(for='dropdownCheck').custom-control-label Remember me
+                button(type='submit').btn.btn-primary Sign In
+          #html2.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-html').
+                &lt;!-- Forms inside dropdown --&gt;
+                &lt;div class=&quot;dropdown-menu&quot; style=&quot;width: 17rem;&quot;&gt;
+                  &lt;form class=&quot;p-4&quot;&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                      &lt;label for=&quot;exampleDropdownFormEmail&quot;&gt;Email address&lt;/label&gt;
+                      &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;exampleDropdownFormEmail&quot; placeholder=&quot;email@example.com&quot; required&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                      &lt;label for=&quot;exampleDropdownFormPassword&quot;&gt;Password&lt;/label&gt;
+                      &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;exampleDropdownFormPassword&quot; placeholder=&quot;Password&quot; required&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                      &lt;div class=&quot;custom-control custom-checkbox&quot;&gt;
+                        &lt;input type=&quot;checkbox&quot; class=&quot;custom-control-input&quot; id=&quot;dropdownCheck&quot;&gt;
+                        &lt;label for=&quot;dropdownCheck&quot; class=&quot;custom-control-label&quot;&gt;Remember me&lt;/label&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;Sign In&lt;/button&gt;
+                  &lt;/form&gt;
+                &lt;/div&gt;
+          #pug2.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-pug').
+                // Forms inside dropdown
+                .dropdown-menu(style=&quot;width: 17rem;&quot;)
+                  form.p-4
+                    .form-group
+                      label(for=&quot;exampleDropdownFormEmail&quot;)
+                        | Email address
+                      input(type=&quot;email&quot;, id=&quot;exampleDropdownFormEmail&quot;, placeholder=&quot;email@example.com&quot;, required).form-control
+                    .form-group
+                      label(for=&quot;exampleDropdownFormPassword&quot;)
+                        | Password
+                      input(type=&quot;password&quot;, id=&quot;exampleDropdownFormPassword&quot;, placeholder=&quot;Password&quot;, required).form-control
+                    .form-group
+                      .custom-control.custom-checkbox
+                        input(type=&quot;checkbox&quot;, id=&quot;dropdownCheck&quot;).custom-control-input
+                        label(for=&quot;dropdownCheck&quot;).custom-control-label
+                          | Remember me
+                    button(type=&quot;submit&quot;).btn.btn-primary
+                      | Sign In
+
+  // Directions
+  section#dropdowns-directions.pb-5.mb-md-2
+    h2.h5.mb-3 Directions
+    .card.border-0.box-shadow
+      .card-header
+        ul(role='tablist').nav.nav-tabs.card-header-tabs
+          li.nav-item
+            a(href='#result3' data-toggle='tab' role='tab' aria-controls='result3' aria-selected='true').nav-link.active Result
+          li.nav-item
+            a(href='#html3' data-toggle='tab' role='tab' aria-controls='html3' aria-selected='false').nav-link HTML
+          li.nav-item
+            a(href='#pug3' data-toggle='tab' role='tab' aria-controls='pug3' aria-selected='false').nav-link Pug
+      .card-body
+        .tab-content
+          #result3.tab-pane.fade.show.active(role='tabpanel')
+            .btn-group.dropdown.d-inline-block.mb-3.mr-2
+              button(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false').btn.btn-outline-secondary.dropdown-toggle Dropdown
+              .dropdown-menu
+                a(href='#').dropdown-item Action
+                a(href='#').dropdown-item Another action
+                .dropdown-divider
+                a(href='#').dropdown-item Something else here
+            .btn-group.dropup.d-inline-block.mb-3.mr-2
+              button(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false').btn.btn-outline-secondary.dropdown-toggle Dropup
+              .dropdown-menu
+                a(href='#').dropdown-item Action
+                a(href='#').dropdown-item Another action
+                .dropdown-divider
+                a(href='#').dropdown-item Something else here
+            .btn-group.dropright.d-inline-block.mb-3.mr-2
+              button(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false').btn.btn-outline-secondary.dropdown-toggle Dropright
+              .dropdown-menu
+                a(href='#').dropdown-item Action
+                a(href='#').dropdown-item Another action
+                .dropdown-divider
+                a(href='#').dropdown-item Something else here
+            .btn-group.dropleft.d-inline-block.mb-3.mr-2
+              button(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false').btn.btn-outline-secondary.dropdown-toggle &nbsp;Dropleft
+              .dropdown-menu
+                a(href='#').dropdown-item Action
+                a(href='#').dropdown-item Another action
+                .dropdown-divider
+                a(href='#').dropdown-item Something else here
+          #html3.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-html').
+                &lt;!-- Dropdown --&gt;
+                &lt;div class=&quot;btn-group dropdown&quot;&gt;
+                  &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-secondary dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;
+                    Dropdown
+                  &lt;/button&gt;
+                  &lt;div class=&quot;dropdown-menu&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Action&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Another action&lt;/a&gt;
+                    &lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Something else here&lt;/a&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Dropup --&gt;
+                &lt;div class=&quot;btn-group dropup&quot;&gt;
+                  &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-secondary dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;
+                    Dropdown
+                  &lt;/button&gt;
+                  &lt;div class=&quot;dropdown-menu&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Action&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Another action&lt;/a&gt;
+                    &lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Something else here&lt;/a&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Dropright --&gt;
+                &lt;div class=&quot;btn-group dropright&quot;&gt;
+                  &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-secondary dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;
+                    Dropdown
+                  &lt;/button&gt;
+                  &lt;div class=&quot;dropdown-menu&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Action&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Another action&lt;/a&gt;
+                    &lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Something else here&lt;/a&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Dropleft --&gt;
+                &lt;div class=&quot;btn-group dropleft&quot;&gt;
+                  &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-secondary dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;
+                    Dropdown
+                  &lt;/button&gt;
+                  &lt;div class=&quot;dropdown-menu&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Action&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Another action&lt;/a&gt;
+                    &lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Something else here&lt;/a&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+          #pug3.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-pug').
+                // Dropdown
+                .btn-group.dropdown
+                  button(type=&quot;button&quot;, data-toggle=&quot;dropdown&quot;, aria-haspopup=&quot;true&quot;, aria-expanded=&quot;false&quot;).btn.btn-outline-secondary.dropdown-toggle
+                    | Dropdown
+                  .dropdown-menu
+                    a(href=&quot;#&quot;).dropdown-item
+                      | Action
+                    a(href=&quot;#&quot;).dropdown-item
+                      | Another action
+                    .dropdown-divider
+                    a(href=&quot;#&quot;).dropdown-item
+                      | Something else here
+                
+                // Dropup
+                .btn-group.dropup
+                  button(type=&quot;button&quot;, data-toggle=&quot;dropdown&quot;, aria-haspopup=&quot;true&quot;, aria-expanded=&quot;false&quot;).btn.btn-outline-secondary.dropdown-toggle
+                    | Dropup
+                  .dropdown-menu
+                    a(href=&quot;#&quot;).dropdown-item
+                      | Action
+                    a(href=&quot;#&quot;).dropdown-item
+                      | Another action
+                    .dropdown-divider
+                    a(href=&quot;#&quot;).dropdown-item
+                      | Something else here
+                
+                // Dropright
+                .btn-group.dropright
+                  button(type=&quot;button&quot;, data-toggle=&quot;dropdown&quot;, aria-haspopup=&quot;true&quot;, aria-expanded=&quot;false&quot;).btn.btn-outline-secondary.dropdown-toggle
+                    | Dropright
+                  .dropdown-menu
+                    a(href=&quot;#&quot;).dropdown-item
+                      | Action
+                    a(href=&quot;#&quot;).dropdown-item
+                      | Another action
+                    .dropdown-divider
+                    a(href=&quot;#&quot;).dropdown-item
+                      | Something else here
+
+                // Dropleft
+                .btn-group.dropleft
+                  button(type=&quot;button&quot;, data-toggle=&quot;dropdown&quot;, aria-haspopup=&quot;true&quot;, aria-expanded=&quot;false&quot;).btn.btn-outline-secondary.dropdown-toggle
+                    | Dropleft
+                  .dropdown-menu
+                    a(href=&quot;#&quot;).dropdown-item
+                      | Action
+                    a(href=&quot;#&quot;).dropdown-item
+                      | Another action
+                    .dropdown-divider
+                    a(href=&quot;#&quot;).dropdown-item
+                      | Something else here
+
+  // Menu alignment
+  section#dropdowns-alignment.pb-5.mb-md-2
+    h2.h5.mb-3 Menu alignment
+    .card.border-0.box-shadow
+      .card-header
+        ul(role='tablist').nav.nav-tabs.card-header-tabs
+          li.nav-item
+            a(href='#result4' data-toggle='tab' role='tab' aria-controls='result4' aria-selected='true').nav-link.active Result
+          li.nav-item
+            a(href='#html4' data-toggle='tab' role='tab' aria-controls='html4' aria-selected='false').nav-link HTML
+          li.nav-item
+            a(href='#pug4' data-toggle='tab' role='tab' aria-controls='pug4' aria-selected='false').nav-link Pug
+      .card-body
+        .tab-content
+          #result4.tab-pane.fade.show.active(role='tabpanel')
+            .btn-group.dropdown.d-inline-block.mb-3.mr-2
+              button(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false').btn.btn-primary.dropdown-toggle Right-aligned menu
+              .dropdown-menu.dropdown-menu-right
+                a(href='#').dropdown-item Action
+                a(href='#').dropdown-item Another action
+                .dropdown-divider
+                a(href='#').dropdown-item Something else here
+          #html4.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-html').
+                &lt;!-- Dropdown --&gt;
+                &lt;div class=&quot;btn-group dropdown&quot;&gt;
+                  &lt;button type=&quot;button&quot; class=&quot;btn btn-primary dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;
+                    Right-aligned menu
+                  &lt;/button&gt;
+                  &lt;div class=&quot;dropdown-menu dropdown-menu-right&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Action&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Another action&lt;/a&gt;
+                    &lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-item&quot;&gt;Something else here&lt;/a&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+          #pug4.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-pug').
+                // Dropdown
+                .btn-group.dropdown
+                  button(type=&quot;button&quot;, data-toggle=&quot;dropdown&quot;, aria-haspopup=&quot;true&quot;, aria-expanded=&quot;false&quot;).btn.btn-primary.dropdown-toggle
+                    | Right-aligned menu
+                  .dropdown-menu.dropdown-menu-right
+                    a(href=&quot;#&quot;).dropdown-item
+                      | Action
+                    a(href=&quot;#&quot;).dropdown-item
+                      | Another action
+                    .dropdown-divider
+                    a(href=&quot;#&quot;).dropdown-item
+                      | Something else here
+
+  // Split button
+  section#dropdowns-split-button.pb-5.mb-md-2
+    h2.h5.mb-3 Split button
+    .card.border-0.box-shadow
+      .card-header
+        ul(role='tablist').nav.nav-tabs.card-header-tabs
+          li.nav-item
+            a(href='#result5' data-toggle='tab' role='tab' aria-controls='result5' aria-selected='true').nav-link.active Result
+          li.nav-item
+            a(href='#html5' data-toggle='tab' role='tab' aria-controls='html5' aria-selected='false').nav-link HTML
+          li.nav-item
+            a(href='#pug5' data-toggle='tab' role='tab' aria-controls='pug5' aria-selected='false').nav-link Pug
+      .card-body
+        .tab-content
+          #result5.tab-pane.fade.show.active(role='tabpanel')
+            .btn-group.mr-2.mb-3
+              button(type='button').btn.btn-primary Button
+              button(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false').btn.btn-primary.dropdown-toggle.dropdown-toggle-split
+                span.sr-only Toggle dropdown
+              .dropdown-menu
+                a(href='#').dropdown-item Action
+                a(href='#').dropdown-item Another action
+                .dropdown-divider
+                a(href='#').dropdown-item Something else here
+            .btn-group.mr-2.mb-3
+              button(type='button').btn.btn-outline-primary Button
+              button(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false').btn.btn-outline-primary.dropdown-toggle.dropdown-toggle-split
+                span.sr-only Toggle dropdown
+              .dropdown-menu
+                a(href='#').dropdown-item Action
+                a(href='#').dropdown-item Another action
+                .dropdown-divider
+                a(href='#').dropdown-item Something else here
+          #html5.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-html').
+                &lt;!-- Solid split button --&gt;
+                &lt;div class=&quot;btn-group&quot;&gt;
+                  &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Button&lt;/button&gt;
+                  &lt;button type=&quot;button&quot; class=&quot;btn btn-primary dropdown-toggle dropdown-toggle-split&quot; data-toggle=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;
+                    &lt;span class=&quot;sr-only&quot;&gt;Toggle dropdown&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;div class=&quot;dropdown-menu&quot;&gt;
+                    ...
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Outline split button --&gt;
+                &lt;div class=&quot;btn-group&quot;&gt;
+                  &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-primary&quot;&gt;Button&lt;/button&gt;
+                  &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-primary dropdown-toggle dropdown-toggle-split&quot; data-toggle=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;
+                    &lt;span class=&quot;sr-only&quot;&gt;Toggle dropdown&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;div class=&quot;dropdown-menu&quot;&gt;
+                    ...
+                  &lt;/div&gt;
+                &lt;/div&gt;
+          #pug5.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-pug').
+                // Solid split button
+                .btn-group
+                  button(type=&quot;button&quot;).btn.btn-primary
+                    | Button
+                  button(type=&quot;button&quot;, data-toggle=&quot;dropdown&quot;, aria-haspopup=&quot;true&quot;, aria-expanded=&quot;false'&quot;).btn.btn-primary.dropdown-toggle.dropdown-toggle-split
+                    span.sr-only
+                      | Toggle dropdown
+                  .dropdown-menu
+                    | ...
+
+                // Outline split button
+                .btn-group
+                  button(type=&quot;button&quot;).btn.btn-outline-primary
+                    | Button
+                  button(type=&quot;button&quot;, data-toggle=&quot;dropdown&quot;, aria-haspopup=&quot;true&quot;, aria-expanded=&quot;false'&quot;).btn.btn-outline-primary.dropdown-toggle.dropdown-toggle-split
+                    span.sr-only
+                      | Toggle dropdown
+                  .dropdown-menu
+                    | ...
+                

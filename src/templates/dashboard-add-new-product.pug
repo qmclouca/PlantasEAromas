@@ -1,0 +1,97 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var pageTitle = 'Add New Product'
+  - var parentMenu = 'Account'
+
+//- Navbar
+block navbar
+  include partials/navbar-marketplace
+
+//- Page Content
+block content
+
+  //- dashboard-header.pug template
+  include partials/dashboard-header
+
+  .container.mb-5.pb-3
+    .bg-light.box-shadow-lg.rounded-lg.overflow-hidden
+      .row
+
+        // Sidebar
+        aside.col-lg-4
+          //- sidebar-dashboard.pug template
+          include partials/sidebar-dashboard
+
+        // Content
+        section.col-lg-8.pt-lg-4.pb-4.mb-3
+          .pt-2.px-4.pl-lg-0.pr-xl-5
+
+            // Title
+            .d-sm-flex.flex-wrap.justify-content-between.align-items-center.pb-2
+              h2.h3.py-2.mr-2.text-center.text-sm-left Add New Product
+              .py-2
+                select#unp-category.custom-select.mr-2
+                  option Select category
+                  option Photos
+                  option Graphics
+                  option UI Design
+                  option Web Themes
+                  option Fonts
+                  option Add-Ons
+            form
+              .form-group.pb-2
+                label(for='unp-product-name').font-weight-medium Product name
+                input(type='text')#unp-product-name.form-control
+                small.form-text.text-muted Maximum 100 characters. No HTML or emoji allowed.
+              .cz-file-drop-area.form-group
+                .cz-file-drop-icon.czi-cloud-upload
+                span.cz-file-drop-message Drag and drop here to upload product screenshot
+                input(type='file').cz-file-drop-input
+                button(type='button').cz-file-drop-btn.btn.btn-primary.btn-sm.mb-2 Or select file
+                small.form-text.text-muted 1000 x 800px ideal size for hi-res displays
+              .form-group.py-2
+                label(for='unp-product-description').font-weight-medium Product description
+                textarea(rows='6')#unp-product-description.form-control
+                .bg-secondary.p-3.font-size-ms.rounded-bottom
+                  span.d-inline-block.font-weight-medium.mr-2.my-1 Markdown supported:
+                  em.d-inline-block.border-right.pr-2.mr-2.my-1 *Italic*
+                  strong.d-inline-block.border-right.pr-2.mr-2.my-1 **Bold**
+                  span.d-inline-block.border-right.pr-2.mr-2.my-1 - List item
+                  span.d-inline-block.border-right.pr-2.mr-2.my-1 ##Heading##
+                  span.d-inline-block --- Horizontal rule
+              .row
+                .col-sm-6.form-group
+                  label(for='unp-standard-price').font-weight-medium Standard license price
+                  .input-group
+                    .input-group-prepend
+                      span.input-group-text
+                        i.czi-dollar
+                    input(type='text')#unp-standard-price.form-control
+                  small.form-text.text-muted Average marketplace price for this category is $15.
+                .col-sm-6.form-group
+                  label(for='unp-extended-price').font-weight-medium Extended license price
+                  .input-group
+                    .input-group-prepend
+                      span.input-group-text
+                        i.czi-dollar
+                    input(type='text')#unp-extended-price.form-control
+                  small.form-text.text-muted Typically 10x of the Standard license price.
+              .form-group.py-2
+                label(for='unp-product-tags').font-weight-medium Product tags
+                textarea(rows='4')#unp-product-tags.form-control
+                small.form-text.text-muted Up to 10 keywords that describe your item. Tags should all be in lowercase and separated by commas.
+              .form-group.pb-2
+                label(for='unp-product-files').font-weight-medium Product files for sale
+                .custom-file
+                  input(type='file')#unp-product-files.custom-file-input
+                  label.custom-file-label(for='unp-product-files') Upload .zip
+                small.form-text.text-muted Maximum file size is 1GB
+              button(type='submit').btn.btn-primary.btn-block
+                i.czi-cloud-upload.font-size-lg.mr-2
+                | Upload Product
+
+//- Footer
+block footer
+  include partials/footer-marketplace

@@ -1,0 +1,129 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var parentMenu = 'Pages'
+
+//- Navbar
+block navbar
+  include partials/navbar-3-level-light
+  
+//- Page Content
+block content
+
+  // Hero section with search
+  section.bg-dark.bg-size-cover.bg-position-center-x.position-relative.py-5.mb-5(style='background-image: url(img/pages/help-hero-bg.jpg);')
+    span.bg-overlay.bg-darker(style='opacity: .65;')
+    .bg-overlay-content.container.py-4.my-3
+      .row.justify-content-center
+        .col-lg-8
+          h1.text-light.text-center How can we help?
+          p.pb-3.text-light.text-center Ask Questions. Browse Topics. Find Answers.
+          .input-group-overlay.input-group-lg.mb-3
+            .input-group-prepend-overlay
+              span.input-group-text
+                i.czi-search
+            input(type='search' placeholder='Ask your question...').form-control.prepended-form-control
+          .font-size-sm
+            span.text-light.opacity-50.mr-1 Suggestions:
+            a(href='#').nav-link-style.nav-link-light.mr-1.pb-1.border-bottom.border-light  Dashboard,
+            a(href='#').nav-link-style.nav-link-light.mr-1.pb-1.border-bottom.border-light Payment,
+            a(href='#').nav-link-style.nav-link-light.mr-1.pb-1.border-bottom.border-light  Refunds,
+            a(href='#').nav-link-style.nav-link-light.mr-1.pb-1.border-bottom.border-light  Delivery
+
+  // Topics grid
+  section.container.py-3
+    h2.h3.text-center Select a topic
+    .row.pt-4
+      .col-lg-4.col-sm-6.mb-grid-gutter
+        a(href='help-single-topic.html').card.border-0.box-shadow
+          .card-body.text-center
+            i.czi-user-circle.h2.mt-2.mb-4.text-primary
+            h6 Managing account
+            p.font-size-sm.text-muted.pb-2 Proin nec turpis vel tortor venenatis tempus. Sed mollis vel arcu in tempor. Mauris enim purus, laoreet nec elit non euismod tempur accusantium.
+            .btn.btn-outline-primary.btn-sm.mb-2 Learn more
+      .col-lg-4.col-sm-6.mb-grid-gutter
+        a(href='help-single-topic.html').card.border-0.box-shadow
+          .card-body.text-center
+            i.czi-laptop.h2.mt-2.mb-4.text-primary
+            h6 Working with dashboard
+            p.font-size-sm.text-muted.pb-2 Proin nec turpis vel tortor venenatis tempus. Sed mollis vel arcu in tempor. Mauris enim purus, laoreet nec elit non euismod tempur accusantium.
+            .btn.btn-outline-primary.btn-sm.mb-2 Learn more
+      .col-lg-4.col-sm-6.mb-grid-gutter
+        a(href='help-single-topic.html').card.border-0.box-shadow
+          .card-body.text-center
+            i.czi-card.h2.mt-2.mb-4.text-primary
+            h6 Payment options
+            p.font-size-sm.text-muted.pb-2 Proin nec turpis vel tortor venenatis tempus. Sed mollis vel arcu in tempor. Mauris enim purus, laoreet nec elit non euismod tempur accusantium.
+            .btn.btn-outline-primary.btn-sm.mb-2 Learn more
+      .col-lg-4.col-sm-6.mb-grid-gutter
+        a(href='help-single-topic.html').card.border-0.box-shadow
+          .card-body.text-center
+            i.czi-delivery.h2.mt-2.mb-4.text-primary
+            h6 Delivery information
+            p.font-size-sm.text-muted.pb-2 Proin nec turpis vel tortor venenatis tempus. Sed mollis vel arcu in tempor. Mauris enim purus, laoreet nec elit non euismod tempur accusantium.
+            .btn.btn-outline-primary.btn-sm.mb-2 Learn more
+      .col-lg-4.col-sm-6.mb-grid-gutter
+        a(href='help-single-topic.html').card.border-0.box-shadow
+          .card-body.text-center
+            i.czi-currency-exchange.h2.mt-2.mb-4.text-primary
+            h6 Refund policy
+            p.font-size-sm.text-muted.pb-2 Proin nec turpis vel tortor venenatis tempus. Sed mollis vel arcu in tempor. Mauris enim purus, laoreet nec elit non euismod tempur accusantium.
+            .btn.btn-outline-primary.btn-sm.mb-2 Learn more
+      .col-lg-4.col-sm-6.mb-grid-gutter
+        a(href='help-single-topic.html').card.border-0.box-shadow
+          .card-body.text-center
+            i.czi-loudspeaker.h2.mt-2.mb-4.text-primary
+            h6 Affiliate program
+            p.font-size-sm.text-muted.pb-2 Proin nec turpis vel tortor venenatis tempus. Sed mollis vel arcu in tempor. Mauris enim purus, laoreet nec elit non euismod tempur accusantium.
+            .btn.btn-outline-primary.btn-sm.mb-2 Learn more
+
+  // FAQ
+  section.container.pt-4.pb-5
+    h2.h3.text-center F.A.Q.
+    .row.pt-4
+      .col-sm-6
+        ul.list-unstyled
+          li.d-flex.align-items-center.border-bottom.pb-3.mb-3
+            i.czi-book.text-muted.mr-2
+            a(href='#').nav-link-style How long will delivery take?
+          li.d-flex.align-items-center.border-bottom.pb-3.mb-3
+            i.czi-book.text-muted.mr-2
+            a(href='#').nav-link-style What payment methods do you accept?
+          li.d-flex.align-items-center.border-bottom.pb-3.mb-3
+            i.czi-book.text-muted.mr-2
+            a(href='#').nav-link-style Do you ship internationally?
+          li.d-flex.align-items-center.border-bottom.pb-3.mb-3
+            i.czi-book.text-muted.mr-2
+            a(href='#').nav-link-style Do I need an account to place an order?
+          li.d-flex.align-items-center.border-bottom.pb-3.mb-3
+            i.czi-book.text-muted.mr-2
+            a(href='#').nav-link-style How can I track my order?
+      .col-sm-6
+        ul.list-unstyled
+          li.d-flex.align-items-center.border-bottom.pb-3.mb-3
+            i.czi-book.text-muted.mr-2
+            a(href='#').nav-link-style What are the product refund conditions?
+          li.d-flex.align-items-center.border-bottom.pb-3.mb-3
+            i.czi-book.text-muted.mr-2
+            a(href='#').nav-link-style Do you have discounts for returning customers?
+          li.d-flex.align-items-center.border-bottom.pb-3.mb-3
+            i.czi-book.text-muted.mr-2
+            a(href='#').nav-link-style How do your referral program work?
+          li.d-flex.align-items-center.border-bottom.pb-3.mb-3
+            i.czi-book.text-muted.mr-2
+            a(href='#').nav-link-style Where I can view and download invoices for my orders?
+          li.d-flex.align-items-center.border-bottom.pb-3.mb-3
+            i.czi-book.text-muted.mr-2
+            a(href='#').nav-link-style Do you provide technical support after the purchase?
+
+  // Submit request
+  section.container.text-center.pt-1.pb-5.mb-2
+    h2.h4.pb-3 Haven't found the answer? We can help.
+    i.czi-help.h3.text-primary.d-block.mb-4
+    a(href='help-submit-request.html').btn.btn-primary Submit a request
+    p.font-size-sm.pt-4 Contact us and we’ll get back to you as soon as possible.
+
+//- Footer
+block footer
+  include partials/footer-dark

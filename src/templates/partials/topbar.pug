@@ -1,0 +1,50 @@
+// Topbar
+.topbar.topbar-dark.bg-dark
+  .container
+    .topbar-text.dropdown.d-md-none
+      a(href='#' data-toggle='dropdown').topbar-link.dropdown-toggle Useful links
+      ul.dropdown-menu
+        li
+          a(href='tel:00331697720').dropdown-item
+            i.czi-support.text-muted.mr-2
+            | (00) 33 169 7720
+        li
+          a(href='order-tracking.html').dropdown-item
+            i.czi-location.text-muted.mr-2
+            | Order tracking
+    .topbar-text.text-nowrap.d-none.d-md-inline-block
+      i.czi-support
+      span.text-muted.mr-1 Support
+      a(href='tel:00331697720').topbar-link (00) 33 169 7720
+    .cz-carousel.cz-controls-static.d-none.d-md-block
+      .cz-carousel-inner(data-carousel-options='{"mode": "gallery", "nav": false}')
+        .topbar-text Free shipping for order over $200
+        .topbar-text We return money within 30 days
+        .topbar-text Friendly 24/7 customer support
+    .ml-3.text-nowrap
+      a(href='order-tracking.html').topbar-link.mr-4.d-none.d-md-inline-block
+        i.czi-location
+        | Order tracking
+      .topbar-text.dropdown.disable-autohide
+        a(href='#' data-toggle='dropdown').topbar-link.dropdown-toggle
+          +image('img/flags/en.png', 'English')(width='20').mr-2
+          | Eng / $
+        ul.dropdown-menu.dropdown-menu-right
+          li.dropdown-item
+            select.custom-select.custom-select-sm
+              option(value='usd') $ USD
+              option(value='eur') € EUR
+              option(value='ukp') £ UKP
+              option(value='jpy') ¥ JPY
+          li
+            a(href='#').dropdown-item.pb-1
+              +image('img/flags/fr.png', 'Français')(width='20').mr-2
+              | Français
+          li
+            a(href='#').dropdown-item.pb-1
+              +image('img/flags/de.png', 'Deutsch')(width='20').mr-2
+              | Deutsch
+          li
+            a(href='#').dropdown-item
+              +image('img/flags/it.png', 'Italiano')(width='20').mr-2
+              | Italiano

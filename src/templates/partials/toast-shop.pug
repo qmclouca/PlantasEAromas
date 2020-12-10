@@ -1,0 +1,9 @@
+// Toast: Added to Cart
+.toast-container.toast-bottom-center
+  #cart-toast.toast.mb-3(data-delay='5000' role='alert' aria-live='assertive' aria-atomic='true')
+    .toast-header.bg-success.text-white
+      i.czi-check-circle.mr-2
+      h6.font-size-sm.text-white.mb-0.mr-auto Added to cart!
+      button(type='button' data-dismiss='toast' aria-label='Close').close.text-white.ml-2.mb-1
+        span(aria-hidden='true') &times;
+    .toast-body This item has been added to your cart.

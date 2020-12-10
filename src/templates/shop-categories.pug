@@ -1,0 +1,343 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var pageTitle = 'Shop categories'
+  - var breadcrumbs = [{'title': 'Shop', 'link': '#'}, {'title': 'Categories'}]
+  - var parentMenu = 'Shop'
+
+//- Navbar
+block navbar
+  include partials/navbar-3-level-light
+
+//- Page title
+block page-title
+  include partials/page-title-light
+  
+//- Page Content
+block content
+
+  .container.pb-4.pb-sm-5
+   
+    // Categories grid
+    .row.pt-5
+
+      // Catogory
+      .col-md-4.col-sm-6.mb-3
+        .card.border-0
+          a(href='shop-grid-ls.html').d-block.overflow-hidden.rounded-lg
+            img(src='img/shop/categories/01.jpg' alt='Clothing').d-block.w-100
+          .card-body
+            h2.h5 Clothing
+            ul.list-unstyled.font-size-sm.mb-0
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Blazers &amp; Suits
+                span.font-size-ms.text-muted 235
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Blouse
+                span.font-size-ms.text-muted 410
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Cardigans &amp; Jumpers
+                span.font-size-ms.text-muted 107
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Dresses
+                span.font-size-ms.text-muted 93
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Hoodie &amp; Sweatshirts
+                span.font-size-ms.text-muted 93
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Sportswear
+                span.font-size-ms.text-muted 65
+              li ...
+              li: hr
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | View all
+                span.font-size-ms.text-muted 2,548
+
+      // Catogory
+      .col-md-4.col-sm-6.mb-3
+        .card.border-0
+          a(href='shop-grid-ls.html').d-block.overflow-hidden.rounded-lg
+            img(src='img/shop/categories/02.jpg' alt='Shoes').d-block.w-100
+          .card-body
+            h2.h5 Shoes
+            ul.list-unstyled.font-size-sm.mb-0
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Pumps &amp; High Heels
+                span.font-size-ms.text-muted 247
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Ballerinas &amp; Flats
+                span.font-size-ms.text-muted 156
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Sandals
+                span.font-size-ms.text-muted 310
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Sneakers
+                span.font-size-ms.text-muted 402
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Boots
+                span.font-size-ms.text-muted 393
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Flip Flops
+                span.font-size-ms.text-muted 116
+              li ...
+              li: hr
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | View all
+                span.font-size-ms.text-muted 1,953
+
+      // Catogory
+      .col-md-4.col-sm-6.mb-3
+        .card.border-0
+          a(href='shop-grid-ls.html').d-block.overflow-hidden.rounded-lg
+            img(src='img/shop/categories/03.jpg' alt='Gadgets').d-block.w-100
+          .card-body
+            h2.h5 Gadgets
+            ul.list-unstyled.font-size-sm.mb-0
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Smartphones &amp; Tablets
+                span.font-size-ms.text-muted 436
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Headphones
+                span.font-size-ms.text-muted 308
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Wearable Electronics
+                span.font-size-ms.text-muted 195
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Home IoT Gadgets
+                span.font-size-ms.text-muted 82
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Computers &amp; Accessories
+                span.font-size-ms.text-muted 264
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Cameras, Photo &amp; Video
+                span.font-size-ms.text-muted 57
+              li ...
+              li: hr
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | View all
+                span.font-size-ms.text-muted 1,240
+
+      // Catogory
+      .col-md-4.col-sm-6.mb-3
+        .card.border-0
+          a(href='shop-grid-ls.html').d-block.overflow-hidden.rounded-lg
+            img(src='img/shop/categories/04.jpg' alt='Furniture').d-block.w-100
+          .card-body
+            h2.h5 Furniture &amp; Decor
+            ul.list-unstyled.font-size-sm.mb-0
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Lounge Seating
+                span.font-size-ms.text-muted 374
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | File Cabinets
+                span.font-size-ms.text-muted 83
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Tables
+                span.font-size-ms.text-muted 125
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Indoor Lighting
+                span.font-size-ms.text-muted 291
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Office Chairs
+                span.font-size-ms.text-muted 118
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Adjustable Height Desks
+                span.font-size-ms.text-muted 46
+              li ...
+              li: hr
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | View all
+                span.font-size-ms.text-muted 960
+
+      // Catogory
+      .col-md-4.col-sm-6.mb-3
+        .card.border-0
+          a(href='shop-grid-ls.html').d-block.overflow-hidden.rounded-lg
+            img(src='img/shop/categories/05.jpg' alt='Accessories').d-block.w-100
+          .card-body
+            h2.h5 Accessories
+            ul.list-unstyled.font-size-sm.mb-0
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Bags
+                span.font-size-ms.text-muted 417
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Sunglasses
+                span.font-size-ms.text-muted 382
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Watches
+                span.font-size-ms.text-muted 122
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Hats
+                span.font-size-ms.text-muted 204
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Jewelry
+                span.font-size-ms.text-muted 149
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Cosmetics
+                span.font-size-ms.text-muted 90
+              li ...
+              li: hr
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | View all
+                span.font-size-ms.text-muted 1,532
+
+      // Catogory
+      .col-md-4.col-sm-6.mb-3
+        .card.border-0
+          a(href='shop-grid-ls.html').d-block.overflow-hidden.rounded-lg
+            img(src='img/shop/categories/06.jpg' alt='Entertainment').d-block.w-100
+          .card-body
+            h2.h5 Entertainment
+            ul.list-unstyled.font-size-sm.mb-0
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Video Games, VR
+                span.font-size-ms.text-muted 306
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Kid's Toys
+                span.font-size-ms.text-muted 231
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Table Games
+                span.font-size-ms.text-muted 114
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Outdoor / Camping
+                span.font-size-ms.text-muted 92
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Gifts
+                span.font-size-ms.text-muted 27
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | Music, CDs &amp; Vinyl
+                span.font-size-ms.text-muted 41
+              li ...
+              li: hr
+              li.d-flex.align-items-center.justify-content-between
+                a(href='#').nav-link-style
+                  i.czi-arrow-right-circle.mr-2
+                  | View all
+                span.font-size-ms.text-muted 879
+   
+    // Popular brands
+    h2.h3.text-center.py-4.mt-md-3 Popular brands
+    .row
+      .col-md-3.col-sm-4.col-6
+        a(href='#').d-block.bg-white.box-shadow-sm.rounded-lg.py-3.py-sm-4.mb-grid-gutter
+          img(src='img/shop/brands/01.png' style='width: 150px;' alt='Brand').d-block.mx-auto
+      .col-md-3.col-sm-4.col-6
+        a(href='#').d-block.bg-white.box-shadow-sm.rounded-lg.py-3.py-sm-4.mb-grid-gutter
+          img(src='img/shop/brands/02.png' style='width: 150px;' alt='Brand').d-block.mx-auto
+      .col-md-3.col-sm-4.col-6
+        a(href='#').d-block.bg-white.box-shadow-sm.rounded-lg.py-3.py-sm-4.mb-grid-gutter
+          img(src='img/shop/brands/03.png' style='width: 150px;' alt='Brand').d-block.mx-auto
+      .col-md-3.col-sm-4.col-6
+        a(href='#').d-block.bg-white.box-shadow-sm.rounded-lg.py-3.py-sm-4.mb-grid-gutter
+          img(src='img/shop/brands/04.png' style='width: 150px;' alt='Brand').d-block.mx-auto
+      .col-md-3.col-sm-4.col-6
+        a(href='#').d-block.bg-white.box-shadow-sm.rounded-lg.py-3.py-sm-4.mb-grid-gutter
+          img(src='img/shop/brands/05.png' style='width: 150px;' alt='Brand').d-block.mx-auto
+      .col-md-3.col-sm-4.col-6
+        a(href='#').d-block.bg-white.box-shadow-sm.rounded-lg.py-3.py-sm-4.mb-grid-gutter
+          img(src='img/shop/brands/06.png' style='width: 150px;' alt='Brand').d-block.mx-auto
+      .col-md-3.col-sm-4.col-6
+        a(href='#').d-block.bg-white.box-shadow-sm.rounded-lg.py-3.py-sm-4.mb-grid-gutter
+          img(src='img/shop/brands/07.png' style='width: 150px;' alt='Brand').d-block.mx-auto
+      .col-md-3.col-sm-4.col-6
+        a(href='#').d-block.bg-white.box-shadow-sm.rounded-lg.py-3.py-sm-4.mb-grid-gutter
+          img(src='img/shop/brands/08.png' style='width: 150px;' alt='Brand').d-block.mx-auto
+      .col-md-3.col-sm-4.col-6
+        a(href='#').d-block.bg-white.box-shadow-sm.rounded-lg.py-3.py-sm-4.mb-grid-gutter
+          img(src='img/shop/brands/09.png' style='width: 150px;' alt='Brand').d-block.mx-auto
+      .col-md-3.col-sm-4.col-6
+        a(href='#').d-block.bg-white.box-shadow-sm.rounded-lg.py-3.py-sm-4.mb-grid-gutter
+          img(src='img/shop/brands/10.png' style='width: 150px;' alt='Brand').d-block.mx-auto
+      .col-md-3.col-sm-4.col-6
+        a(href='#').d-block.bg-white.box-shadow-sm.rounded-lg.py-3.py-sm-4.mb-grid-gutter
+          img(src='img/shop/brands/11.png' style='width: 150px;' alt='Brand').d-block.mx-auto
+      .col-md-3.col-sm-4.col-6
+        a(href='#').d-block.bg-white.box-shadow-sm.rounded-lg.py-3.py-sm-4.mb-grid-gutter
+          img(src='img/shop/brands/12.png' style='width: 150px;' alt='Brand').d-block.mx-auto
+
+//- Footer
+block footer
+  include partials/footer-dark

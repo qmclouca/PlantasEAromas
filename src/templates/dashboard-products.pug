@@ -1,0 +1,168 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var pageTitle = 'Products'
+  - var parentMenu = 'Account'
+
+//- Navbar
+block navbar
+  include partials/navbar-marketplace
+
+//- Page Content
+block content
+
+  //- dashboard-header.pug template
+  include partials/dashboard-header
+
+  .container.mb-5.pb-3
+    .bg-light.box-shadow-lg.rounded-lg.overflow-hidden
+      .row
+
+        // Sidebar
+        aside.col-lg-4
+          //- sidebar-dashboard.pug template
+          include partials/sidebar-dashboard
+
+        // Content
+        section.col-lg-8.pt-lg-4.pb-4.mb-3
+          .pt-2.px-4.pl-lg-0.pr-xl-5
+
+            // Title
+            .d-sm-flex.flex-wrap.justify-content-between.align-items-center.border-bottom
+              h2.h3.py-2.mr-2.text-center.text-sm-left
+                | Your products
+                span.badge.badge-secondary.font-size-sm.text-body.align-middle.ml-2 5
+              .py-2
+                .form-inline.flex-nowrap.pb-3
+                  label(for='sorting').text-nowrap.mr-2 Sort by:
+                  select#sorting.custom-select.custom-select-sm.mr-2
+                    option Date Purchased
+                    option Product Name
+                    option Price
+                    option Rating
+                    option Updates
+                  button(type='button').btn.btn-outline-secondary.btn-sm.px-2
+                    i.czi-arrow-up
+
+            // Product
+            .media.d-block.d-sm-flex.align-items-center.py-4.border-bottom
+              a(href='marketplace-single.html' style='width: 12.5rem;').d-block.mb-3.mb-sm-0.mr-sm-4.mx-auto
+                img(src='img/marketplace/products/th08.jpg' alt='Product').rounded-lg
+              .media-body.text-center.text-sm-left
+                h3.h6.product-title.mb-2
+                  a(href='marketplace-single.html') Flat-line E-Commerce Icons (AI)
+                .d-inline-block.text-accent
+                  | $18.<small>00</small>
+                .d-inline-block.text-muted.font-size-ms.border-left.ml-2.pl-2
+                  | Sales: 
+                  span.font-weight-medium 26
+                .d-inline-block.text-muted.font-size-ms.border-left.ml-2.pl-2
+                  | Earnings: 
+                  span.font-weight-medium $327.<small>60</small>
+                .d-flex.justify-content-center.justify-content-sm-start.pt-3
+                  button(type='button' data-toggle='tooltip' title='Download').btn.bg-faded-accent.btn-icon.mr-2
+                    i.czi-download.text-accent
+                  button(type='button' data-toggle='tooltip' title='Edit').btn.bg-faded-info.btn-icon.mr-2
+                    i.czi-edit.text-info
+                  button(type='button' data-toggle='tooltip' title='Delete').btn.bg-faded-danger.btn-icon
+                    i.czi-trash.text-danger
+
+            // Product
+            .media.d-block.d-sm-flex.align-items-center.py-4.border-bottom
+              a(href='marketplace-single.html' style='width: 12.5rem;').d-block.position-relative.mb-3.mb-sm-0.mr-sm-4.mx-auto
+                img(src='img/marketplace/products/th09.jpg' alt='Product').rounded-lg
+              .media-body.text-center.text-sm-left
+                h3.h6.product-title.mb-2
+                  a(href='marketplace-single.html') Square Style Mobile UI Kit (Sketch)
+                .d-inline-block.text-accent
+                  | $24.<small>00</small>
+                .d-inline-block.text-muted.font-size-ms.border-left.ml-2.pl-2
+                  | Sales: 
+                  span.font-weight-medium 153
+                .d-inline-block.text-muted.font-size-ms.border-left.ml-2.pl-2
+                  | Earnings: 
+                  span.font-weight-medium $2,570.<small>40</small>
+                .d-flex.justify-content-center.justify-content-sm-start.pt-3
+                  button(type='button' data-toggle='tooltip' title='Download').btn.bg-faded-accent.btn-icon.mr-2
+                    i.czi-download.text-accent
+                  button(type='button' data-toggle='tooltip' title='Edit').btn.bg-faded-info.btn-icon.mr-2
+                    i.czi-edit.text-info
+                  button(type='button' data-toggle='tooltip' title='Delete').btn.bg-faded-danger.btn-icon
+                    i.czi-trash.text-danger
+
+            // Product
+            .media.d-block.d-sm-flex.align-items-center.py-4.border-bottom
+              a(href='marketplace-single.html' style='width: 12.5rem;').d-block.position-relative.mb-3.mb-sm-0.mr-sm-4.mx-auto
+                img(src='img/marketplace/products/th10.jpg' alt='Product').rounded-lg
+              .media-body.text-center.text-sm-left
+                h3.h6.product-title.mb-2
+                  a(href='marketplace-single.html') Floating Phone and Tablet Mockup (PSD)
+                .d-inline-block.text-accent
+                  | $15.<small>00</small>
+                .d-inline-block.text-muted.font-size-ms.border-left.ml-2.pl-2
+                  | Sales: 
+                  span.font-weight-medium 109
+                .d-inline-block.text-muted.font-size-ms.border-left.ml-2.pl-2
+                  | Earnings: 
+                  span.font-weight-medium $1,144.<small>50</small>
+                .d-flex.justify-content-center.justify-content-sm-start.pt-3
+                  button(type='button' data-toggle='tooltip' title='Download').btn.bg-faded-accent.btn-icon.mr-2
+                    i.czi-download.text-accent
+                  button(type='button' data-toggle='tooltip' title='Edit').btn.bg-faded-info.btn-icon.mr-2
+                    i.czi-edit.text-info
+                  button(type='button' data-toggle='tooltip' title='Delete').btn.bg-faded-danger.btn-icon
+                    i.czi-trash.text-danger
+
+            // Product
+            .media.d-block.d-sm-flex.align-items-center.py-4.border-bottom
+              a(href='marketplace-single.html' style='width: 12.5rem;').d-block.position-relative.mb-3.mb-sm-0.mr-sm-4.mx-auto
+                img(src='img/marketplace/products/th11.jpg' alt='Product').rounded-lg
+              .media-body.text-center.text-sm-left
+                h3.h6.product-title.mb-2
+                  a(href='marketplace-single.html') Minimal Mobile App UI Kit (Sketch)
+                .d-inline-block.text-accent
+                  | $23.<small>00</small>
+                .d-inline-block.text-muted.font-size-ms.border-left.ml-2.pl-2
+                  | Sales: 
+                  span.font-weight-medium 117
+                .d-inline-block.text-muted.font-size-ms.border-left.ml-2.pl-2
+                  | Earnings: 
+                  span.font-weight-medium $1,883.<small>70</small>
+                .d-flex.justify-content-center.justify-content-sm-start.pt-3
+                  button(type='button' data-toggle='tooltip' title='Download').btn.bg-faded-accent.btn-icon.mr-2
+                    i.czi-download.text-accent
+                  button(type='button' data-toggle='tooltip' title='Edit').btn.bg-faded-info.btn-icon.mr-2
+                    i.czi-edit.text-info
+                  button(type='button' data-toggle='tooltip' title='Delete').btn.bg-faded-danger.btn-icon
+                    i.czi-trash.text-danger
+
+            // Product
+            .media.d-block.d-sm-flex.align-items-center.pt-4.pb-2
+              a(href='marketplace-single.html' style='width: 12.5rem;').d-block.position-relative.mb-3.mb-sm-0.mr-sm-4.mx-auto
+                img(src='img/marketplace/products/th12.jpg' alt='Product').rounded-lg
+              .media-body.text-center.text-sm-left
+                h3.h6.product-title.mb-2
+                  a(href='marketplace-single.html') Travel &amp; Landmark Icon Pack (AI)
+                .d-inline-block.text-accent
+                  | $17.<small>00</small>
+                .d-inline-block.text-muted.font-size-ms.border-left.ml-2.pl-2
+                  | Sales: 
+                  span.font-weight-medium 21
+                .d-inline-block.text-muted.font-size-ms.border-left.ml-2.pl-2
+                  | Earnings: 
+                  span.font-weight-medium $249.<small>90</small>
+                .d-flex.justify-content-center.justify-content-sm-start.pt-3
+                  button(type='button' data-toggle='tooltip' title='Download').btn.bg-faded-accent.btn-icon.mr-2
+                    i.czi-download.text-accent
+                  button(type='button' data-toggle='tooltip' title='Edit').btn.bg-faded-info.btn-icon.mr-2
+                    i.czi-edit.text-info
+                  button(type='button' data-toggle='tooltip' title='Delete').btn.bg-faded-danger.btn-icon
+                    i.czi-trash.text-danger
+
+  //- toast-shop.pug template
+  include partials/toast-shop
+
+//- Footer
+block footer
+  include partials/footer-marketplace

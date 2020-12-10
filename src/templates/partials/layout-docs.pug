@@ -1,0 +1,112 @@
+//- Include config.pug file that holds all variables
+block config
+  include ../helpers/config
+
+//- Mixins - reusable code snippets
+include ../helpers/mixins
+  
+//- Override default config variables
+append config
+  - var isNestedFile = true
+
+doctype html
+html(lang="en")
+
+  //- head.pug template
+  include head 
+  
+  // Body
+  body
+    
+    main.container-fluid
+
+      // Main content
+      section.sidenav-enabled.row.pb-3.pb-md-4
+        .col-xl-9
+
+          // Navbar
+          header(data-scroll-header).navbar.navbar-docs.navbar-expand.navbar-light.fixed-top.bg-light.box-shadow-sm.px-3.px-lg-4
+            a(href='dev-setup.html' style='min-width: 7rem;').navbar-brand.d-lg-none.mr-auto
+              +image('img/logo-dark.png', 'Cartzilla')(width='142')
+            ul.navbar-nav.ml-auto.d-none.d-lg-flex
+              li.nav-item
+                a(href='../index.html').nav-link
+                  i.czi-eye.align-middle.mt-n1.mr-2
+                  | Live preview
+              li.nav-item: .nav-link.disabled.text-border.px-1 |
+              li.nav-item
+                a(href='../components/typography.html').nav-link
+                  i.czi-server.align-middle.mt-n1.mr-2
+                  | Components
+              li.nav-item: .nav-link.disabled.text-border.px-1 |
+            button(type='button' data-toggle='collapse' data-target='#docs-nav').navbar-toggler.d-block.d-lg-none
+              span.navbar-toggler-icon
+            a(href='https://themes.getbootstrap.com/product/cartzilla-bootstrap-e-commerce-template-ui-kit/' target='_blank' rel='noopener').btn.btn-primary.btn-shadow.ml-2.ml-lg-4
+              i.czi-cart.mr-1.d-none.d-sm-inline-block
+              | Buy now
+      
+          // Side navigation
+          aside#docs-nav.sidenav.collapse.bg-dark
+            header.sidenav-header.bg-darker.d-none.d-lg-block
+              a(href='dev-setup.html' style='min-width: 7rem;').navbar-brand
+                +image('img/logo-light.png', 'Cartzilla')(width='142')
+              span.badge.badge-success Docs
+            .sidenav-body(data-simplebar data-simplebar-auto-hide='true')
+              .pt-4.pb-3.mt-3
+                .d-flex.d-lg-none.pb-4.mb-4.border-bottom.border-light
+                  .w-50.pr-2
+                    a(href='../index.html').btn.btn-outline-light.btn-block
+                      i.czi-eye.align-middle.mt-n1.mr-2
+                      | Live demo
+                  .w-50.pl-2
+                    a(href='../components/typography.html').btn.btn-light.btn-block
+                      i.czi-server.align-middle.mt-n1.mr-2
+                      | Components
+                .widget.widget-links.widget-light.mb-4.pb-2
+                  h3.widget-title.text-white Contents
+                  ul.widget-list
+                    li()&attributes(pageTitle === 'Dev environment setup' ? {'class': 'widget-list-item active'} : {'class': 'widget-list-item'})
+                      a(href='dev-setup.html').widget-list-link Dev environment setup
+                    li()&attributes(pageTitle === 'Working with Gulp' ? {'class': 'widget-list-item active'} : {'class': 'widget-list-item'})
+                      a(href='working-with-gulp.html').widget-list-link Working with Gulp
+                    li()&attributes(pageTitle === 'Project structure' ? {'class': 'widget-list-item active'} : {'class': 'widget-list-item'})
+                      a(href='project-structure.html').widget-list-link Project structure
+                    li()&attributes(pageTitle === 'Installing Vendor plugins with npm and Gulp' ? {'class': 'widget-list-item active'} : {'class': 'widget-list-item'})
+                      a(href='install-vendor-plugin.html').widget-list-link Installing Vendor plugins with npm and Gulp
+                    li()&attributes(pageTitle === 'Using Pug & Sass' ? {'class': 'widget-list-item active'} : {'class': 'widget-list-item'})
+                      a(href='using-preprocessors.html').widget-list-link Using Pug &amp; Sass
+                    li()&attributes(pageTitle === 'Browser support' ? {'class': 'widget-list-item active'} : {'class': 'widget-list-item'})
+                      a(href='autoprefixer.html').widget-list-link Browser support
+                    li()&attributes(pageTitle === 'Global colors' ? {'class': 'widget-list-item active'} : {'class': 'widget-list-item'})
+                      a(href='global-colors.html').widget-list-link Global colors
+                    li()&attributes(pageTitle === 'Components' ? {'class': 'widget-list-item active'} : {'class': 'widget-list-item'})
+                      a(href='components.html').widget-list-link Components
+                    li()&attributes(pageTitle === 'Navbar, Page title and Footer templates (Pug)' ? {'class': 'widget-list-item active'} : {'class': 'widget-list-item'})
+                      a(href='navbar-footer.html').widget-list-link Navbar / Page title / Footer variants (Pug)
+                    li()&attributes(pageTitle === 'Utility classes' ? {'class': 'widget-list-item active'} : {'class': 'widget-list-item'})
+                      a(href='utilities.html').widget-list-link Utility classes
+                    li()&attributes(pageTitle === 'UI icons (Icon font)' ? {'class': 'widget-list-item active'} : {'class': 'widget-list-item'})
+                      a(href='ui-icons.html').widget-list-link UI icons (Icon font)
+                    li()&attributes(pageTitle === 'Mailchimp subscription form' ? {'class': 'widget-list-item active'} : {'class': 'widget-list-item'})
+                      a(href='mailchimp.html').widget-list-link Mailchimp subscription form
+                    li()&attributes(pageTitle === 'Sources and credits' ? {'class': 'widget-list-item active'} : {'class': 'widget-list-item'})
+                      a(href='credits.html').widget-list-link Sources and credits
+                    li()&attributes(pageTitle === 'Changelog' ? {'class': 'widget-list-item active'} : {'class': 'widget-list-item'})
+                      a(href='changelog.html').widget-list-link Changelog
+
+          // Page title
+          .border-bottom.mt-lg-2.pt-5.pb-2.mb-5
+            h1.mt-lg-4.pt-lg-5 !{pageTitle}
+
+          block content
+
+    // Back To Top Button
+    a(href='#top' data-scroll).btn-scroll-top
+      span.btn-scroll-top-tooltip.text-muted.font-size-sm.mr-2 Top
+      i.btn-scroll-top-icon.czi-arrow-up    
+    
+    // Vendor scrits: js libraries and plugins
+    +vendor-scripts
+
+    // Main theme script
+    script()&attributes(isNestedFile ? {'src': '../js/theme.min.js'} : {'src': 'js/theme.min.js'})

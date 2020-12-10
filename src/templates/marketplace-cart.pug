@@ -1,0 +1,117 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var pageTitle = 'Your cart'
+  - var breadcrumbs = [{'title': 'Market', 'link': 'marketplace-category.html'}, {'title': 'Cart'}]
+  - var parentMenu = 'Shop'
+
+//- Navbar
+block navbar
+  include partials/navbar-marketplace
+
+//- Page Title
+block page-title
+  include partials/page-title-marketplace
+  
+//- Page Content
+block content
+
+  .container.mb-5.pb-3
+    .bg-light.box-shadow-lg.rounded-lg.overflow-hidden
+      .row
+
+        // Content
+        section.col-lg-8.pt-2.pt-lg-4.pb-4.mb-3
+          .pt-2.px-4.pr-lg-0.pl-xl-5
+
+            // Header
+            .d-flex.flex-wrap.justify-content-between.align-items-center.border-bottom.pb-3
+              .py-1
+                a(href='marketplace-category.html').btn.btn-outline-accent.btn-sm
+                  i.czi-arrow-left.mr-1.ml-n1
+                  | Back to shopping
+              .d-none.d-sm-block.py-1.font-size-ms You have 3 products in your cart
+              .py-1
+                a(href='marketplace-category.html').btn.btn-outline-danger.btn-sm
+                  i.czi-close.font-size-xs.mr-1.ml-n1
+                  | Clear cart
+
+
+            // Product
+            .media.d-block.d-sm-flex.align-items-center.py-4.border-bottom
+              a(href='marketplace-single.html' style='width: 12.5rem;').d-block.position-relative.mb-3.mb-sm-0.mr-sm-4.mx-auto
+                img(src='img/marketplace/products/th02.jpg' alt='Product').rounded-lg
+                span.close-floating(data-toggle='tooltip' title='Remove from Cart'): i.czi-close
+              .media-body.text-center.text-sm-left
+                h3.h6.product-title.mb-2
+                  a(href='marketplace-single.html') UI Isometric Devices Pack (PSD)
+                .d-inline-block.text-accent
+                  | $23.<small>00</small>
+                a(href='#').d-inline-block.text-accent.font-size-ms.border-left.ml-2.pl-2
+                  | by uidesigner
+                .form-inline.pt-2
+                  select.custom-select.custom-select-sm.my-1.mr-2
+                    option Standard license
+                    option Extended license
+
+            // Product
+            .media.d-block.d-sm-flex.align-items-center.py-4.border-bottom
+              a(href='marketplace-single.html' style='width: 12.5rem;').d-block.position-relative.mb-3.mb-sm-0.mr-sm-4.mx-auto
+                img(src='img/marketplace/products/th06.jpg' alt='Product').rounded-lg
+                span.close-floating(data-toggle='tooltip' title='Remove from Cart'): i.czi-close
+              .media-body.text-center.text-sm-left
+                h3.h6.product-title.mb-2
+                  a(href='marketplace-single.html') Project Devices Showcase (PSD)
+                .d-inline-block.text-accent
+                  | $18.<small>00</small>
+                a(href='#').d-inline-block.text-accent.font-size-ms.border-left.ml-2.pl-2
+                  | by pixels
+                .form-inline.pt-2
+                  select.custom-select.custom-select-sm.my-1.mr-2
+                    option Standard license
+                    option Extended license
+
+            // Product
+            .media.d-block.d-sm-flex.align-items-center.pt-4.pb-2
+              a(href='marketplace-single.html' style='width: 12.5rem;').d-block.position-relative.mb-3.mb-sm-0.mr-sm-4.mx-auto
+                img(src='img/marketplace/products/th07.jpg' alt='Product').rounded-lg
+                span.close-floating(data-toggle='tooltip' title='Remove from Cart'): i.czi-close
+              .media-body.text-center.text-sm-left
+                h3.h6.product-title.mb-2
+                  a(href='marketplace-single.html') Gravity Devices UI Mockup (PSD)
+                .d-inline-block.text-accent
+                  | $15.<small>00</small>
+                a(href='#').d-inline-block.text-accent.font-size-ms.border-left.ml-2.pl-2
+                  | by pixels
+                .form-inline.pt-2
+                  select.custom-select.custom-select-sm.my-1.mr-2
+                    option Standard license
+                    option Extended license
+
+
+        // Sidebar
+        aside.col-lg-4
+          hr.d-lg-none
+          .cz-sidebar-static.h-100.ml-auto.border-left
+            .text-center.mb-4.pb-3.border-bottom
+              h2.h6.mb-3.pb-1 Cart total
+              h3.font-weight-normal
+                | $56.
+                small 00
+            .text-center.mb-4.pb-3.border-bottom
+              h2.h6.mb-3.pb-1 Promo code
+              form(method='post' novalidate).needs-validation.pb-2
+                .form-group
+                  input(type='text' placeholder='Promo code' required).form-control
+                  .invalid-feedback Please provide promo code.
+                button(type='submit').btn.btn-secondary.btn-block Apply promo code
+            a(href='marketplace-checkout.html').btn.btn-primary.btn-shadow.btn-block.mt-4
+              i.czi-locked.font-size-lg.mr-2
+              | Secure Checkout
+            .text-center.pt-2
+              small.text-form.text-muted 100% money back guarantee
+
+//- Footer
+block footer
+  include partials/footer-marketplace

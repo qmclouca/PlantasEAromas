@@ -1,0 +1,204 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var pageTitle = 'Checkout'
+  - var breadcrumbs = [{'title': 'Shop', 'link': 'shop-grid-ls.html'}, {'title': 'Checkout'}]
+  - var parentMenu = 'Shop'
+
+//- Navbar
+block navbar
+  include partials/navbar-3-level-light
+
+//- Page title
+block page-title
+  include partials/page-title-shop
+  
+//- Page Content
+block content
+
+  .container.pb-5.mb-2.mb-md-4
+    .row
+
+      section.col-lg-8
+
+        // Steps
+        .steps.steps-light.pt-2.pb-3.mb-5
+          a(href='shop-cart.html').step-item.active
+            .step-progress
+              span.step-count 1
+            .step-label
+              i.czi-cart
+              | Cart
+          a(href='checkout-details.html').step-item.active
+            .step-progress
+              span.step-count 2
+            .step-label
+              i.czi-user-circle
+              | Your details
+          a(href='checkout-shipping.html').step-item.active.current
+            .step-progress
+              span.step-count 3
+            .step-label
+              i.czi-package
+              | Shipping
+          a(href='checkout-payment.html').step-item
+            .step-progress
+              span.step-count 4
+            .step-label
+              i.czi-card
+              | Payment
+          a(href='checkout-review.html').step-item
+            .step-progress
+              span.step-count 5
+            .step-label
+              i.czi-check-circle
+              | Review
+        
+        // Shipping methods table
+        h2.h6.pb-3.mb-2 Choose shipping method
+        .table-responsive
+          table.table.table-hover.font-size-sm.border-bottom
+            thead
+              tr
+                th.align-middle
+                th.align-middle Shipping method
+                th.align-middle Delivery time
+                th.align-middle Handling fee
+            tbody
+              tr
+                td
+                  .custom-control.custom-radio.mb-4
+                    input(type='radio' id='courier' name='shipping-method' checked).custom-control-input
+                    label(for='courier').custom-control-label
+                td.align-middle
+                  span.text-dark.font-weight-medium Courier
+                  br
+                  span.text-muted All addresses (default zone), United States &amp; Canada
+                td.align-middle 2 - 4 days
+                td.align-middle $26.50
+              tr
+                td
+                  .custom-control.custom-radio.mb-4
+                    input(type='radio' id='local' name='shipping-method').custom-control-input
+                    label(for='local').custom-control-label
+                td.align-middle
+                  span.text-dark.font-weight-medium Local Shipping
+                  br
+                  span.text-muted All addresses (default zone), United States &amp; Canada
+                td.align-middle up to one week
+                td.align-middle $10.00
+              tr
+                td
+                  .custom-control.custom-radio.mb-4
+                    input(type='radio' id='flat' name='shipping-method').custom-control-input
+                    label(for='flat').custom-control-label
+                td.align-middle
+                  span.text-dark.font-weight-medium Flat Rate
+                  br
+                  span.text-muted All addresses (default zone)
+                td.align-middle 5 - 7 days
+                td.align-middle $33.85
+              tr
+                td
+                  .custom-control.custom-radio.mb-4
+                    input(type='radio' id='ups' name='shipping-method').custom-control-input
+                    label(for='ups').custom-control-label
+                td.align-middle
+                  span.text-dark.font-weight-medium UPS Ground Shipping
+                  br
+                  span.text-muted All addresses (default zone)
+                td.align-middle 4 - 6 days
+                td.align-middle $18.00
+              tr
+                td
+                  .custom-control.custom-radio.mb-4
+                    input(type='radio' id='pickup' name='shipping-method').custom-control-input
+                    label(for='pickup').custom-control-label
+                td.align-middle
+                  span.text-dark.font-weight-medium Local Pickup from store
+                  br
+                  span.text-muted All addresses (default zone)
+                td.align-middle &mdash;
+                td.align-middle $0.00
+              tr
+                td
+                  .custom-control.custom-radio.mb-4
+                    input(type='radio' id='locker' name='shipping-method').custom-control-input
+                    label(for='locker').custom-control-label
+                td.align-middle
+                  span.text-dark.font-weight-medium Pick Up at Cartzilla Locker
+                  br
+                  span.text-muted All addresses (default zone), United States &amp; Canada
+                td.align-middle &mdash;
+                td.align-middle $9.99
+              tr
+                td
+                  .custom-control.custom-radio.mb-4
+                    input(type='radio' id='global-export' name='shipping-method').custom-control-input
+                    label(for='global-export').custom-control-label
+                td.align-middle
+                  span.text-dark.font-weight-medium Cartzilla Global Export
+                  br
+                  span.text-muted.font-size-sm All addresses (default zone), outside United States
+                td.align-middle 3 - 4 days
+                td.align-middle $25.00
+              tr
+                td
+                  .custom-control.custom-radio.mb-4
+                    input(type='radio' id='same-day' name='shipping-method').custom-control-input
+                    label(for='same-day').custom-control-label
+                td.align-middle
+                  span.text-dark.font-weight-medium Same-Day Delivery
+                  br
+                  span.text-muted Only United States
+                td.align-middle &mdash;
+                td.align-middle $34.00
+              tr
+                td
+                  .custom-control.custom-radio.mb-4
+                    input(type='radio' id='international' name='shipping-method').custom-control-input
+                    label(for='international').custom-control-label
+                td.align-middle
+                  span.text-dark.font-weight-medium International Shipping
+                  br
+                  span.text-muted All addresses (default zone)
+                td.align-middle up to 15 days
+                td.align-middle $27.00
+
+        // Navigation (desktop)
+        .d-none.d-lg-flex.pt-4
+          .w-50.pr-3
+            a(href='checkout-details.html').btn.btn-secondary.btn-block
+              i.czi-arrow-left.mt-sm-0.mr-1
+              span.d-none.d-sm-inline Back to Adresses
+              span.d-inline.d-sm-none Back
+          .w-50.pl-2
+            a(href='checkout-payment.html').btn.btn-primary.btn-block
+              span.d-none.d-sm-inline Proceed to Payment
+              span.d-inline.d-sm-none Next
+              i.czi-arrow-right.mt-sm-0.ml-1
+          
+      // Sidebar
+      aside.col-lg-4.pt-4.pt-lg-0
+        //- sidebar-checkout.pug template
+        include partials/sidebar-checkout
+        
+    // Navigation (mobile)
+    .row.d-lg-none
+      .col-lg-8
+        .d-flex.pt-4.mt-3
+          .w-50.pr-3
+            a(href='checkout-details.html').btn.btn-secondary.btn-block
+              i.czi-arrow-left.mt-sm-0.mr-1
+              span.d-none.d-sm-inline Back to Adresses
+              span.d-inline.d-sm-none Back
+          .w-50.pl-2
+            a(href='checkout-payment.html').btn.btn-primary.btn-block
+              span.d-none.d-sm-inline Proceed to Payment
+              span.d-inline.d-sm-none Next
+              i.czi-arrow-right.mt-sm-0.ml-1
+
+//- Footer
+block footer
+  include partials/footer-dark

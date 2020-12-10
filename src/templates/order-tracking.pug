@@ -1,0 +1,84 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var pageTitle = 'Tracking order: <span class="h4 font-weight-normal text-light">34VB5540K83</span>'
+  - var breadcrumbs = [{'title': 'Shop', 'link': '#'}, {'title': 'Order tracking'}]
+  - var parentMenu = 'Shop'
+
+//- Navbar + Modal
+block navbar
+  include partials/modal-order
+  include partials/navbar-3-level-light
+
+//- Page title
+block page-title
+  include partials/page-title-dark
+  
+//- Page Content
+block content
+
+  .container.py-5.mb-2.mb-md-3
+
+    // Details
+    .row.mb-4
+      .col-sm-4.mb-2
+        .bg-secondary.p-4.text-center.rounded-lg
+          span.font-weight-medium.text-dark.mr-2 Shipped via:
+          | UPS Ground
+      .col-sm-4.mb-2
+        .bg-secondary.p-4.text-center.rounded-lg
+          span.font-weight-medium.text-dark.mr-2 Status:
+          | Processing order
+      .col-sm-4.mb-2
+        .bg-secondary.p-4.text-center.rounded-lg
+          span.font-weight-medium.text-dark.mr-2 Expected date:
+          | October 15, 2019
+    
+    // Progress
+    .card.border-0.box-shadow-lg
+      .card-body.pb-2
+        ul(class='nav nav-tabs media-tabs nav-justified')
+          li.nav-item
+            .nav-link.completed
+              .media.align-items-center
+                .media-tab-media.mr-3
+                  i.czi-bag
+                .media-body
+                  .media-tab-subtitle.text-muted.font-size-xs.mb-1 First step
+                  h6.media-tab-title.text-nowrap.mb-0 Order placed
+          li.nav-item
+            .nav-link.active
+              .media.align-items-center
+                .media-tab-media.mr-3
+                  i.czi-settings
+                .media-body
+                  .media-tab-subtitle.text-muted.font-size-xs.mb-1 Second step
+                  h6.media-tab-title.text-nowrap.mb-0 Processing order
+          li.nav-item
+            .nav-link
+              .media.align-items-center
+                .media-tab-media.mr-3
+                  i.czi-star
+                .media-body
+                  .media-tab-subtitle.text-muted.font-size-xs.mb-1 Third step
+                  h6.media-tab-title.text-nowrap.mb-0 Quality check
+          li.nav-item
+            .nav-link
+              .media.align-items-center
+                .media-tab-media.mr-3
+                  i.czi-package
+                .media-body
+                  .media-tab-subtitle.text-muted.font-size-xs.mb-1 Fourth step
+                  h6.media-tab-title.text-nowrap.mb-0 Product dispatched
+    
+    // Footer
+    .d-sm-flex.flex-wrap.justify-content-between.align-items-center.text-center.pt-4
+      .custom-control.custom-checkbox.mt-2.mr-3
+        input(type='checkbox' id='notify-me' checked).custom-control-input
+        label(for='notify-me').custom-control-label Notify me when order is delivered
+      a(href='#order-details' data-toggle='modal').btn.btn-primary.btn-sm.mt-2 View Order Details
+
+//- Footer
+block footer
+  include partials/footer-dark

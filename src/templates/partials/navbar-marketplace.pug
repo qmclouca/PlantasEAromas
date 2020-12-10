@@ -1,0 +1,188 @@
+// Navbar Marketplace
+// Remove "navbar-sticky" class to make navigation bar scrollable with the page.
+header.bg-light.box-shadow-sm.navbar-sticky
+  .navbar.navbar-expand-lg.navbar-light
+    .container
+      a(href='index.html' style='min-width: 7rem;').navbar-brand.d-none.d-sm-block.mr-4.order-lg-1
+        +image('img/logo-dark.png', 'Cartzilla')(width='142')
+      a(href='index.html' style='min-width: 4.625rem;').navbar-brand.d-sm-none.mr-2.order-lg-1
+        +image('img/logo-icon.png', 'Cartzilla')(width='74')
+      
+      // Toolbar
+      .navbar-toolbar.d-flex.align-items-center.order-lg-3
+        //- Mobile menu toggler
+        button(type='button' data-toggle='collapse' data-target='#navbarCollapse').navbar-toggler
+          span.navbar-toggler-icon
+        //- Search
+        a(href='#searchBox' data-toggle='collapse' role='button' aria-expanded='false', aria-controls='searchBox').navbar-tool.d-none.d-lg-flex
+          span.navbar-tool-tooltip Search
+          .navbar-tool-icon-box: i.navbar-tool-icon.czi-search
+        //- Favorites
+        a(href='dashboard-favorites.html').navbar-tool.d-none.d-lg-flex
+          span.navbar-tool-tooltip Favorites
+          .navbar-tool-icon-box: i.navbar-tool-icon.czi-heart
+        //- Account dropdown
+        .navbar-tool.dropdown.ml-2
+          a(href='dashboard-sales.html').navbar-tool-icon-box.border.dropdown-toggle
+            +image('img/marketplace/account/avatar-sm.png', 'Createx Studio')(width='32')
+          a(href='dashboard-sales.html').navbar-tool-text.ml-n1
+            small Createx Std.
+            | $1,375.00
+          .dropdown-menu.dropdown-menu-right(style='min-width: 14rem;')
+            h6.dropdown-header Account
+            a(href='dashboard-settings.html').dropdown-item.d-flex.align-items-center
+              i.czi-settings.opacity-60.mr-2
+              | Settings
+            a(href='dashboard-purchases.html').dropdown-item.d-flex.align-items-center
+              i.czi-basket.opacity-60.mr-2
+              | Purchases
+            a(href='dashboard-favorites.html').dropdown-item.d-flex.align-items-center
+              i.czi-heart.opacity-60.mr-2
+              | Favorites
+              span.font-size-xs.text-muted.ml-auto 4
+            .dropdown-divider
+            h6.dropdown-header Seller Dashboard
+            a(href='dashboard-sales.html').dropdown-item.d-flex.align-items-center
+              i.czi-dollar.opacity-60.mr-2
+              | Sales
+              span.font-size-xs.text-muted.ml-auto $1,375.00
+            a(href='dashboard-products.html').dropdown-item.d-flex.align-items-center
+              i.czi-package.opacity-60.mr-2
+              | Products
+              span.font-size-xs.text-muted.ml-auto 5
+            a(href='dashboard-add-new-product.html').dropdown-item.d-flex.align-items-center
+              i.czi-cloud-upload.opacity-60.mr-2
+              | Add New Product
+            a(href='dashboard-payouts.html').dropdown-item.d-flex.align-items-center
+              i.czi-currency-exchange.opacity-60.mr-2
+              | Payouts
+            .dropdown-divider
+            a(href='account-signin.html').dropdown-item.d-flex.align-items-center
+              i.czi-sign-out.opacity-60.mr-2
+              | Sign Out
+        //- Cart
+        .navbar-tool.ml-4
+          a(href='marketplace-cart.html').navbar-tool-icon-box.bg-secondary.dropdown-toggle
+            span.navbar-tool-label 3
+            i.navbar-tool-icon.czi-cart
+
+      #navbarCollapse.collapse.navbar-collapse.mr-auto.order-lg-2
+
+        // Search
+        .input-group-overlay.d-lg-none.my-3
+          .input-group-prepend-overlay
+            span.input-group-text
+              i.czi-search
+          input(type='text' placeholder='Search marketplace').form-control.prepended-form-control
+        
+        // Categories dropdown
+        ul.navbar-nav.mega-nav.pr-lg-2.mr-lg-2
+          li.nav-item.dropdown
+            a(href='#' data-toggle='dropdown').nav-link.dropdown-toggle.pl-0
+              i.czi-menu.align-middle.mt-n1.mr-2
+              | Categories
+            ul.dropdown-menu.py-1
+              li.dropdown
+                a(href='#' data-toggle='dropdown').dropdown-item.dropdown-toggle Photos
+                ul.dropdown-menu
+                  li.dropdown-item.product-title.font-weight-medium
+                    a(href='#')
+                      | All Photos
+                      i.czi-arrow-right.font-size-xs.ml-1
+                  li.dropdown-divider
+                  li: a(href='#').dropdown-item Abstract
+                  li: a(href='#').dropdown-item Animals
+                  li: a(href='#').dropdown-item Architecture
+                  li: a(href='#').dropdown-item Beauty &amp; Fashion
+                  li: a(href='#').dropdown-item Business
+                  li: a(href='#').dropdown-item Education
+                  li: a(href='#').dropdown-item Food &amp; Drink
+                  li: a(href='#').dropdown-item Holidays
+                  li: a(href='#').dropdown-item Industrial
+                  li: a(href='#').dropdown-item People
+                  li: a(href='#').dropdown-item Sports
+                  li: a(href='#').dropdown-item Technology
+              li.dropdown
+                a(href='#' data-toggle='dropdown').dropdown-item.dropdown-toggle Graphics
+                ul.dropdown-menu
+                  li.dropdown-item.product-title.font-weight-medium
+                    a(href='#')
+                      | All Graphics
+                      i.czi-arrow-right.font-size-xs.ml-1
+                  li.dropdown-divider
+                  li: a(href='#').dropdown-item Icons
+                  li: a(href='#').dropdown-item Illustartions
+                  li: a(href='#').dropdown-item Patterns
+                  li: a(href='#').dropdown-item Textures
+                  li: a(href='#').dropdown-item Web Elements
+              li.dropdown
+                a(href='#' data-toggle='dropdown').dropdown-item.dropdown-toggle UI Design
+                ul.dropdown-menu
+                  li.dropdown-item.product-title.font-weight-medium
+                    a(href='#')
+                      | All UI Design
+                      i.czi-arrow-right.font-size-xs.ml-1
+                  li.dropdown-divider
+                  li: a(href='#').dropdown-item PSD Templates
+                  li: a(href='#').dropdown-item Sketch Templates
+                  li: a(href='#').dropdown-item Adobe XD Templates
+                  li: a(href='#').dropdown-item Figma Templates
+              li.dropdown
+                a(href='#' data-toggle='dropdown').dropdown-item.dropdown-toggle Web Themes
+                ul.dropdown-menu
+                  li.dropdown-item.product-title.font-weight-medium
+                    a(href='#')
+                      | All Web Themes
+                      i.czi-arrow-right.font-size-xs.ml-1
+                  li.dropdown-divider
+                  li: a(href='#').dropdown-item WordPress Themes
+                  li: a(href='#').dropdown-item Bootstrap Themes
+                  li: a(href='#').dropdown-item eCommerce Templates
+                  li: a(href='#').dropdown-item Muse Templates
+                  li: a(href='#').dropdown-item Plugins
+              li.dropdown
+                a(href='#' data-toggle='dropdown').dropdown-item.dropdown-toggle Fonts
+                ul.dropdown-menu
+                  li.dropdown-item.product-title.font-weight-medium
+                    a(href='#')
+                      | All Fonts
+                      i.czi-arrow-right.font-size-xs.ml-1
+                  li.dropdown-divider
+                  li: a(href='#').dropdown-item Blackletter
+                  li: a(href='#').dropdown-item Display
+                  li: a(href='#').dropdown-item Non Western
+                  li: a(href='#').dropdown-item Sans Serif
+                  li: a(href='#').dropdown-item Script
+                  li: a(href='#').dropdown-item Serif
+                  li: a(href='#').dropdown-item Slab Serif
+                  li: a(href='#').dropdown-item Symbols
+              li.dropdown
+                a(href='#' data-toggle='dropdown').dropdown-item.dropdown-toggle Add-Ons
+                ul.dropdown-menu
+                  li.dropdown-item.product-title.font-weight-medium
+                    a(href='#')
+                      | All Add-Ons
+                      i.czi-arrow-right.font-size-xs.ml-1
+                  li.dropdown-divider
+                  li: a(href='#').dropdown-item Photoshop Add-Ons
+                  li: a(href='#').dropdown-item Illustrator Add-Ons
+                  li: a(href='#').dropdown-item Sketch Plugins
+                  li: a(href='#').dropdown-item Procreate Brushes
+                  li: a(href='#').dropdown-item InDesign Palettes
+                  li: a(href='#').dropdown-item Lightroom Presets
+                  li: a(href='#').dropdown-item Other Software
+        
+        // Primary menu
+        ul.navbar-nav
+          li.nav-item
+            a(href='index.html').nav-link Back to main demo
+
+  // Search collapse
+  #searchBox.search-box.collapse
+    .card.pt-2.pb-4.border-0.rounded-0
+      .container
+        .input-group-overlay
+          .input-group-prepend-overlay
+            span.input-group-text
+              i.czi-search
+          input(type='text' placeholder='Search marketplace').form-control.prepended-form-control

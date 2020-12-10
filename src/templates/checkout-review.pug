@@ -1,0 +1,232 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var pageTitle = 'Checkout'
+  - var breadcrumbs = [{'title': 'Shop', 'link': 'shop-grid-ls.html'}, {'title': 'Checkout'}]
+  - var parentMenu = 'Shop'
+
+//- Navbar
+block navbar
+  include partials/navbar-3-level-light
+
+//- Page title
+block page-title
+  include partials/page-title-shop
+  
+//- Page Content
+block content
+
+  .container.pb-5.mb-2.mb-md-4
+    .row
+
+      section.col-lg-8
+
+        // Steps
+        .steps.steps-light.pt-2.pb-3.mb-5
+          a(href='shop-cart.html').step-item.active
+            .step-progress
+              span.step-count 1
+            .step-label
+              i.czi-cart
+              | Cart
+          a(href='checkout-details.html').step-item.active
+            .step-progress
+              span.step-count 2
+            .step-label
+              i.czi-user-circle
+              | Your details
+          a(href='checkout-shipping.html').step-item.active
+            .step-progress
+              span.step-count 3
+            .step-label
+              i.czi-package
+              | Shipping
+          a(href='checkout-payment.html').step-item.active
+            .step-progress
+              span.step-count 4
+            .step-label
+              i.czi-card
+              | Payment
+          a(href='checkout-review.html').step-item.active.current
+            .step-progress
+              span.step-count 5
+            .step-label
+              i.czi-check-circle
+              | Review
+        
+        // Order details
+        h2.h6.pt-1.pb-3.mb-3.border-bottom Review your order
+
+        // Item
+        .d-sm-flex.justify-content-between.my-4.pb-3.border-bottom
+          .media.media-ie-fix.d-block.d-sm-flex.text-center.text-sm-left
+            a(href='shop-single-v1.html' style='width: 10rem;').d-inline-block.mx-auto.mr-sm-4
+              img(src='img/shop/cart/01.jpg' alt='Product')
+            .media-body.pt-2
+              h3.product-title.font-size-base.mb-2
+                a(href='shop-single-v1.html') Women Colorblock Sneakers
+              .font-size-sm
+                span.text-muted.mr-2 Size:
+                | 8.5
+              .font-size-sm
+                span.text-muted.mr-2 Color:
+                | White &amp; Blue
+              .font-size-lg.text-accent.pt-2 $154.<small>00</small>
+          .pt-2.pt-sm-0.pl-sm-3.mx-auto.mx-sm-0.text-center.text-sm-right(style='max-width: 9rem;')
+            p.mb-0
+              span.text-muted.font-size-sm Quantity:
+              span &nbsp;1
+            button(type='button').btn.btn-link.px-0
+              i.czi-edit.mr-2
+              span.font-size-sm Edit
+
+        // Item
+        .d-sm-flex.justify-content-between.my-4.pb-3.border-bottom
+          .media.media-ie-fix.d-block.d-sm-flex.text-center.text-sm-left
+            a(href='shop-single-v1.html' style='width: 10rem;').d-inline-block.mx-auto.mr-sm-4
+              img(src='img/shop/cart/02.jpg' alt='Product')
+            .media-body.pt-2
+              h3.product-title.font-size-base.mb-2
+                a(href='shop-single-v1.html') TH Jeans City Backpack
+              .font-size-sm
+                span.text-muted.mr-2 Brand:
+                | Tommy Hilfiger
+              .font-size-sm
+                span.text-muted.mr-2 Color:
+                | Khaki
+              .font-size-lg.text-accent.pt-2 $79.<small>50</small>
+          .pt-2.pt-sm-0.pl-sm-3.mx-auto.mx-sm-0.text-center.text-sm-right(style='max-width: 9rem;')
+            p.mb-0
+              span.text-muted.font-size-sm Quantity:
+              span &nbsp;1
+            button(type='button').btn.btn-link.px-0
+              i.czi-edit.mr-2
+              span.font-size-sm Edit
+
+        // Item
+        .d-sm-flex.justify-content-between.my-4.pb-3.border-bottom
+          .media.media-ie-fix.d-block.d-sm-flex.text-center.text-sm-left
+            a(href='shop-single-v1.html' style='width: 10rem;').d-inline-block.mx-auto.mr-sm-4
+              img(src='img/shop/cart/03.jpg' alt='Product')
+            .media-body.pt-2
+              h3.product-title.font-size-base.mb-2
+                a(href='shop-single-v1.html') 3-Color Sun Stash Hat
+              .font-size-sm
+                span.text-muted.mr-2 Brand:
+                | The North Face
+              .font-size-sm
+                span.text-muted.mr-2 Color:
+                | Pink / Beige / Dark blue
+              .font-size-lg.text-accent.pt-2 $22.<small>50</small>
+          .pt-2.pt-sm-0.pl-sm-3.mx-auto.mx-sm-0.text-center.text-sm-right(style='max-width: 9rem;')
+            p.mb-0
+              span.text-muted.font-size-sm Quantity:
+              span &nbsp;1
+            button(type='button').btn.btn-link.px-0
+              i.czi-edit.mr-2
+              span.font-size-sm Edit
+
+        // Item
+        .d-sm-flex.justify-content-between.my-4.pb-3.border-bottom
+          .media.media-ie-fix.d-block.d-sm-flex.text-center.text-sm-left
+            a(href='shop-single-v1.html' style='width: 10rem;').d-inline-block.mx-auto.mr-sm-4
+              img(src='img/shop/cart/04.jpg' alt='Product')
+            .media-body.pt-2
+              h3.product-title.font-size-base.mb-2
+                a(href='shop-single-v1.html') Cotton Polo Regular Fit
+              .font-size-sm
+                span.text-muted.mr-2 Size:
+                | 42
+              .font-size-sm
+                span.text-muted.mr-2 Color:
+                | Light blue
+              .font-size-lg.text-accent.pt-2 $9.<small>00</small>
+          .pt-2.pt-sm-0.pl-sm-3.mx-auto.mx-sm-0.text-center.text-sm-right(style='max-width: 9rem;')
+            p.mb-0
+              span.text-muted.font-size-sm Quantity:
+              span &nbsp;1
+            button(type='button').btn.btn-link.px-0
+              i.czi-edit.mr-2
+              span.font-size-sm Edit
+        
+        // Client details
+        .bg-secondary.rounded-lg.px-4.pt-4.pb-2
+          .row
+            .col-sm-6
+              h4.h6 Shipping to:
+              ul.list-unstyled.font-size-sm
+                li
+                  span.text-muted Client:&nbsp;
+                  | Susan Gardner
+                li
+                  span.text-muted Address:&nbsp;
+                  | 44 Shirley Ave. West Chicago, IL 60185, USA
+                li
+                  span.text-muted Phone:&nbsp;
+                  | +1 (808) 764 554 330
+            .col-sm-6
+              h4.h6 Payment method:
+              ul.list-unstyled.font-size-sm
+                li
+                  span.text-muted Credit Card:&nbsp;
+                  | **** **** **** 5300
+
+        // Navigation (desktop)
+        .d-none.d-lg-flex.pt-4
+          .w-50.pr-3
+            a(href='checkout-payment.html').btn.btn-secondary.btn-block
+              i.czi-arrow-left.mt-sm-0.mr-1
+              span.d-none.d-sm-inline Back to Payment
+              span.d-inline.d-sm-none Back
+          .w-50.pl-2
+            a(href='checkout-complete.html').btn.btn-primary.btn-block
+              span.d-none.d-sm-inline Complete order
+              span.d-inline.d-sm-none Complete
+              i.czi-arrow-right.mt-sm-0.ml-1
+          
+      // Sidebar
+      aside.col-lg-4.pt-4.pt-lg-0
+        .cz-sidebar-static.rounded-lg.box-shadow-lg.ml-lg-auto
+          h2.h6.text-center.mb-4 Order summary
+          ul.list-unstyled.font-size-sm.pb-2.border-bottom
+            li.d-flex.justify-content-between.align-items-center
+              span.mr-2 Subtotal:
+              span.text-right $265.<small>00</small>
+            li.d-flex.justify-content-between.align-items-center
+              span.mr-2 Shipping:
+              span.text-right —
+            li.d-flex.justify-content-between.align-items-center
+              span.mr-2 Taxes:
+              span.text-right $9.<small>50</small>
+            li.d-flex.justify-content-between.align-items-center
+              span.mr-2 Discount:
+              span.text-right —
+          h3.font-weight-normal.text-center.my-4
+            | $274.
+            small 50
+
+          form(method='post' novalidate).needs-validation
+            .form-group
+              input(type='text' placeholder='Promo code' required).form-control
+              .invalid-feedback Please provide promo code.
+            button(type='submit').btn.btn-outline-primary.btn-block Apply promo code
+        
+    // Navigation (mobile)
+    .row.d-lg-none
+      .col-lg-8
+        .d-flex.pt-4.mt-3
+          .w-50.pr-3
+            a(href='checkout-payment.html').btn.btn-secondary.btn-block
+              i.czi-arrow-left.mt-sm-0.mr-1
+              span.d-none.d-sm-inline Back to Payment
+              span.d-inline.d-sm-none Back
+          .w-50.pl-2
+            a(href='checkout-complete.html').btn.btn-primary.btn-block
+              span.d-none.d-sm-inline Complete order
+              span.d-inline.d-sm-none Complete
+              i.czi-arrow-right.mt-sm-0.ml-1
+
+//- Footer
+block footer
+  include partials/footer-dark

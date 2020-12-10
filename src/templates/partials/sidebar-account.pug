@@ -1,0 +1,47 @@
+//- Account sidebar
+.cz-sidebar-static.rounded-lg.box-shadow-lg.px-0.pb-0.mb-5.mb-lg-0
+  .px-4.mb-4
+    .media.align-items-center
+      .img-thumbnail.rounded-circle.position-relative(style='width: 6.375rem;')
+        span(data-toggle='tooltip' title='Reward points').badge.badge-warning 384
+        img(src='img/shop/account/avatar.jpg' alt='Susan Gardner').rounded-circle
+      .media-body.pl-3
+        h3.font-size-base.mb-0 Susan Gardner
+        span.text-accent.font-size-sm s.gardner@example.com
+  .bg-secondary.px-4.py-3
+    h3.font-size-sm.mb-0.text-muted Dashboard
+  ul.list-unstyled.mb-0
+    li.border-bottom.mb-0
+      a(href='account-orders.html')&attributes(pageTitle === 'My orders' ? {'class': 'nav-link-style d-flex align-items-center px-4 py-3 active'} : {'class': 'nav-link-style d-flex align-items-center px-4 py-3'})
+        i.czi-bag.opacity-60.mr-2
+        | Orders
+        span.font-size-sm.text-muted.ml-auto 1
+    li.border-bottom.mb-0
+      a(href='account-wishlist.html')&attributes(pageTitle === 'My wishlist' ? {'class': 'nav-link-style d-flex align-items-center px-4 py-3 active'} : {'class': 'nav-link-style d-flex align-items-center px-4 py-3'})
+        i.czi-heart.opacity-60.mr-2
+        | Wishlist
+        span.font-size-sm.text-muted.ml-auto 3
+    li.mb-0
+      a(href='account-tickets.html')&attributes(pageTitle === 'Support tickets' ? {'class': 'nav-link-style d-flex align-items-center px-4 py-3 active'} : {'class': 'nav-link-style d-flex align-items-center px-4 py-3'})
+        i.czi-help.opacity-60.mr-2
+        | Support tickets
+        span.font-size-sm.text-muted.ml-auto 1
+  .bg-secondary.px-4.py-3
+    h3.font-size-sm.mb-0.text-muted Account settings
+  ul.list-unstyled.mb-0
+    li.border-bottom.mb-0
+      a(href='account-profile.html')&attributes(pageTitle === 'Profile info' ? {'class': 'nav-link-style d-flex align-items-center px-4 py-3 active'} : {'class': 'nav-link-style d-flex align-items-center px-4 py-3'})
+        i.czi-user.opacity-60.mr-2
+        | Profile info
+    li.border-bottom.mb-0
+      a(href='account-address.html')&attributes(pageTitle === 'My addresses' ? {'class': 'nav-link-style d-flex align-items-center px-4 py-3 active'} : {'class': 'nav-link-style d-flex align-items-center px-4 py-3'})
+        i.czi-location.opacity-60.mr-2
+        | Addresses
+    li.mb-0
+      a(href='account-payment.html')&attributes(pageTitle === 'My payment methods' ? {'class': 'nav-link-style d-flex align-items-center px-4 py-3 active'} : {'class': 'nav-link-style d-flex align-items-center px-4 py-3'})
+        i.czi-card.opacity-60.mr-2
+        | Payment methods
+    li.d-lg-none.border-top.mb-0
+      a(href='account-signin.html').nav-link-style.d-flex.align-items-center.px-4.py-3
+        i.czi-sign-out.opacity-60.mr-2
+        | Sign out

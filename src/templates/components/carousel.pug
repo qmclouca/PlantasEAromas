@@ -1,0 +1,313 @@
+extends ../partials/layout-components
+
+//- Override default config variables
+append config
+  - var vendorStyles = ['prismjs/themes/prism.css', 'prismjs/plugins/toolbar/prism-toolbar.css', 'prismjs/plugins/line-numbers/prism-line-numbers.css']
+  - var vendorScripts = ['prismjs/components/prism-core.min.js', 'prismjs/components/prism-markup.min.js', 'prismjs/components/prism-clike.min.js', 'prismjs/components/prism-javascript.min.js', 'prismjs/components/prism-pug.min.js', 'prismjs/plugins/toolbar/prism-toolbar.min.js', 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js', 'prismjs/plugins/line-numbers/prism-line-numbers.min.js']
+  - var pageTitle = 'Carousel'
+  - var pageSubtitle = 'A slideshow component for cycling through elements (images or slides of text) like a carousel.'
+  - var isPageTitleBadge = true
+  - var anchorNav = [{'title': 'One item + Dots + Loop (defaults)', 'link': '#carousel-example1'}, {'title': 'One item + Static controls + Dots inside + No loop', 'link': '#carousel-example2'}, {'title': 'Vertical carousel + Loop + No dots', 'link': '#carousel-example3'}, {'title': 'Multiple items + Static controls outside + No dots + Loop (Responsive)', 'link': '#carousel-example4'}, {'title': 'One item + Fade transition + Dots + Loop', 'link': '#carousel-example5'}]
+  
+//- Page Content
+block content
+
+  .alert.alert-info.alert-with-icon.mt-n3.mb-4(role='alert')
+    .alert-icon-box
+      i.alert-icon.czi-announcement
+    p.font-size-md.mb-0 Make sure to link to <strong>Tiny Slider css and js</strong> files in your document: <strong>vendor/tiny-slider/dist/tiny-slider.css</strong> and <strong>vendor/tiny-slider/dist/min/tiny-slider.js</strong>. Use this page as a reference.   
+
+  //-- Styles For Demo purpose only
+  style.
+    .example-code {
+      padding-top: 0 !important;
+    }
+    div.code-toolbar > .toolbar {
+      display: none;
+    }
+  //-- End of styles
+  .bg-secondary.rounded-lg.p-4.mb-5
+    p.font-size-sm You can alter carousel look and behaviour via modifier CSS classes and flexible data API.
+    h6.font-size-sm Basic HTML structure:
+    pre.example-code
+      code(class='lang-html').
+        &lt;div class=&quot;cz-carousel cz-dots-enabled&quot;&gt;
+          &lt;div class=&quot;cz-carousel-inner&quot; data-carousel-options='{}'&gt;
+            &lt;!-- Carousel slides here --&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    h6.font-size-sm Modifier classes:
+    ul.list-unstyled.font-size-sm
+      li
+        code cz-dots-enabled
+        span &nbsp;- Helper class to align absolute positioned controls (prev/next) when nav (dots) are enabled.
+      li
+        code cz-controls-lg
+        span &nbsp;- Large controls (prev/next buttons).
+      li
+        code cz-controls-sm
+        span &nbsp;- Small controls (prev/next buttons).
+      li
+        code cz-controls-static
+        span &nbsp;- Controls (prev/next buttons) are always visible.
+      li
+        code cz-controls-outside
+        span &nbsp;- Controls (prev/next buttons) are placed outside of carousel content.
+      li
+        code cz-dots-inside
+        span &nbsp;- Position dots absolutely on top of the carousel content.
+      li
+        code cz-dots-light
+        span &nbsp;- Switch dots skin to light version.
+    h6.font-size-sm Data API:
+    code.font-size-sm data-carousel-options = '{}'
+    | :
+    ul.list-unstyled.font-size-sm.mb-0
+      li
+        code "mode": "carousel" | "gallery"
+        span &nbsp;- With carousel everything slides to the side, while gallery uses fade animations and changes all slides at once.
+      li
+        code "axis": "horizontal" | "vertical"
+        span &nbsp;- The axis of the slider.
+      li
+        code "items": 1
+        span &nbsp;- How many items to display
+      li
+        code "nav": true/false
+        span  Enable/disable dots control
+      li
+        code "controls": true/false
+        span  Enable/disable prev / next arrow buttons
+      li
+        code "loop": true/false
+        span  Enable/disable infinite loop
+      li
+        code "speed": 300
+        span  Speed of the slide animation (in "ms")
+      li
+        code "autoplay": true/false
+        span  Toggles the automatic change of slides
+      li
+        code "autoplayTimeout": 5000
+        span  Timeou between transition. Value in ms | 1000ms = 1s
+      li
+        code "gutter": 0
+        span  Space between carousel items (in px)
+      li
+        code "autoHeight": true/false
+        span  Height of slider container changes according to each slide's height.
+      li
+        code "responsive": {"0": {"items": 1}, "768": {"items": 2}, ...}
+        span  How many items to display on each screen size. Options are not limited to number of items. You can change any option based on screen size.
+      li.font-weight-medium.pt-3
+        | For more options please visit
+        a(href='https://github.com/ganlanyuan/tiny-slider#options' target='_blank' rel='noopener').ml-2
+          | https://github.com/ganlanyuan/tiny-slider#options
+
+  // One item + Dots + Loop (defaults)
+  section#carousel-example1.pb-5.mb-md-2
+    h2.h5.mb-3 One item + Dots + Loop (defaults)
+    .card.border-0.box-shadow
+      .card-header
+        ul(role='tablist').nav.nav-tabs.card-header-tabs
+          li.nav-item
+            a(href='#result1' data-toggle='tab' role='tab' aria-controls='result1' aria-selected='true').nav-link.active Result
+          li.nav-item
+            a(href='#html1' data-toggle='tab' role='tab' aria-controls='html1' aria-selected='false').nav-link HTML
+          li.nav-item
+            a(href='#pug1' data-toggle='tab' role='tab' aria-controls='pug1' aria-selected='false').nav-link Pug
+      .card-body
+        .tab-content
+          #result1.tab-pane.fade.show.active(role='tabpanel')
+            .cz-carousel.cz-dots-enabled(style='max-width: 50rem;')
+              .cz-carousel-inner
+                +image('img/components/carousel/01.jpg', 'Image')
+                +image('img/components/carousel/02.jpg', 'Image')
+                +image('img/components/carousel/03.jpg', 'Image')
+          #html1.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-html').
+                &lt;!-- One item + Dots + Loop (defaults) --&gt;
+                &lt;div class=&quot;cz-carousel cz-dots-enabled&quot;&gt;
+                  &lt;div class=&quot;cz-carousel-inner&quot;&gt;
+                    &lt;img src=&quot;path-to-image&quot; alt=&quot;...&quot;&gt;
+                    &lt;img src=&quot;path-to-image&quot; alt=&quot;...&quot;&gt;
+                    &lt;img src=&quot;path-to-image&quot; alt=&quot;...&quot;&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+          #pug1.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-pug').
+                // One item + Dots + Loop (defaults)
+                .cz-carousel.cz-dots-enabled
+                  .cz-carousel-inner
+                    +image(&quot;path-to-image&quot;, &quot;Alt text&quot;)
+                    +image(&quot;path-to-image&quot;, &quot;Alt text&quot;)
+                    +image(&quot;path-to-image&quot;, &quot;Alt text&quot;)
+
+  // One item + Static controls + Dots inside + No loop
+  section#carousel-example2.pb-5.mb-md-2
+    h2.h5.mb-3 One item + Static controls + Dots inside + No loop
+    .card.border-0.box-shadow
+      .card-header
+        ul(role='tablist').nav.nav-tabs.card-header-tabs
+          li.nav-item
+            a(href='#result2' data-toggle='tab' role='tab' aria-controls='result2' aria-selected='true').nav-link.active Result
+          li.nav-item
+            a(href='#html2' data-toggle='tab' role='tab' aria-controls='html2' aria-selected='false').nav-link HTML
+          li.nav-item
+            a(href='#pug2' data-toggle='tab' role='tab' aria-controls='pug2' aria-selected='false').nav-link Pug
+      .card-body
+        .tab-content
+          #result2.tab-pane.fade.show.active(role='tabpanel')
+            .cz-carousel.cz-controls-static.cz-dots-enabled.cz-dots-light.cz-dots-inside(style='max-width: 50rem;')
+              .cz-carousel-inner(data-carousel-options='{"loop": false}')
+                +image('img/components/carousel/04.jpg', 'Image')
+                +image('img/components/carousel/05.jpg', 'Image')
+                +image('img/components/carousel/06.jpg', 'Image')
+          #html2.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-html').
+                &lt;!-- One item + Static controls + Dots inside + No loop --&gt;
+                &lt;div class=&quot;cz-carousel cz-controls-static cz-dots-enabled cz-dots-light cz-dots-inside&quot;&gt;
+                  &lt;div class=&quot;cz-carousel-inner&quot; data-carousel-options='{&quot;loop&quot;: false}'&gt;
+                    &lt;img src=&quot;path-to-image&quot; alt=&quot;...&quot;&gt;
+                    &lt;img src=&quot;path-to-image&quot; alt=&quot;...&quot;&gt;
+                    &lt;img src=&quot;path-to-image&quot; alt=&quot;...&quot;&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+          #pug2.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-pug').
+                // One item + Static controls + Dots inside + No loop
+                .cz-carousel.cz-controls-static.cz-dots-enabled.cz-dots-light.cz-dots-inside
+                  .cz-carousel-inner(data-carousel-options='{&quot;loop&quot;: false}')
+                    +image(&quot;path-to-image&quot;, &quot;Alt text&quot;)
+                    +image(&quot;path-to-image&quot;, &quot;Alt text&quot;)
+                    +image(&quot;path-to-image&quot;, &quot;Alt text&quot;)
+
+  // Vertical carousel + Loop + No dots
+  section#carousel-example3.pb-5.mb-md-2
+    h2.h5.mb-3 Vertical carousel + No dots
+    .card.border-0.box-shadow
+      .card-header
+        ul(role='tablist').nav.nav-tabs.card-header-tabs
+          li.nav-item
+            a(href='#result3' data-toggle='tab' role='tab' aria-controls='result3' aria-selected='true').nav-link.active Result
+          li.nav-item
+            a(href='#html3' data-toggle='tab' role='tab' aria-controls='html3' aria-selected='false').nav-link HTML
+          li.nav-item
+            a(href='#pug3' data-toggle='tab' role='tab' aria-controls='pug3' aria-selected='false').nav-link Pug
+      .card-body
+        .tab-content
+          #result3.tab-pane.fade.show.active(role='tabpanel')
+            .cz-carousel(style='max-width: 50rem;')
+              .cz-carousel-inner(data-carousel-options='{"axis": "vertical", "nav": false}')
+                +image('img/components/carousel/03.jpg', 'Image')
+                +image('img/components/carousel/01.jpg', 'Image')
+                +image('img/components/carousel/02.jpg', 'Image')
+          #html3.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-html').
+                &lt;!-- Vertical carousel + Loop + No dots --&gt;
+                &lt;div class=&quot;cz-carousel&quot;&gt;
+                  &lt;div class=&quot;cz-carousel-inner&quot; data-carousel-options='{&quot;axis&quot;: &quot;vertical&quot;, &quot;nav&quot;: false}'&gt;
+                    &lt;img src=&quot;path-to-image&quot; alt=&quot;...&quot;&gt;
+                    &lt;img src=&quot;path-to-image&quot; alt=&quot;...&quot;&gt;
+                    &lt;img src=&quot;path-to-image&quot; alt=&quot;...&quot;&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+          #pug3.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-pug').
+                // Vertical carousel + Loop + No dots
+                .cz-carousel
+                  .cz-carousel-inner(data-carousel-options='{&quot;axis&quot;: &quot;vertical&quot;, &quot;nav&quot;: false}')
+                    +image(&quot;path-to-image&quot;, &quot;Alt text&quot;)
+                    +image(&quot;path-to-image&quot;, &quot;Alt text&quot;)
+                    +image(&quot;path-to-image&quot;, &quot;Alt text&quot;)
+
+  // Multiple items + Static controls outside + No dots + Loop (Responsive)
+  section#carousel-example4.pb-5.mb-md-2
+    h2.h5.mb-3 Multiple items + Static controls outside + No dots + Loop (Responsive)
+    .card.border-0.box-shadow
+      .card-header
+        ul(role='tablist').nav.nav-tabs.card-header-tabs
+          li.nav-item
+            a(href='#result4' data-toggle='tab' role='tab' aria-controls='result4' aria-selected='true').nav-link.active Result
+          li.nav-item
+            a(href='#html4' data-toggle='tab' role='tab' aria-controls='html4' aria-selected='false').nav-link HTML
+          li.nav-item
+            a(href='#pug4' data-toggle='tab' role='tab' aria-controls='pug4' aria-selected='false').nav-link Pug
+      .card-body
+        .tab-content
+          #result4.tab-pane.fade.show.active(role='tabpanel')
+            .cz-carousel.cz-controls-static.cz-controls-outside
+              .cz-carousel-inner(data-carousel-options='{"items": 3, "nav": false, "responsive": {"0":{"items":1},"500":{"items":2, "gutter": 18},"768":{"items":3, "gutter": 20}, "1100":{"gutter": 24}}}')
+                +image('img/components/carousel/04.jpg', 'Image')
+                +image('img/components/carousel/05.jpg', 'Image')
+                +image('img/components/carousel/06.jpg', 'Image')
+                +image('img/components/carousel/07.jpg', 'Image')
+          #html4.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-html').
+                &lt;!-- Multiple items + Static controls outside + No dots + Loop (Responsive) --&gt;
+                &lt;div class=&quot;cz-carousel cz-controls-static cz-controls-outside&quot;&gt;
+                  &lt;div class=&quot;cz-carousel-inner&quot; data-carousel-options='{&quot;items&quot;: 3, &quot;nav&quot;: false, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;500&quot;:{&quot;items&quot;:2, &quot;gutter&quot;: 18},&quot;768&quot;:{&quot;items&quot;:3, &quot;gutter&quot;: 20}, &quot;1100&quot;:{&quot;gutter&quot;: 24}}}'&gt;
+                    &lt;img src=&quot;path-to-image&quot; alt=&quot;...&quot;&gt;
+                    &lt;img src=&quot;path-to-image&quot; alt=&quot;...&quot;&gt;
+                    &lt;img src=&quot;path-to-image&quot; alt=&quot;...&quot;&gt;
+                    &lt;img src=&quot;path-to-image&quot; alt=&quot;...&quot;&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+          #pug4.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-pug').
+                // Multiple items + Static controls outside + No dots + Loop (Responsive)
+                .cz-carousel.cz-controls-static.cz-controls-outside
+                  .cz-carousel-inner(data-carousel-options='{&quot;items&quot;: 3, &quot;nav&quot;: false, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;500&quot;:{&quot;items&quot;:2, &quot;gutter&quot;: 18},&quot;768&quot;:{&quot;items&quot;:3, &quot;gutter&quot;: 20}, &quot;1100&quot;:{&quot;gutter&quot;: 24}}}')
+                    +image(&quot;path-to-image&quot;, &quot;Alt text&quot;)
+                    +image(&quot;path-to-image&quot;, &quot;Alt text&quot;)
+                    +image(&quot;path-to-image&quot;, &quot;Alt text&quot;)
+                    +image(&quot;path-to-image&quot;, &quot;Alt text&quot;)
+
+  // One item + Fade transition + Dots + Loop
+  section#carousel-example5.pb-5.mb-md-2
+    h2.h5.mb-3 One item + Fade transition + Dots + Loop
+    .card.border-0.box-shadow
+      .card-header
+        ul(role='tablist').nav.nav-tabs.card-header-tabs
+          li.nav-item
+            a(href='#result5' data-toggle='tab' role='tab' aria-controls='result5' aria-selected='true').nav-link.active Result
+          li.nav-item
+            a(href='#html5' data-toggle='tab' role='tab' aria-controls='html5' aria-selected='false').nav-link HTML
+          li.nav-item
+            a(href='#pug5' data-toggle='tab' role='tab' aria-controls='pug5' aria-selected='false').nav-link Pug
+      .card-body
+        .tab-content
+          #result5.tab-pane.fade.show.active(role='tabpanel')
+            .cz-carousel.cz-dots-enabled(style='max-width: 50rem;')
+              .cz-carousel-inner(data-carousel-options='{"mode": "gallery", "speed": 1000}')
+                +image('img/components/carousel/01.jpg', 'Image')
+                +image('img/components/carousel/02.jpg', 'Image')
+                +image('img/components/carousel/03.jpg', 'Image')
+          #html5.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-html').
+                &lt;!-- One item + Fade transition + Dots + Loop --&gt;
+                &lt;div class=&quot;cz-carousel cz-dots-enabled&quot;&gt;
+                  &lt;div class=&quot;cz-carousel-inner data-carousel-options='{&quot;mode&quot;: &quot;gallery&quot;, &quot;speed&quot;: 1000}'&quot;&gt;
+                    &lt;img src=&quot;path-to-image&quot; alt=&quot;...&quot;&gt;
+                    &lt;img src=&quot;path-to-image&quot; alt=&quot;...&quot;&gt;
+                    &lt;img src=&quot;path-to-image&quot; alt=&quot;...&quot;&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+          #pug5.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-pug').
+                // One item + Fade transition + Dots + Loop
+                .cz-carousel.cz-dots-enabled
+                  .cz-carousel-inner(data-carousel-options='{&quot;mode&quot;: &quot;gallery&quot;, &quot;speed&quot;: 1000}')
+                    +image(&quot;path-to-image&quot;, &quot;Alt text&quot;)
+                    +image(&quot;path-to-image&quot;, &quot;Alt text&quot;)
+                    +image(&quot;path-to-image&quot;, &quot;Alt text&quot;)

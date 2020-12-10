@@ -1,0 +1,247 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var pageTitle = 'Account Settings'
+  - var parentMenu = 'Account'
+
+//- Navbar + Modal
+block navbar
+  include partials/modal-payment
+  include partials/navbar-marketplace
+
+//- Page Content
+block content
+
+  //- dashboard-header.pug template
+  include partials/dashboard-header
+
+  .container.mb-5.pb-3
+    .bg-light.box-shadow-lg.rounded-lg.overflow-hidden
+      .row
+
+        // Sidebar
+        aside.col-lg-4
+          //- sidebar-dashboard.pug template
+          include partials/sidebar-dashboard
+
+        // Content
+        section.col-lg-8.pt-lg-4.pb-4.mb-3
+          .pt-2.px-4.pl-lg-0.pr-xl-5
+            h2.h3.py-2.text-center.text-sm-left Settings
+
+            // Tabs
+            ul(role='tablist').nav.nav-tabs.nav-justified
+              li.nav-item
+                a(href='#profile' data-toggle='tab' role='tab').nav-link.px-0.active
+                  .d-none.d-lg-block
+                    i.czi-user.opacity-60.mr-2
+                    | Profile
+                  .d-lg-none.text-center
+                    i.czi-user.opacity-60.d-block.font-size-xl.mb-2
+                    span.font-size-ms Profile
+              li.nav-item
+                a(href='#notifications' data-toggle='tab' role='tab').nav-link.px-0
+                  .d-none.d-lg-block
+                    i.czi-bell.opacity-60.mr-2
+                    | Notifications
+                  .d-lg-none.text-center
+                    i.czi-bell.opacity-60.d-block.font-size-xl.mb-2
+                    span.font-size-ms Notifications
+              li.nav-item
+                a(href='#payment' data-toggle='tab' role='tab').nav-link.px-0
+                  .d-none.d-lg-block
+                    i.czi-card.opacity-60.mr-2
+                    | Payment methods
+                  .d-lg-none.text-center
+                    i.czi-card.opacity-60.d-block.font-size-xl.mb-2
+                    span.font-size-ms Payment
+            
+            // Tab content
+            .tab-content
+
+              // Profile
+              #profile.tab-pane.fade.show.active(role='tabpanel')
+                .bg-secondary.rounded-lg.p-4.mb-4
+                  .media.align-items-center
+                    img(src='img/marketplace/account/avatar.png' width='90' alt='Createx Studio')
+                    .media-body.pl-3
+                      button(type='button').btn.btn-light.btn-shadow.btn-sm.mb-2
+                        i.czi-loading.mr-2
+                        | Change <span class='d-none d-sm-inline'>avatar</span>
+                      .p.mb-0.font-size-ms.text-muted Upload JPG, GIF or PNG image. 300 x 300 required.
+                .row
+                  .col-sm-6
+                    .form-group
+                      label(for='dashboard-fn') First Name
+                      input(type='text' id='dashboard-fn' value='John').form-control
+                  .col-sm-6
+                    .form-group
+                      label(for='dashboard-ln') Last Name
+                      input(type='text' id='dashboard-ln' value='Doe').form-control
+                  .col-sm-6
+                    .form-group
+                      label(for='dashboard-email') Email address
+                      input(type='text' id='dashboard-email' value='contact@example.com' disabled).form-control
+                  .col-sm-6
+                    .form-group
+                      label(for='dashboard-profile-name') Profile Name
+                      input(type='text' id='dashboard-profile-name' value='Createx Studio').form-control
+                  .col-sm-6
+                    .form-group
+                      label(for='dashboard-country') Country
+                      select(id='dashboard-country' class='custom-select')
+                        option(value) Select country
+                        option(value='Argentina') Argentina
+                        option(value='Belgium') Belgium
+                        option(value='France') France
+                        option(value='Germany') Germany
+                        option(value='Madagascar' selected) Madagascar
+                        option(value='Spain') Spain
+                        option(value='UK') United Kingdom
+                        option(value='USA') USA
+                  .col-sm-6
+                    .form-group
+                      label(for='dashboard-city') City
+                      input(type='text' id='dashboard-city' value='Antananarivo').form-control
+                  .col-sm-6
+                    .form-group
+                      label(for='dashboard-address') Address Line
+                      input(type='text' id='dashboard-address' value='Some Cool Street, 22/1').form-control
+                  .col-sm-6
+                    .form-group
+                      label(for='dashboard-zip') ZIP Code
+                      input(type='text' id='dashboard-zip').form-control
+                  .col-12
+                    hr.mt-2.mb-3
+                    .d-flex.flex-wrap.justify-content-between.align-items-center
+                      .custom-control.custom-checkbox.d-block
+                        input(type='checkbox' id='freelancer' checked).custom-control-input
+                        label(for='freelancer').custom-control-label I'm available for freelance
+                      button(type='button' class='btn btn-primary mt-3 mt-sm-0') Save changes
+
+              // Notifications
+              #notifications.tab-pane.fade(role='tabpanel')
+                .bg-secondary.rounded-lg.p-4
+                  .custom-control.custom-switch
+                    input(type='checkbox' id='nf-disable-all').custom-control-input
+                    label(for='nf-disable-all').custom-control-label.font-weight-medium Disable all notifications
+                .border-bottom.p-4
+                  .custom-control.custom-switch
+                    input(type='checkbox' id='nf-product-sold' checked).custom-control-input
+                    label(for='nf-product-sold').custom-control-label Product sold notifications
+                  small.form-text.text-muted Send an email when someone purchased one of my products
+                .border-bottom.p-4
+                  .custom-control.custom-switch
+                    input(type='checkbox' id='nf-product-updated' checked).custom-control-input
+                    label(for='nf-product-updated').custom-control-label Product update notifications
+                  small.form-text.text-muted Send an email when a product I've purchased is updated
+                .border-bottom.p-4
+                  .custom-control.custom-switch
+                    input(type='checkbox' id='nf-product-comment' checked).custom-control-input
+                    label(for='nf-product-comment').custom-control-label Product comment notifications
+                  small.form-text.text-muted Send an email when someone comments on one of my products
+                .border-bottom.p-4
+                  .custom-control.custom-switch
+                    input(type='checkbox' id='nf-product-review' checked).custom-control-input
+                    label(for='nf-product-review').custom-control-label Product review notification
+                  small.form-text.text-muted Send an email when someone leaves a review with their rating
+                .border-bottom.p-4
+                  .custom-control.custom-switch
+                    input(type='checkbox' id='nf-daily-summary').custom-control-input
+                    label(for='nf-daily-summary').custom-control-label Daily summary emails
+                  small.form-text.text-muted Send me a daily summary of all products sold, commented or reviewed
+                .text-right.mt-4
+                  button(type='button' class='btn btn-primary') Save changes
+
+              // Payment methods
+              #payment.tab-pane.fade(role='tabpanel')
+                .bg-secondary.rounded-lg.p-4.mb-4
+                  p.font-size-sm.text-muted.mb-0 Primary payment method is used by default
+                .table-responsive.font-size-md
+                  table.table.table-hover.mb-0
+                    thead
+                      tr
+                        th Your credit / debit cards
+                        th Name on card
+                        th Expires on
+                        th
+                    tbody
+                      tr
+                        td.py-3.align-middle
+                          .media.align-items-center
+                            img(src='img/card-visa.png' width='39' alt='Visa').mr-2
+                            .media-body
+                              span.font-weight-medium.text-heading.mr-1 Visa
+                              | ending in 4999
+                              span.align-middle.badge.badge-info.ml-2 Primary
+                        td.py-3.align-middle John doe
+                        td.py-3.align-middle 08 / 2019
+                        td.py-3.align-middle
+                          a(href='#' data-toggle='tooltip' title='Edit').nav-link-style.mr-2
+                            i.czi-edit
+                          a(href='#' data-toggle='tooltip' title='Remove').nav-link-style.text-danger
+                            .czi-trash
+                      tr
+                        td.py-3.align-middle
+                          .media.align-items-center
+                            img(src='img/card-master.png' width='39' alt='MesterCard').mr-2
+                            .media-body
+                              span.font-weight-medium.text-heading.mr-1 MasterCard
+                              | ending in 0015
+                        td.py-3.align-middle John doe
+                        td.py-3.align-middle 11 / 2021
+                        td.py-3.align-middle
+                          a(href='#' data-toggle='tooltip' title='Edit').nav-link-style.mr-2
+                            i.czi-edit
+                          a(href='#' data-toggle='tooltip' title='Remove').nav-link-style.text-danger
+                            .czi-trash
+                      tr
+                        td.py-3.align-middle
+                          .media.align-items-center
+                            img(src='img/card-paypal.png' width='39' alt='PayPal').mr-2
+                            .media-body
+                              span.font-weight-medium.text-heading.mr-1 PayPal
+                              | j.doe@example.com
+                        td.py-3.align-middle &mdash;
+                        td.py-3.align-middle &mdash;
+                        td.py-3.align-middle
+                          a(href='#' data-toggle='tooltip' title='Edit').nav-link-style.mr-2
+                            i.czi-edit
+                          a(href='#' data-toggle='tooltip' title='Remove').nav-link-style.text-danger
+                            .czi-trash
+                      tr
+                        td.py-3.align-middle
+                          .media.align-items-center
+                            img(src='img/card-visa.png' width='39' alt='Visa').mr-2
+                            .media-body
+                              span.font-weight-medium.text-heading.mr-1 Visa
+                              | ending in 6073
+                        td.py-3.align-middle John doe
+                        td.py-3.align-middle 09 / 2021
+                        td.py-3.align-middle
+                          a(href='#' data-toggle='tooltip' title='Edit').nav-link-style.mr-2
+                            i.czi-edit
+                          a(href='#' data-toggle='tooltip' title='Remove').nav-link-style.text-danger
+                            .czi-trash
+                      tr
+                        td.py-3.align-middle
+                          .media.align-items-center
+                            img(src='img/card-visa.png' width='39' alt='Visa').mr-2
+                            .media-body
+                              span.font-weight-medium.text-heading.mr-1 Visa
+                              | ending in 9791
+                        td.py-3.align-middle John doe
+                        td.py-3.align-middle 05 / 2021
+                        td.py-3.align-middle
+                          a(href='#' data-toggle='tooltip' title='Edit').nav-link-style.mr-2
+                            i.czi-edit
+                          a(href='#' data-toggle='tooltip' title='Remove').nav-link-style.text-danger
+                            .czi-trash
+                hr.pb-4
+                .text-sm-right
+                  a(href='#add-payment' class='btn btn-primary' data-toggle='modal') Add payment method
+
+//- Footer
+block footer
+  include partials/footer-marketplace

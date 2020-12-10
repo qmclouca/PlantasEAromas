@@ -1,0 +1,115 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var pageTitle = 'Signle ticket'
+  - var breadcrumbs = [{'title': 'Account', 'link': '#'}, {'title': 'Single ticket'}]
+  - var parentMenu = 'Account'
+
+//- Navbar
+block navbar
+  include partials/navbar-3-level-light
+
+//- Page title
+block page-title
+  include partials/page-title-shop
+
+//- Page Content
+block content
+
+  .container.pb-5.mb-2.mb-md-3
+    .row
+
+      // Sidebar
+      aside.col-lg-4.pt-4.pt-lg-0
+        //- sidebar-account.pug template
+        include partials/sidebar-account
+
+      // Content  
+      section.col-lg-8
+
+        // Toolbar
+        .d-none.d-lg-flex.justify-content-between.align-items-center.pt-lg-3.pb-4.pb-lg-5.mb-lg-4
+          .d-flex.w-100.text-light.text-center.mr-3
+            .font-size-ms.px-3
+              .font-weight-medium Date Submitted
+              .opacity-60 09/27/2019
+            .font-size-ms.px-3
+              .font-weight-medium Last Updated
+              .opacity-60 09/30/2019
+            .font-size-ms.px-3
+              .font-weight-medium Type
+              .opacity-60 Website problem
+            .font-size-ms.px-3
+              .font-weight-medium Priority
+              span.badge.badge-warning High
+            .font-size-ms.px-3
+              .font-weight-medium Status
+              span.badge.badge-success Open
+          a(href='account-signin.html').btn.btn-primary.btn-sm
+            i.czi-sign-out.mr-3
+            | Sign out
+        
+        // Ticket details (visible on mobile)
+        .d-flex.d-lg-none.flex-wrap.bg-secondary.text-center.rounded-lg.pt-4.px-4.pb-1.mb-4
+          .font-size-sm.px-3.pb-3
+            .font-weight-medium Date Submitted
+            .text-muted 09/27/2019
+          .font-size-sm.px-3.pb-3
+            .font-weight-medium Last Updated
+            .text-muted 09/30/2019
+          .font-size-sm.px-3.pb-3
+            .font-weight-medium Type
+            .text-muted Website problem
+          .font-size-sm.px-3.pb-3
+            .font-weight-medium Priority
+            span.badge.badge-warning High
+          .font-size-sm.px-3.pb-3
+            .font-weight-medium Status
+            span.badge.badge-success Open
+
+        // Comment
+        .media.pb-4.border-bottom
+          +image('img/testimonials/03.jpg', 'Michael Davis')(width='50').rounded-circle
+          .media-body.pl-3
+            h6.font-size-md.mb-2 Michael Davis
+            p.font-size-md.mb-1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat cupidatat non proident, sunt in culpa qui.
+            span.font-size-ms.text-muted
+              i.czi-time.align-middle.mr-2
+              | Sep 30, 2019 at 11:05AM
+
+        // Comment reply
+        .media.py-4.border-bottom
+          +image('img/testimonials/03.jpg', 'Michael Davis')(width='50').rounded-circle
+          .media-body.pl-3
+            h6.font-size-md.mb-2 Michael Davis
+            p.font-size-md.mb-1 Sed elementum tempus egestas sed sed. Aliquam faucibus purus in massa tempor nec feugiat. Interdum varius sit amet mattis. Magna ac placerat vestibulum lectus mauris. Magna fringilla urna porttitor rhoncus dolor purus non. Urna et pharetra pharetra massa massa ultricies mi quis.
+            span.font-size-ms.text-muted
+              i.czi-time.align-middle.mr-2
+              | Sep 28, 2019 at 10:00AM
+
+            // Comment
+            .media.border-top.pt-4.mt-4
+              +image('img/testimonials/04.jpg', 'Susan Gardner')(width='50').rounded-circle
+              .media-body.pl-3
+                h6.font-size-md.mb-2 Susan Gardner
+                p.font-size-md.mb-1 Egestas sed sed risus pretium quam vulputate dignissim. A diam sollicitudin tempor id eu nisl. Ut porttitor leo a diam. Bibendum at varius vel pharetra vel turpis nunc.
+                span.font-size-ms.text-muted
+                  i.czi-time.align-middle.mr-2
+                  | Sep 27, 2019 at 6:30PM
+        
+        // Leave message
+        h3.h5.mt-2.pt-4.pb-2 Leave a Message
+        form(novalidate).needs-validation
+          .form-group
+            textarea(rows='8' placeholder='Write your message here...' required).form-control
+            .invalid-tooltip Please write the message!
+          .d-flex.flex-wrap.justify-content-between.align-items-center
+            .custom-control.custom-checkbox.d-block
+              input(type='checkbox' id='close-ticket').custom-control-input
+              label(for='close-ticket').custom-control-label Submit and close the ticket
+            button(type='submit').btn.btn-primary.my-2 Submit message
+
+//- Footer
+block footer
+  include partials/footer-dark

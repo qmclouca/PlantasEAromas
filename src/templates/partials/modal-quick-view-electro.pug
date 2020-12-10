@@ -1,0 +1,114 @@
+// Quick View Modal
+#quick-view-electro.modal-quick-view.modal.fade(tabindex='-1')
+  .modal-dialog.modal-xl
+    .modal-content
+      .modal-header
+        h4.modal-title.product-title
+          a(href='shop-single-v2.html' data-toggle='tooltip' data-placement='right' title='Go to product page')
+            | Smartwatch Youth Edition
+            i.czi-arrow-right.font-size-lg.ml-2
+        button(type='button' class='close' data-dismiss='modal' aria-label='Close')
+          span(aria-hidden='true') &times;
+      .modal-body
+        .row
+
+          // Product gallery
+          .col-lg-7.pr-lg-0
+            .cz-product-gallery
+              .cz-preview.order-sm-2
+                #first.cz-preview-item.active
+                  img(src='img/shop/single/gallery/05.jpg' data-zoom='img/shop/single/gallery/05.jpg' alt='Product image').cz-image-zoom
+                  .cz-image-zoom-pane
+                #second.cz-preview-item
+                  img(src='img/shop/single/gallery/06.jpg' data-zoom='img/shop/single/gallery/06.jpg' alt='Product image').cz-image-zoom
+                  .cz-image-zoom-pane
+                #third.cz-preview-item
+                  img(src='img/shop/single/gallery/07.jpg' data-zoom='img/shop/single/gallery/07.jpg' alt='Product image').cz-image-zoom
+                  .cz-image-zoom-pane
+                #fourth.cz-preview-item
+                  img(src='img/shop/single/gallery/08.jpg' data-zoom='img/shop/single/gallery/08.jpg' alt='Product image').cz-image-zoom
+                  .cz-image-zoom-pane
+              .cz-thumblist.order-sm-1
+                a(href='#first').cz-thumblist-item.active
+                  img(src='img/shop/single/gallery/th05.jpg' alt='Product thumb')
+                a(href='#second').cz-thumblist-item
+                  img(src='img/shop/single/gallery/th06.jpg' alt='Product thumb')
+                a(href='#third').cz-thumblist-item
+                  img(src='img/shop/single/gallery/th07.jpg' alt='Product thumb')
+                a(href='#fourth').cz-thumblist-item
+                  img(src='img/shop/single/gallery/th08.jpg' alt='Product thumb')
+
+          // Product details
+          .col-lg-5.pt-4.pt-lg-0.cz-image-zoom-pane
+            .product-details.ml-auto.pb-3
+              .mb-2
+                +star-rating(4)
+                span.d-inline-block.font-size-sm.text-body.align-middle.mt-1.ml-1 74 Reviews
+              .h3.font-weight-normal.text-accent.mb-3.mr-1 $124.<small>99</small>
+              .font-size-sm.mb-4
+                span.text-heading.font-weight-medium.mr-1 Color:
+                span.text-muted Dark blue/Orange
+              .position-relative.mr-n4.mb-3
+                .custom-control.custom-option.custom-control-inline.mb-2
+                  input(type='radio' name='color' id='color1' checked).custom-control-input
+                  label(for='color1').custom-option-label.rounded-circle
+                    span(style='background-color: #f25540;').custom-option-color.rounded-circle
+                .custom-control.custom-option.custom-control-inline.mb-2
+                  input(type='radio' name='color' id='color2').custom-control-input
+                  label(for='color2').custom-option-label.rounded-circle
+                    span(style='background-color: #65805b;').custom-option-color.rounded-circle
+                .custom-control.custom-option.custom-control-inline.mb-2
+                  input(type='radio' name='color' id='color3').custom-control-input
+                  label(for='color3').custom-option-label.rounded-circle
+                    span(style='background-color: #f5f5f5;').custom-option-color.rounded-circle
+                .custom-control.custom-option.custom-control-inline.mb-2
+                  input(type='radio' name='color' id='color4').custom-control-input
+                  label(for='color4').custom-option-label.rounded-circle
+                    span(style='background-color: #333;').custom-option-color.rounded-circle
+                .product-badge.product-available.mt-n1
+                  i.czi-security-check
+                  | Product available
+              .d-flex.align-items-center.pt-2.pb-4
+                select(style='width: 5rem;').custom-select.mr-3
+                  option(value='1') 1
+                  option(value='2') 2
+                  option(value='3') 3
+                  option(value='4') 4
+                  option(value='5') 5
+                button(type='button').btn.btn-primary.btn-shadow.btn-block
+                  i.czi-cart.font-size-lg.mr-2
+                  | Add to Cart
+              .d-flex.mb-4
+                .w-100.mr-3
+                  button(type='button').btn.btn-secondary.btn-block
+                    i.czi-heart.font-size-lg.mr-2
+                    | <span class='d-none d-sm-inline'>Add to </span>Wishlist
+                .w-100
+                  button(type='button').btn.btn-secondary.btn-block
+                    i.czi-compare.font-size-lg.mr-2
+                    | Compare
+              h5.h6.mb-3.py-2.border-bottom
+                i.czi-announcement.text-muted.font-size-lg.align-middle.mt-n1.mr-2
+                | Product info
+              h6.font-size-sm.mb-2 General
+              ul.font-size-sm.pb-2
+                li
+                  span.text-muted Model: 
+                  | Amazfit Smartwatch
+                li
+                  span.text-muted Gender: 
+                  | Unisex
+                li
+                  span.text-muted OS campitibility: 
+                  | Android / iOS
+              h6.font-size-sm.mb-2 Physical specs
+              ul.font-size-sm.pb-2
+                li
+                  span.text-muted Shape: 
+                  | Rectangular
+                li
+                  span.text-muted Body material: 
+                  | Plastics / Ceramics
+                li
+                  span.text-muted Band material: 
+                  | Silicone

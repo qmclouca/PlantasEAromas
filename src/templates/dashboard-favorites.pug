@@ -1,0 +1,119 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var pageTitle = 'Favorites'
+  - var parentMenu = 'Account'
+
+//- Navbar
+block navbar
+  include partials/navbar-marketplace
+
+//- Page Content
+block content
+
+  //- dashboard-header.pug template
+  include partials/dashboard-header
+
+  .container.mb-5.pb-3
+    .bg-light.box-shadow-lg.rounded-lg.overflow-hidden
+      .row
+
+        // Sidebar
+        aside.col-lg-4
+          //- sidebar-dashboard.pug template
+          include partials/sidebar-dashboard
+
+        // Content
+        section.col-lg-8.pt-lg-4.pb-4.mb-3
+          .pt-2.px-4.pl-lg-0.pr-xl-5
+            h2.h3.pt-2.pb-4.mb-0.text-center.text-sm-left.border-bottom
+              | Favorites
+              span.badge.badge-secondary.font-size-sm.text-body.align-middle.ml-2 4
+
+            // Product
+            .media.d-block.d-sm-flex.align-items-center.py-4.border-bottom
+              a(href='marketplace-single.html' style='width: 12.5rem;').d-block.position-relative.mb-3.mb-sm-0.mr-sm-4.mx-auto
+                img(src='img/marketplace/products/th02.jpg' alt='Product').rounded-lg
+                span.close-floating(data-toggle='tooltip' title='Remove from Favorites'): i.czi-close
+              .media-body.text-center.text-sm-left
+                h3.h6.product-title.mb-2
+                  a(href='marketplace-single.html') UI Isometric Devices Pack (PSD)
+                .d-inline-block.text-accent
+                  | $23.<small>00</small>
+                a(href='marketplace-vendor.html').d-inline-block.text-accent.font-size-ms.border-left.ml-2.pl-2
+                  | by uidesigner
+                .form-inline.pt-2
+                  select.custom-select.custom-select-sm.my-1.mr-2
+                    option Standard license
+                    option Extended license
+                  button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm.mx-auto.mx-sm-0.my-2
+                    i.czi-cart.mr-1
+                    | Add to Cart
+
+            // Product
+            .media.d-block.d-sm-flex.align-items-center.py-4.border-bottom
+              a(href='marketplace-single.html' style='width: 12.5rem;').d-block.position-relative.mb-3.mb-sm-0.mr-sm-4.mx-auto
+                img(src='img/marketplace/products/th06.jpg' alt='Product').rounded-lg
+                span.close-floating(data-toggle='tooltip' title='Remove from Favorites'): i.czi-close
+              .media-body.text-center.text-sm-left
+                h3.h6.product-title.mb-2
+                  a(href='marketplace-single.html') Project Devices Showcase (PSD)
+                .d-inline-block.text-accent
+                  | $18.<small>00</small>
+                a(href='marketplace-vendor.html').d-inline-block.text-accent.font-size-ms.border-left.ml-2.pl-2
+                  | by pixels
+                .form-inline.pt-2
+                  select.custom-select.custom-select-sm.my-1.mr-2
+                    option Standard license
+                    option Extended license
+                  button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm.mx-auto.mx-sm-0.my-2
+                    i.czi-cart.mr-1
+                    | Add to Cart
+
+            // Product
+            .media.d-block.d-sm-flex.align-items-center.py-4.border-bottom
+              a(href='marketplace-single.html' style='width: 12.5rem;').d-block.position-relative.mb-3.mb-sm-0.mr-sm-4.mx-auto
+                img(src='img/marketplace/products/th01.jpg' alt='Product').rounded-lg
+                span.close-floating(data-toggle='tooltip' title='Remove from Favorites'): i.czi-close
+              .media-body.text-center.text-sm-left
+                h3.h6.product-title.mb-2
+                  a(href='marketplace-single.html') Top View Smartwatch 3D Render
+                .d-inline-block.text-accent
+                  | $19.<small>00</small>
+                a(href='marketplace-vendor.html').d-inline-block.text-accent.font-size-ms.border-left.ml-2.pl-2
+                  | by modello
+                .form-inline.pt-2
+                  select.custom-select.custom-select-sm.my-1.mr-2
+                    option Standard license
+                    option Extended license
+                  button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm.mx-auto.mx-sm-0.my-2
+                    i.czi-cart.mr-1
+                    | Add to Cart
+
+            // Product
+            .media.d-block.d-sm-flex.align-items-center.pt-4.pb-2
+              a(href='marketplace-single.html' style='width: 12.5rem;').d-block.position-relative.mb-3.mb-sm-0.mr-sm-4.mx-auto
+                img(src='img/marketplace/products/th07.jpg' alt='Product').rounded-lg
+                span.close-floating(data-toggle='tooltip' title='Remove from Favorites'): i.czi-close
+              .media-body.text-center.text-sm-left
+                h3.h6.product-title.mb-2
+                  a(href='marketplace-single.html') Gravity Devices UI Mockup (PSD)
+                .d-inline-block.text-accent
+                  | $15.<small>00</small>
+                a(href='marketplace-vendor.html').d-inline-block.text-accent.font-size-ms.border-left.ml-2.pl-2
+                  | by pixels
+                .form-inline.pt-2
+                  select.custom-select.custom-select-sm.my-1.mr-2
+                    option Standard license
+                    option Extended license
+                  button(type='button' data-toggle='toast' data-target='#cart-toast').btn.btn-primary.btn-sm.mx-auto.mx-sm-0.my-2
+                    i.czi-cart.mr-1
+                    | Add to Cart
+
+  //- toast-shop.pug template
+  include partials/toast-shop
+
+//- Footer
+block footer
+  include partials/footer-marketplace
