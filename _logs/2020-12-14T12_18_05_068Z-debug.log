@@ -1,0 +1,39 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'D:\\Program Files\\NodeJS\\node.exe',
+1 verbose cli   'D:\\Program Files\\NodeJS\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'pug',
+1 verbose cli   'globall'
+1 verbose cli ]
+2 info using npm@6.14.8
+3 info using node@v12.19.0
+4 verbose npm-session a7b1f3d688eddf22
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 http fetch GET 404 https://registry.npmjs.org/globall 1168ms
+8 http fetch GET 304 https://registry.npmjs.org/pug 1230ms (from cache)
+9 http fetch GET 200 https://registry.npmjs.org/pug/-/pug-3.0.0.tgz 18ms (from cache)
+10 silly pacote range manifest for pug@^3.0.0 fetched in 1274ms
+11 http fetch GET 404 https://registry.npmjs.org/globall 1005ms
+12 silly fetchPackageMetaData error for globall@latest 404 Not Found - GET https://registry.npmjs.org/globall - Not found
+13 timing stage:rollbackFailedOptional Completed in 0ms
+14 timing stage:runTopLevelLifecycles Completed in 3736ms
+15 verbose stack Error: 404 Not Found - GET https://registry.npmjs.org/globall - Not found
+15 verbose stack     at D:\Program Files\NodeJS\node_modules\npm\node_modules\npm-registry-fetch\check-response.js:117:15
+15 verbose stack     at processTicksAndRejections (internal/process/task_queues.js:97:5)
+16 verbose statusCode 404
+17 verbose pkgid globall@latest
+18 verbose cwd D:\PlantasEAromas\Site\FrontEnd
+19 verbose Windows_NT 10.0.18363
+20 verbose argv "D:\\Program Files\\NodeJS\\node.exe" "D:\\Program Files\\NodeJS\\node_modules\\npm\\bin\\npm-cli.js" "install" "pug" "globall"
+21 verbose node v12.19.0
+22 verbose npm  v6.14.8
+23 error code E404
+24 error 404 Not Found - GET https://registry.npmjs.org/globall - Not found
+25 error 404
+26 error 404 'globall@latest' is not in the npm registry.
+27 error 404 You should bug the author to publish it (or use the name yourself!)
+28 error 404 Note that you can also install from a
+29 error 404 tarball, folder, http url, or git url.
+30 verbose exit [ 1, true ]
