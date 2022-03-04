@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/4.0.5/typescript.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Plantas & Aromas</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+   
+    
+
+</head>
+
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/buy-button-js/2.1.7/buybutton.min.js"></script>
+    <script src="script.js"></script>
+    
+    <h1>Óleo Essencial de Melaleuca Alternifolia - Tea Tree</h1>
+    <!--Início texto aproveitado do blog-->
+<p align="justify">
+Em 2005 montei uma pequena empresa de óleos essenciais com meu pai e para iniciar a produção procurei por uma espécie de planta com algumas características especiais. A primeira demanda era por um óleo essencial que não fosse apenas aromático, mas também funciona-se como óleo vegetal medicamentoso. O segundo requisito para a planta escolhida era que não fosse nativa do Brasil. Adoro plantas nativas, mas como já expliquei em uma artigo anterior (https://www.rlbpc.me/2020/08/a-fitoquimica-brasileira-e-maravilhosa.html), é muito mais fácil trabalhar com uma planta não nativa devido as questões legislativas brasileiras. A espécie escolhida na época foi a <i>Melaleuca Alternifolia</i>, conhecida também como <i>Tea Tree</i>, ou simplesmente melaleuca.
+</p>
+<p align="justify">
+Durante o resto do ano de 2005 produzimos cerca de 10.000 mudas desta fantástica planta e preparamos a pequena instalação de extração de óleos essenciais. Basicamente esta planta era composta de um triturador de forragem, uma vaso aquecedor de água (nem vou chamar de caldeira) para gerar vapor saturado e um tanque extrator equipado com serpentinas para extrair o óleo. Apesar de serem equipamentos simples tivemos o cuidados de fazer tudo em aço inox 316L, para obter um óleo essencial livre de qualquer contaminação de metais pesados, que podem catalisar a degradação do produto e além disso prejudicar sua qualidade medicamentosa. Ao fim de intensos oito meses de trabalho de produção de mudas, colocamos todas elas no solo e agora era questão de esperar o tempo necessário para a colheira e primeira extração.
+Em teoria, a melaleuca possui 2% de óleos essenciais nas folhas, mas o que conseguimos extrair de fato após um ano de trabalho gerava cerca de 0,40% (m/m). Mesmo assim, o óleo produzido é de excelente qualidade, rico em 1-4-Terpineol, que basicamente é seu componente majoritário (típicamente superior a 36% (m/m)). Existem nesse óleo também diversos outros compostos químicos medicinais e que podem ser usados como matérias primas para produção de outros fármacos. O cromatograma típico do óleo de melaleuca produzido é mostrado na figura 1.</p>
+  <div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-0Paik11TeUo/X0pGeoli3qI/AAAAAAAANDg/PAeKT3zp4DsvnxaEKHqnUIIzu0zazyAzwCLcBGAsYHQ/s903/TeaTree.png" style="display: block; padding: 1em 0; text-align: none;"><img alt="" border="0" width="600" data-original-height="654" data-original-width="903" src="https://1.bp.blogspot.com/-0Paik11TeUo/X0pGeoli3qI/AAAAAAAANDg/PAeKT3zp4DsvnxaEKHqnUIIzu0zazyAzwCLcBGAsYHQ/s600/TeaTree.png"/></a></div>
+<strong>Figura 1: </strong>Cromatograma típico do óleo de melaleuca produzido.
+<p align="justify">
+Vou listar as características dos dois principais componentes em massa deste óleo:</p>
+<ul>
+	<li>1-4-Terpineol</li>
+		<p align="justify">
+        	<ol>
+           		<li> Propriedades antitumorais
+              		<p align="justify">
+                  	 Foi testado contra duas linhagens de células tumorais murinas agressivas, mesotelioma AE17 e melanoma B16. Seus efeitos sobre a viabilidade celular de duas linhas de células tumorais e células de fibroblastos foram avaliados por ensaio de MTT. A indução da morte celular apoptótica e necrótica foi visualizada por microscopia fluorescente e quantificada por citometria de fluxo. As alterações ultraestruturais das células tumorais foram examinadas por microscopia eletrônica de transmissão e as alterações na distribuição do ciclo celular foram avaliadas por citometria de fluxo, com as alterações na morfologia celular monitoradas por microscopia de lapso de tempo de vídeo. Os resultados mostram que o 1-4-Terpineol inibe significativamente o crescimento de duas linhas de células tumorais murinas de uma maneira dependente da dose e do tempo. Interessante acrescentar que, as doses citotóxicas de 1-4-terpineol foram significativamente menos eficazes contra células de fibroblastos não tumorais (saudáveis e portanto que devem ser preservadas). O 1-4-terpineol induz a morte celular necrótica acoplada com morte celular apoptótica de baixo nível em ambas as linhas de células tumorais. Esta necrose primária foi esclarecida por microscopia de lapso de tempo de vídeo e também por microscopia eletrônica de transmissão, que revelou características ultraestruturais, incluindo edema celular e organela após o tratamento. Além disso, O 1-4-terpineol induz seu efeito inibitório ao desencadear a parada do ciclo celular G1. O 1-4-terpineol possui atividade antiproliferativa significativa contra duas linhas de células tumorais. Além disso, a identificação de morte celular necrótica primária e parada do ciclo celular das células tumorais agressivas destaca a potencial atividade anticânce. REF Greay SJ et al; Cancer Chemother Pharmacol 65 (5): 877-88 (2010)</p>
+               		<p align="justify">
+                  Outro artigo mostra a atividade da substância contra células de melanoma humano M14 WT e suas contrapartes resistentes a medicamentos, células M14 resistentes à adriamicina. As células sensíveis e resistentes foram cultivadas na presença de óleo da árvore do chá em concentrações que variam de 0,005 a 0,03%. Tanto o óleo integral quanto seu principal componente ativo, o 1,4-Terpineol foram capazes de induzir apoptose dependente de caspase das células de melanoma e esse efeito foi mais evidente na população de células variantes resistentes. As análises de fraturamento por congelamento e microscopia eletrônica de varredura sugeriram que o efeito do óleo integral e do 1-4-Terpineol foi mediado por sua interação com a membrana plasmática e subsequente reorganização dos lipídios da membrana. Este segundo artigo conclui que o óleo integral e o 1-4-terpineol são capazes de impedir o crescimento de células de melanoma M14 humano e parecem ser mais eficazes em suas variantes resistentes, que expressam níveis elevados de glicoproteína P na membrana plasmática, superando a resistência a apoptose dependente de caspase exercida por células tumorais positivas para glicoproteína-P. REF Calcabrini A et al; J Invest Dermatol 122 (2): 349-60 (2004)</p>
+          			<p align="justify">
+                  Um terceiro artigo mostra que ao examinar os componentes do óleo individualmente, apenas o terpinen-4-ol suprimiu a produção após 40 h de TNFalfa, IL-1beta, IL-8, IL-10 e PGE2 por monócitos ativados por LPS. REF Hart PH et al; Inflamm Res 49 (11): 619-26 (2000)</p>
+                  	
+                  <li> Propriedades Antiinflamatórias
+                    <p align="justify">
+ O 1-4-terpinenol suprime a produção de TNFalfa, IL-1beta, IL-8, IL-10 e PGE2 por monócitos ativados por LPS. Os componentes solúveis em água do óleo da árvore do chá podem suprimir a produção de mediadores pró-inflamatórios por monócitos humanos ativados. REF Hart PH et al; Inflamm Res 49 (11): 619-26 (2000)
+
+                      A capacidade do óleo para reduzir a produção de superóxido por neutrófilos e monócitos estimulados com N-formil-metionil-leucil-fenilalanina (fMLP), lipopolissacarídeo (LPS) ou 12-miristato 13-acetato de forbol (PMA) foi examinada. A fração solúvel em água não teve efeito significativo na produção de superóxido estimulada por agonista pelos neutrófilos, mas suprimiu de forma significativa e dependente da dose a produção de superóxido estimulada por agonista pelos monócitos. Essa supressão não foi devido à morte celular. A análise química identificou os componentes solúveis em água como 1-4-terpinenol, alfa-terpineol e 1,8-cineol. Quando examinado individualmente, o 1-4-terpineol suprimiu significativamente a produção de superóxido estimulada por fMLP e LPS, mas não por PMA; o alfa-terpineol suprimiu significativamente a produção de superóxido estimulada por fMLP-, LPS- e PMA; 1,8-cineol não teve efeito. Os componentes do óleo chá suprimem a produção de superóxido pelos monócitos, mas não dos neutrófilos, sugerindo o potencial para a regulação seletiva dos tipos de células por esses componentes durante a inflamação. Brand C et al; Inflamm Res 50 (4): 213-19 (2001)
+                                          
+                    </p>
+				  
+              	  <li> Propriedades Bactericidas
+                    <p align="justify">
+                    Um artigo excelente publicado na revista Applied Microbiology comparou a atividade antimicrobiana do 1-4-terpineol e do óleo integral contra amostras de isolados clínicos de pele com infecção por Staphylococcus aureus resistente à meticilina (MRSA) e estafilococos coagulase-negativos (CoNS) e seus toxicidade contra células de fibroblastos humanos. A atividade antimicrobiana foi comparada usando microdiluição em caldo e métodos de teste de tempo in vitro. O 1-4-terpineol exibiu atividade bacteriostática e bactericida significativamente maior, medida pelas concentrações inibitórias e bactericidas mínimas, respectivamente, do que o óleo integral contra os isolados de MRSA e CoNS mostrando que grande parte da atividade antimicrobiana provém desta substância. A comparação da toxicidade de 1-4-terpineol e óleo integral contra fibroblastos humanos revelou que nenhum dos agentes, nas concentrações testadas, era tóxico durante o período de teste de 24 horas. O 1-4-terpineol é um agente antibacteriano potente contra isolados de MRSA e CoNS, sem exibir toxicidade para células de fibroblastos nas concentrações testadas. O artigo termina concluindo que o 1-4-terpineol deve ser considerado para inclusão como agente único em produtos formulados para tratamento tópico da infecção por MRSA. Loughlin R et al; Lett Appl Microbiol 46 (4): 428-33 (2008)
+                    </p>
+              
+  			</ol>
+  	<li><font face="Symbol">g</font>-Terpineno</li>
+		<p align="justify"> Um artigo lançado este ano mostra a atividade de alguns dos componentes do óleo integral de melaleuca sobre as proteínas (enzima) responsáveis pela entrada do coronavírus em células humanas, e portanto responsáveis pela sua alta virulência. O objetivo do estudo foi investigar o potencial de compostos naturais, como o Limoneno, P-Cimeno e γ-Terpineno presentes em várias plantas como a Ammoides verticillata e a Melaleuca alternifolia como inibidores para o alvo ACE2. Estes compostos foram testados in vitro para estudo da inibição desta enzima. O artigo mostrou para esses componentes naturais possuem atividades bastante semelhantes e muito boas em todos os aspectos considerados. Assim, podem ser considerados como candidatos a fármaco contra o receptor ACE2 dos coronavírus, notadamente aquele responsável pela síndrome respiratória aguda grave. Também foi sugerido no artigo que os componentes dos óleos essenciais podem bloquear o receptor ACE2 e podem dificultar a entrada do coronavírus nas células, o que pode, pelo menos, reduzir significativamente a epidemia até o desaparecimento do vírus. Embora essas propriedades sejam apreciáveis, estudos adicionais de estudos in vitro e clínicos que tratam da SARS-CoV-2 devem ser considerados para estudos posteriores. REF Imane Abdelli, Faiçal Hassani, Sohayb Bekkel Brikci & Said Ghalem (2020) In silico study the inhibition of angiotensin converting enzyme 2 receptor of COVID-19 by Ammoides verticillata components harvested from Western Algeria, Journal of Biomolecular Structure and Dynamics, DOI: 10.1080/07391102.2020.1763199
+</p>
+  
+</ul>
+
+Quer usar esse maravilhoso óleo essencial? Faça seu pedido em: https://shopee.com.br/product/371979426/8413439185/ 
+
+    <!--Fim texto aproveitado do blog-->
+
+
+
+
+   
+  </body>
+   <footer class="copyright">© 2021 
+		  <a href="https://repl.it/@RodolfoBortoluz" target="_blank">Developed by: Rodolfo Bortoluzzi.</a>
+     </footer>
